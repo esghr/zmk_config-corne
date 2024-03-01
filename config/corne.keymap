@@ -36,8 +36,8 @@
                         bindings = <
    &kp GRAVE  &kp AMPS     &kp AT          &kp C_MENU_UP   &kp N4           &kp LBKT         &kp RBKT &kp EXCL  &kp N8   &kp EQUAL &kp STAR  &kp PLUS
    &kp BSLH   &kp SLASH    &kp C_MENU_LEFT &bt C_MENU_DOWN &bt C_MENU_RIGHT &bt LPAR         &kp RPAR &kp QMARK &kp UP   &kp RIGHT &kp COLON &kp MINUS
-   &kp HASH   &kp DLLR     &kp PIPE        &kp TILDE       &kp PRCNT        &kp LT           &kp RT   &kp UNDER &kp DQT  &kp SQT   &kp SEMI  &trans
-                                           &trans          &trans           &kp LT           &kp RT   &kp RALT  &trans
+   &kp HASH   &kp DLLR     &kp PIPE        &kp TILDE       &kp PRCNT        &kp LBRC           &kp RBRC   &kp UNDER &kp DQT  &kp SQT   &kp SEMI  &trans
+                                           &trans          &trans           &kp LT           &kp GT   &kp RALT  &trans
                         >;
                 };
 
