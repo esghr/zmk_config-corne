@@ -19,10 +19,10 @@
 // |  ALT |  Ü  |  Ö  |  Ä  |  P  |  Z  |   |  B  |  M   |  ,  |  .  |  J  | ESC  |
 //                    | CTRL| LWR | SPC |   | SHFT| BKSP | ENT |
                         bindings = <
-   &kp TAB  &kp X    &kp V     &kp L      &kp C &kp W      &kp K        &kp H     &kp G     &kp F   &kp Q &kp MINUS
-   &kp LGUI &kp U    &kp I     &kp A      &kp E &kp O      &kp S        &kp N     &kp R     &kp T   &kp D &kp Y
-   &kp LALT &kp LBKT &kp COLON &kp DQT    &kp P &kp Z      &kp B        &kp M     &kp COMMA &kp DOT &kp J &kp ESC
-                               &kp LCTRL  &mo 1 &kp SPACE  &kp LSHFT    &mo 2     &kp RET
+   &kp TAB  &kp X	&kp V	&kp L	&kp C	&kp W	&kp K	&kp H	&kp G	&kp F	&kp Q	&kp MINUS
+   &kp LGUI	&kp U	&kp I	&kp A	&kp E	&kp O	&kp S	&kp N	&kp R	&kp T	&kp D	&kp Y
+   &kp LALT	&kp LBKT	&kp COLON	&kp DQT	&kp P	&kp Z	&kp B	&kp M	&kp COMMA	&kp DOT	&kp J	&kp ESC
+   			&kp LCTRL	&mo 1	&kp SPACE	&kp LSHFT	&mo 2	&kp RET
                         >;
                 };
                 lower_layer {
@@ -32,10 +32,10 @@
 // |  #   |  $  |  |  |  ~  |  %  |  {  |   |  }  |  _  |  "  |  '  |  ;  |  ^   |
 //                    |     |     |  <  |   |  >  | RALT|     |
                         bindings = <
-   &kp GRAVE  &kp AMPS     &kp AT          &kp C_MENU_UP   &kp N4           &kp LBKT         &kp RBKT &kp EXCL  &kp N8   &kp EQUAL &kp STAR  &kp PLUS
-   &kp BSLH   &kp SLASH    &kp C_MENU_LEFT &bt C_MENU_DOWN &bt C_MENU_RIGHT &bt LPAR         &kp RPAR &kp QMARK &kp UP   &kp RIGHT &kp COLON &kp MINUS
-   &kp HASH   &kp DLLR     &kp PIPE        &kp TILDE       &kp PRCNT        &kp LT           &kp RT   &kp UNDER &kp DQT  &kp SQT   &kp SEMI  &trans
-                                           &trans          &trans           &kp LT           &kp RT   &kp RALT  &trans
+   &kp GRAVE	&kp AMPS	&kp AT	&kp C_MENU_UP	&kp N4	&kp LBKT	&kp RBKT	&kp EXCL	&kp N8	&kp EQUAL	&kp STAR	&kp PLUS
+   &kp BSLH	&kp SLASH	&kp C_MENU_LEFT	&bt C_MENU_DOWN	&bt C_MENU_RIGHT	&bt LPAR	&kp RPAR	&kp QMARK	&kp UP	&kp RIGHT	&kp COLON	&kp MINUS
+   &kp HASH	&kp DLLR	&kp PIPE	&kp TILDE	&kp PRCNT	&kp LT	&kp RT	&kp UNDER	&kp DQT	&kp SQT	&kp SEMI	&trans
+   			&trans	&trans	&kp LT	&kp RT	&kp RALT	&trans
                         >;
                 };
                 
@@ -46,10 +46,10 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
+   &kp  TAB  &kp EXCL	&kp AT	&kp HASH	&kp DLLR	&kp PRCNT	&kp CARET	&kp AMPS	&kp KP_MULTIPLY	&kp LPAR	&kp RPAR	&kp BSPC
+   &kp LCTRL	&trans	&trans	&trans	&trans	&trans	&kp MINUS	&kp EQUAL	&kp LBKT	&kp RBKT	&kp BSLH	&kp GRAVE
    &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &kp LGUI	&trans	&kp SPACE	&kp RET	&trans	&kp RALT
                         >;
                 };
         };
