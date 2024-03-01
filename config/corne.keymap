@@ -21,8 +21,8 @@
                         bindings = <
    &kp TAB  &kp X &kp V &kp L &kp C &kp W      &kp K &kp H  &kp G  &kp F   &kp Q &kp MINUS
    &kp LGUI &kp U &kp I &kp A &kp E &kp O      &kp S &kp N  &kp R  &kp T   &kp D &kp Y
-   &kp LALT &kp LBKT &kp COLON &kp DQT &kp P &kp Z   &kp B &kp M  &kp COMMA &kp DOT &kp J &kp ESC
-                  &kp LCTRL &mo 1 &kp SPACE    &kp LSHFT &kp BSPC &kp RET
+   &kp LALT &kp LBKT &kp COLON &kp DQT &kp P &kp Z   &kp B &kp M  &kp COMMA &kp DOT &kp J &kp RET
+                  &kp LCTRL &mo 1 &kp SPACE    &kp LSHFT &kp mo 2 &kp BSPC
                         >;
                 };
                 lower_layer {
@@ -46,9 +46,9 @@
 // |theta | rho | tau | eta |  pi |zeta |   | beta|  1  |  2  |  3  | mu  |      |
 //                    |     |     |     |   |     |     |  0  |
                         bindings = <
-   &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-   &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-   &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+   &kp ESC  &trans  &trans  &trans  &trans  &trans     &kp 7  &kp 8  &kp 9  &kp 0  &trans  &trans
+   &kp TAB  &trans  &trans  &trans  &trans  &trans     &kp 4  &kp 5  &kp 6  &trans  &trans  &trans
+   &kp   &trans  &trans  &trans  &trans  &trans     &kp 1  &kp 2  &kp 3  &trans  &trans  &trans
                            &trans  &trans  &trans     &trans  &trans  &trans
                         >;
                 };
