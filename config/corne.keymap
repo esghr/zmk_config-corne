@@ -32,9 +32,9 @@
 // |  #   |  $  |  |  |  ~  |  %  |  {  |   |  }  |  _  |  "  |  '  |  ;  |  ^   |
 //                    |     |     |  <  |   |  >  | RALT|     |
                         bindings = <
-   &kp GRAVE  &kp AMPS     &kp AT          &kp C_MENU_UP   &kp N4           &kp LBKT         &kp RBKT &kp EXCL  &kp N8   &kp EQUAL &kp STAR  &kp PLUS
-   &kp BSLH   &kp SLASH    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp LPAR         &kp RPAR &kp QMARK &kp UP   &kp RIGHT &kp COLON &kp MINUS
-   &kp HASH   &kp DLLR     &kp PIPE        &kp TILDE       &kp PRCNT        &kp LBRC           &kp RBRC   &kp UNDER &kp DQT  &kp SQT   &kp SEMI  &trans
+   &kp PLUS   &trans      &kp AT          &kp C_MENU_UP   &kp N4           &kp LBKT         &kp RBKT &kp EXCL  &kp N8   &kp RPAR &kp STAR  &kp RBRC 
+   &kp BSLH    &kp AMPS    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp LPAR         &trans &kp UNDER &kp UP   &kp RIGHT &kp COLON &kp SLASH
+   &kp LCTRL   &kp HASH     &kp PIPE        &kp TILDE       &kp PRCNT        &kp LBRC           &kp RBRC   &kp QMARK &kp DQT  &kp DLLR   &kp SEMI  &kp GRAVE
                                            &trans          &trans           &kp LT           &kp GT   &kp RALT  &trans
                         >;
                 };
