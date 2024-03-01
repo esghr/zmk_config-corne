@@ -8,6 +8,34 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define de_GRAVE PLUS 
+#define de_DQT AT
+#define de_4 N4 
+#define de_ue LBKT
+#define de_PLUS RBKT
+#define de_8 N8
+#define de_EQUAL RPAR
+#define de_LPAR STAR
+#define de_STAR RBRC
+#define de_HASH BSLH
+#define de_SLASH AMPS
+#define de_RPAR LPAR
+#define de_QMARK UNDER
+#define de_oe COLON
+#define de_MINUS SLASH
+#define de_PARA HASH
+#define de_SQT PIPE
+#define de_DEGREE TILDE
+#define de_ue LBRC
+#define de_STAR RBRC
+#define de_UNDER QMARK
+#define de_ae DQT
+#define de_oe SEMI
+#define de_CARET GRAVE
+#define de_SEMICOLON LT
+#define de_COLON GT
+
+
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -27,15 +55,15 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  `   |  &  |  @  | UP  | EURO|  [  |   |  ]  |  !  |  $  |  =  |  *  |  +   |
+// |  `   |  &  |  @  | UP  | EURO|  [  |   |  ]  |  !  |  §  |  =  |  *  |  +   |
 // |  \   |  /  | LFT | DWN | RGT |  (  |   |  )  |  ?  |  °  |     |  :  |  -   |
 // |  #   |  $  |  |  |  ~  |  %  |  {  |   |  }  |  _  |  "  |  '  |  ;  |  ^   |
 //                    |     |     |  <  |   |  >  | RALT|     |
                         bindings = <
-   &kp PLUS   &trans      &kp AT          &kp C_MENU_UP   &kp N4           &kp LBKT         &kp RBKT &kp EXCL  &kp N8   &kp RPAR &kp STAR  &kp RBRC 
-   &kp BSLH    &kp AMPS    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp LPAR         &trans &kp UNDER &kp UP   &kp RIGHT &kp COLON &kp SLASH
-   &kp LCTRL   &kp HASH     &kp PIPE        &kp TILDE       &kp PRCNT        &kp LBRC           &kp RBRC   &kp QMARK &kp DQT  &kp DLLR   &kp SEMI  &kp GRAVE
-                                           &trans          &trans           &kp LT           &kp GT   &kp RALT  &trans
+   &kp PLUS   &trans      &trans          &kp C_MENU_UP   &trans           &trans         &trans &kp EXCL  &HASH   &kp RPAR &kp RBRC  &RBKT 
+   &trans    &kp AMPS    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp LPAR         &trans &kp UNDER &TILDE   &trans &kp de_COLON &kp SLASH
+   &kp LCTRL   &kp BSLH     &trans        &trans       &kp PRCNT        &trans           &kp RBRC   &kp QMARK &kp AT  &kp PIPE   &kp de_SEMICOLON  &kp GRAVE
+                                           &trans          &trans           &trans           &trans   &kp RALT  &trans
                         >;
                 };
 
