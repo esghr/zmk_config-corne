@@ -62,7 +62,7 @@
 // |  #   |  $  |  |  |  ~  |  %  |  {  |   |  }  |  _  |  "  |  '  |  ;  |  ^   |
 //                    |     |     |  <  |   |  >  | RALT|     |
                         bindings = <
-   &kp PLUS   &trans      &trans          &kp C_MENU_UP   &trans           &trans         &trans &kp EXCL  &HASH   &kp RPAR &kp RBRC  &RBKT 
+   &kp PLUS   &trans      &trans          &kp C_MENU_UP   &trans           &trans         &trans &kp EXCL  &kp HASH   &kp RPAR &kp RBRC  &kp RBKT 
    &trans    &kp AMPS    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp LPAR         &trans &kp UNDER &kp TILDE   &trans &kp GT &kp SLASH
    &kp LCTRL   &kp BSLH     &trans        &trans       &kp PRCNT        &trans           &kp RBRC   &kp QMARK &kp AT  &kp PIPE   &kp LT  &kp GRAVE
                                            &trans          &trans           &trans           &trans   &kp RALT  &trans
