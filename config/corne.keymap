@@ -48,7 +48,7 @@
                         bindings = <
    &kp ESC  &trans  &trans  &trans  &trans  &trans     &kp 7  &kp 8  &kp 9  &kp 0  &trans  &trans
    &kp TAB  &trans  &trans  &trans  &trans  &trans     &kp 4  &kp 5  &kp 6  &trans  &trans  &trans
-   &kp   &trans  &trans  &trans  &trans  &trans     &kp 1  &kp 2  &kp 3  &trans  &trans  &trans
+   &trans   &trans  &trans  &trans  &trans  &trans     &kp 1  &kp 2  &kp 3  &trans  &trans  &trans
                            &trans  &trans  &trans     &trans  &trans  &trans
                         >;
                 };
