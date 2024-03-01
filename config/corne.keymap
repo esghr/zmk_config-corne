@@ -63,7 +63,7 @@
 //                    |     |     |  <  |   |  >  | RALT|     |
                         bindings = <
    &kp PLUS   &kp LS(N6)      &kp RA(Q)          &kp C_MENU_UP   &kp RA(E)           &kp RA(N8)         &kp RA(N9) &kp EXCL  &kp HASH   &kp RPAR &kp RBRC  &kp RBKT 
-   &kp RA(MINUS)    &kp AMPS    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp STAR         &kp LPAR &kp UNDER &kp TILDE   &trans &kp GT &kp SLASH
+   &kp RA(MINUS)    &kp AMPS    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp STAR         &kp LPAR &kp UNDER &kp TILDE   &kp SLASH &kp GT &trans
    &kp LCTRL   &kp BSLH     &kp RA(NUBS)        &kp RA(RBRC)       &kp PRCNT        &kp LA(N7)           &kp LA(N0)   &kp QMARK &kp AT  &kp PIPE   &kp LT  &kp GRAVE
                                            &trans          &trans           &trans           &trans   &kp RALT  &trans
                         >;
@@ -76,9 +76,9 @@
 // |theta | rho | tau | eta |  pi |zeta |   | beta|  1  |  2  |  3  | mu  |      |
 //                    |     |     |     |   |     |     |  0  |
                         bindings = <
-   &kp ESC  &trans  &trans  &trans  &trans  &trans     &kp N7  &kp N8  &kp N9  &kp N0  &trans  &trans
-   &kp TAB  &trans  &trans  &trans  &trans  &trans     &kp N4  &kp N5  &kp N6  &trans  &trans  &trans
-   &trans   &trans  &trans  &trans  &trans  &trans     &kp N1  &kp N2  &kp N3  &trans  &trans  &trans
+   &kp ESC  &trans  &trans  &trans  &trans  &trans     &trans  &kp N7  &kp N8  &kp N9  &kp N0  &trans
+   &kp TAB  &trans  &trans  &trans  &trans  &trans     &trans  &kp N4  &kp N5  &kp N6  &trans  &trans
+   &trans   &trans  &trans  &trans  &trans  &trans     &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
                            &trans  &trans  &trans     &trans  &trans  &trans
                         >;
                 };
