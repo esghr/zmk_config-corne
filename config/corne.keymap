@@ -64,7 +64,7 @@
                         bindings = <
    &kp PLUS   &kp LS(N6)      &kp RA(Q)          &kp C_MENU_UP   &kp RA(E)           &kp RA(N8)         &kp RA(N9) &kp EXCL  &kp HASH   &kp RPAR &kp RBRC  &kp RBKT 
    &kp RA(MINUS)    &kp AMPS    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp STAR         &kp LPAR &kp UNDER &kp TILDE   &kp SLASH &kp GT &kp LS(N4)
-   &kp LCTRL   &kp BSLH     &kp RA(NUBS)        &kp CARET       &kp PRCNT        &kp LA(N7)           &kp LA(N0)   &kp QMARK &kp AT  &kp PIPE   &kp LT  &kp GRAVE
+   &kp LCTRL   &kp BSLH     &kp RA(NUBS)        &kp RA(RBRC)       &kp PRCNT        &kp LA(N7)           &kp LA(N0)   &kp QMARK &kp AT  &kp PIPE   &kp LT  &kp GRAVE
                                            &trans          &trans           &trans           &trans   &kp RALT  &trans
                         >;
                 };
