@@ -46,8 +46,8 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB |  X  |  V  |  L  |  C  |  W  |   |  K  |  H   |  G  |  F  |  Q  |  ẞ   |
 // |  GUI |  U  |  I  |  A  |  E  |  O  |   |  S  |  N   |  R  |  T  |  D  |  Y   |
-// |  ALT |  Ü  |  Ö  |  Ä  |  P  |  Z  |   |  B  |  M   |  ,  |  .  |  J  | ESC  |
-//                    | CTRL| LWR | SPC |   | SHFT| RSE  | ENT |
+// |  ALT |  Ü  |  Ö  |  Ä  |  P  |  Z  |   |  B  |  M   |  ,  |  .  |  J  | ENT  |
+//                    | CTRL| LWR | SPC |   | SHFT| RSE  |BSPC |
                         bindings = <
    &kp TAB  &kp X &kp V &kp L &kp C &kp W      &kp K &kp H  &kp G  &kp F   &kp Q &kp MINUS
    &kp LGUI &kp U &kp I &kp A &kp E &kp O      &kp S &kp N  &kp R  &kp T   &kp D &kp Y
@@ -58,13 +58,13 @@
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  `   |  &  |  @  | UP  | EURO|  [  |   |  ]  |  !  |  §  |  =  |  *  |  +   |
-// |  \   |  /  | LFT | DWN | RGT |  (  |   |  )  |  ?  |  °  |     |  :  |  -   |
-// |  #   |  $  |  |  |  ~  |  %  |  {  |   |  }  |  _  |  "  |  '  |  ;  |  ^   |
+// |  \   |  /  | LFT | DWN | RGT |  (  |   |  )  |  ?  |  °  |  -  |  :  |      |
+// |      |  #  |  |  |  ~  |  %  |  {  |   |  }  |  _  |  "  |  '  |  ;  |  ^   |
 //                    |     |     |  <  |   |  >  | RALT|     |
                         bindings = <
    &kp PLUS   &kp LS(N6)      &kp RA(Q)          &kp C_MENU_UP   &kp RA(E)           &kp RA(N8)         &kp RA(N9) &kp EXCL  &kp HASH   &kp RPAR &kp RBRC  &kp RBKT 
-   &kp RA(MINUS)    &kp AMPS    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp STAR         &kp LPAR &kp UNDER &kp TILDE   &kp SLASH &kp GT &trans
-   &kp LCTRL   &kp BSLH     &kp RA(NUBS)        &kp RA(RBRC)       &kp PRCNT        &kp LA(N7)           &kp LA(N0)   &kp QMARK &kp AT  &kp PIPE   &kp LT  &kp GRAVE
+   &kp RA(MINUS)    &kp AMPS    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp STAR         &kp LPAR &kp UNDER &kp TILDE   &kp SLASH &kp GT &kp LS(N4)
+   &kp LCTRL   &kp BSLH     &kp RA(NUBS)        &kp CARET       &kp PRCNT        &kp LA(N7)           &kp LA(N0)   &kp QMARK &kp AT  &kp PIPE   &kp LT  &kp GRAVE
                                            &trans          &trans           &trans           &trans   &kp RALT  &trans
                         >;
                 };
