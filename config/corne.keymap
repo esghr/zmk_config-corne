@@ -119,7 +119,7 @@
 //                    | CTRL| LWR | SPC |   | SHFT| BSPC | ENT |
                         bindings = <
    &kp TAB  &kp Z &kp Y &kp U &kp A &kp Q      &kp P &kp B  &kp M  &kp L   &kp F &kp DE_SS
-   &kp LGUI &kp C &kp S &ht_tp RALT I &ht_tp LCTL E &kp O      &ht_tp LCTL D &ht_tp RALT T  &kp N  &kp R   &kp H &kp J
+   &kp LGUI &kp C &kp S &hm RALT I &hm LCTL E &kp O      &hm LCTL D &hm RALT T  &kp N  &kp R   &kp H &kp J
    &kp LALT &kp V &kp X &kp LBKT &kp SQT &kp SEMI   &kp W &kp G  &kp COMMA &kp DOT &kp J &mo 1
                   &kp LCTRL &mo 2 &kp SPACE    &kp LSHFT &kp BSPC &kp RET
                         >;
