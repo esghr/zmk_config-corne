@@ -158,7 +158,7 @@
 //                    |     |    |    |   |    |LSHFT|    |
                         bindings = <
    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-   &trans  &kp HOME  &kp LC(END)  &kp LC(HOME)  &kp END  &trans     &trans  &trans  &kp LC(LA(DWN))  &kp LC(LA(UP))  &kp LS(N6)  &kp RA(Q)
+   &trans  &kp HOME  &kp LC(END)  &kp LC(HOME)  &kp END  &trans     &trans  &trans  &kp LC(LA(C_MENU_DOWN))  &kp LC(LA(C_MENU_UP))  &kp LS(N6)  &kp RA(Q)
    &trans   &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &kp LS(N3)
                            &trans  &trans  &trans     &trans  &kp LSHFT  &trans
                         >;
