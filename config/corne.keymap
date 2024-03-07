@@ -78,7 +78,7 @@
 // Aliases
 #define DE_CIRC GRAVE  // ^ (dead)
 #define DE_SS   MINUS // ß
-#define DE_ACUT EQUAL  // ´ (dead)
+#define DE_ACUT PLUS  // ´ (dead)
 #define DE_UE 	LBKT // Ü
 #define DE_PLUS RBRC // +
 #define DE_OE 	SEMI // Ö
@@ -105,18 +105,18 @@
 #define DE_SCLN LS(COMMA) // ;
 #define DE_COLN LS(DOT)  // :
 #define DE_UNDS LS(DE_MINS) // _
-#define DE_SUP2 RALT(N2)    // ²
-#define DE_SUP3 RALT(N3)    // ³
-#define DE_LCBR RALT(N7)    // {
-#define DE_LBRC RALT(N8)    // [
-#define DE_RBRC RALT(N9)    // ]
-#define DE_RCBR RALT(N0)    // }
-#define DE_BSLS RALT(SS)   // (backslash)
-#define DE_AT   RALT(Q)    // @
-#define DE_EURO RALT(E)    // €
-#define DE_TILD RALT(DE_PLUS) // ~
-#define DE_PIPE RALT(DE_LABK) // |
-#define DE_MICR RALT(M)    // µ
+#define DE_SUP2 RA(N2)    // ²
+#define DE_SUP3 RA(N3)    // ³
+#define DE_LCBR RA(N7)    // {
+#define DE_LBRC RA(N8)    // [
+#define DE_RBRC RA(N9)    // ]
+#define DE_RCBR RA(N0)    // }
+#define DE_BSLS RA(SS)   // (backslash)
+#define DE_AT   RA(Q)    // @
+#define DE_EURO RA(E)    // €
+#define DE_TILD RA(DE_PLUS) // ~
+#define DE_PIPE RA(DE_LABK) // |
+#define DE_MICR RA(M)    // µ
 
 
 / {
@@ -125,42 +125,42 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Z  |  Y  |  U  |  A  |  Q  |   |  P  |  B   |  M  |  L  |  F  |  ẞ   |
-// |  GUI |  C  |  S  |  I  |  E  |  O  |   |  D  |  T   |  N  |  R  |  H  |  J   |
-// |  ALT |  V  |  X  |  Ü  |  Ä  |  Ö  |   |  W  |  G   |  ,  |  .  |  K  | RAL  |
-//                    | CTRL| LWR | SPC |   | SHFT| BSPC | ENT |
+// |  TAB (ESC) |     Z     |     Y     |     U     |     A    |    Q    |     |    P    |    B     |    M    |    L    |    F    |    ẞ     |
+// |     GUI    |  C (RSL)  |  S (LWR)  |  I (RALT) | E (LCTRL)|    O    |     |    D    | T (RCTRL)| N (RALT)| R (LWR) | H (RSL) |    J     |
+// |     ALT    |     V     |     X     |     Ü     |     Ä    |    Ö    |     |    W    |    G     |    ,    |    .    |    K    |   RALT   |
+//                                      |    CTRL   |    LWR   |   SPC   |     |   SHFT  |   BSPC   |   ENT   |
                         bindings = <
    &hm ESC TAB  &kp Z &kp Y &kp U &kp A &kp Q      &kp P &kp B  &kp M  &kp L   &kp F &kp DE_SS
-   &kp LGUI &hml 2 C &hml 1 S &hm RALT I &hm LCTL E &kp O      &hm LCTL D &hm RALT T  &hml 1 N  &hml 2 R   &kp H &kp J
-   &kp LALT &kp V &kp X &kp LBKT &kp SQT &kp SEMI   &kp W &kp G  &kp COMMA &kp DOT &kp J &mo 1
-                  &kp LCTRL &mo 2 &kp SPACE    &kp LSHFT &kp BSPC &kp RET
+   &kp LGUI &hml 2 C &hml 1 S &hm RALT I &hm LCTRL E &kp O      &kp D &hm RCTRL T  &hml RALT N  &hml 1 R   &hml 2 H &kp J
+   &kp LALT &kp V &kp X &kp LBKT &kp SQT &kp SEMI   &kp W &kp G  &kp COMMA &kp DOT &kp K &mo 1
+                  &kp LC(C_MENU_LEFT) &kp LC(C_MENU_UP) &kp SPACE    &kp LSHFT &kp BSPC &kp RET
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  `   |  &  |  @  |  /  | EURO|  [  |   |  ]  |  !  |  §  |  =  |  *  |  +   |
-// |  \   | LFT | UP  | DWN | RGT |  (  |   |  )  |  ?  |  "  |  '  |  -  |      |
-// |      |  #  |  |  |  ~  |  %  |  {  |   |  }  |  _  |  ;  |  :  |  °  |  ^   |
-//                    |     |     |  <  |   |  >  | RALT|     |
+// |  mu |  \  |  ~  |  ?  |  !  |  [  |   |  ]  |  7  |  8  |  9  |  +  |  *  |
+// | EURO| LFT | UP  | DWN | RGT |  (  |   |  )  |  4  |  5  |  6  |  "  |  -  |
+// |  _  | DLR | "|" |  %  |  #  |  {  |   |  }  |  1  |  2  |  3  |  '  |  /  |
+//                   |  °  |  =  |  <  |   |  >  |  0  |  ^  |
                         bindings = <
-   &kp PLUS   &kp LS(N6)  &kp RA(Q)   &kp AMPS  &kp RA(E)  &kp RA(N8) &kp RA(N9) &kp EXCL  &kp HASH   &kp RPAR &kp RBRC  &kp RBKT 
-   &kp RA(MINUS)    &kp C_MENU_LEFT    &kp C_MENU_DOWN &kp C_MENU_UP &kp C_MENU_RIGHT &kp STAR  &kp LPAR &kp UNDER &kp DE_DQUO   &kp DE_QUOT &kp DE_MINS &kp LS(N4)
-   &kp LCTRL   &kp BSLH  &kp RA(NUBS)  &kp RA(RBRC) &kp PRCNT &kp LA(N7) &kp LA(N0) &kp QMARK &kp DE_SCLN  &kp DE_COLN   &kp DE_DEG  &kp GRAVE
-                                           &trans          &trans           &trans           &trans   &kp RALT  &trans
+   &kp DE_MICR &kp DE_BSLS  &kp DE_TILD &kp DE_QUES &kp DE_EXLM  &kp DE_LBRC &kp DE_RBRC &kp N7 &kp N8 &kp N9 &kp DE_PLUS  &kp DE_ASTR 
+   &kp DE_EURO &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &kp C_MENU_RIGHT &kp DE_LPRN  &kp DE_RPRN &kp N4 &kp N5 &kp N6 &kp DE_DQUO &kp DE_MINS
+   &kp DE_UNDS &kp DE_DLR  &kp DE_PIPE  &kp DE_PERC &kp DE_HASH &kp DE_LCBR &kp DE_RCBR &kp N1 &kp N2  &kp N3   &kp DE_QUOT  &kp DE_SLSH
+                                           &kp DE_DEG &kp DE_EQL &kp DE_LABK      &kp DE_RABK &kp N0 &kp DE_CIRC
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  xi  | xi  | psi |labda| chi | tau |   |kappa|  7  |  8  |  9  |gamma|omega |
-// | phi  |upsln| iota|alpha| epsi|omcrn|   | nu  |  4  |  5  |  6  |delta|sigma |
-// |theta | rho | tau | eta |  pi |zeta |   | beta|  1  |  2  |  3  | mu  |      |
-//                    |     |     |     |   |     |     |  0  |
+// |  xi  | xi  |    |labda| chi | tau |   |kappa|    |    |    |gamma|omega |
+// | phi  |HOME |LC(END)|LC(HOME)|END |omcrn|   | nu  |    |LC(LA(DWN))|LC(LA(UP))|    |  @  |
+// |theta | rho | tau | eta |  pi |zeta |   | beta|    |    |    |   |  §  |
+//                    |     |    |    |   |    |LSHFT|    |
                         bindings = <
-   &kp ESC  &trans  &trans  &trans  &trans  &trans     &trans  &kp N7  &kp N8  &kp N9  &trans  &trans
-   &kp TAB  &trans  &trans  &trans  &trans  &trans     &trans  &kp N4  &kp N5  &kp N6  &trans  &trans
-   &trans   &trans  &trans  &trans  &trans  &trans     &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
-                           &trans  &trans  &trans     &trans  &kp N0  &trans
+   &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+   &trans  &kp HOME  &kp LC(END)  &kp LC(HOME)  &kp END  &trans     &trans  &trans  &kp LC(LA(DWN))  &kp LC(LA(UP))  &trans  &kp DE_AT
+   &trans   &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &kp DE_SECT
+                           &trans  &trans  &trans     &trans  &kp LSHFT  &trans
                         >;
                 };
         };
