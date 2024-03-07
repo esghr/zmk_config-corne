@@ -102,7 +102,7 @@
 #define DE_ASTR LS(DE_PLUS) // *
 #define DE_QUOT LS(DE_HASH) // '
 #define DE_RABK LS(DE_LABK) // >
-#define DE_SCLN LS(COMM) // ;
+#define DE_SCLN LS(COMMA) // ;
 #define DE_COLN LS(DOT)  // :
 #define DE_UNDS LS(DE_MINS) // _
 #define DE_SUP2 RALT(N2)    // ²
@@ -114,8 +114,8 @@
 #define DE_BSLS RALT(SS)   // (backslash)
 #define DE_AT   RALT(Q)    // @
 #define DE_EURO RALT(E)    // €
-#define DE_TILD RALT(PLUS) // ~
-#define DE_PIPE RALT(LABK) // |
+#define DE_TILD RALT(DE_PLUS) // ~
+#define DE_PIPE RALT(DE_LABK) // |
 #define DE_MICR RALT(M)    // µ
 
 
@@ -138,14 +138,14 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  `   |  &  |  @  | UP  | EURO|  [  |   |  ]  |  !  |  §  |  =  |  *  |  +   |
-// |  \   |  /  | LFT | DWN | RGT |  (  |   |  )  |  ?  |  "  |  '  |  -  |      |
+// |  `   |  &  |  @  |  /  | EURO|  [  |   |  ]  |  !  |  §  |  =  |  *  |  +   |
+// |  \   | LFT | UP  | DWN | RGT |  (  |   |  )  |  ?  |  "  |  '  |  -  |      |
 // |      |  #  |  |  |  ~  |  %  |  {  |   |  }  |  _  |  ;  |  :  |  °  |  ^   |
 //                    |     |     |  <  |   |  >  | RALT|     |
                         bindings = <
-   &kp PLUS   &kp LS(N6)  &kp RA(Q)   &kp C_MENU_UP   &kp RA(E)  &kp RA(N8) &kp RA(N9) &kp EXCL  &kp HASH   &kp RPAR &kp RBRC  &kp RBKT 
-   &kp RA(MINUS)    &kp AMPS    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp STAR  &kp LPAR &kp UNDER &kp DE_DQUO   &kp DE_QUOT &kp DE_MINS &kp LS(N4)
-   &kp LCTRL   &kp BSLH &kp RA(NUBS)  &kp RA(RBRC) &kp PRCNT &kp LA(N7) &kp LA(N0) &kp QMARK &kp DE_SCLN  &kp DE_COLN   &kp DE_DEG  &kp GRAVE
+   &kp PLUS   &kp LS(N6)  &kp RA(Q)   &kp AMPS  &kp RA(E)  &kp RA(N8) &kp RA(N9) &kp EXCL  &kp HASH   &kp RPAR &kp RBRC  &kp RBKT 
+   &kp RA(MINUS)    &kp C_MENU_LEFT    &kp C_MENU_DOWN &kp C_MENU_UP &kp C_MENU_RIGHT &kp STAR  &kp LPAR &kp UNDER &kp DE_DQUO   &kp DE_QUOT &kp DE_MINS &kp LS(N4)
+   &kp LCTRL   &kp BSLH  &kp RA(NUBS)  &kp RA(RBRC) &kp PRCNT &kp LA(N7) &kp LA(N0) &kp QMARK &kp DE_SCLN  &kp DE_COLN   &kp DE_DEG  &kp GRAVE
                                            &trans          &trans           &trans           &trans   &kp RALT  &trans
                         >;
                 };
