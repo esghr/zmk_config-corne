@@ -27,7 +27,7 @@
     behaviors {
         hml: homerow_mods_layers {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HOMEROW_MODS_LAYER";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
@@ -133,7 +133,7 @@
    &hm ESC TAB  &kp Z &kp Y &kp U &kp A &kp Q      &kp P &kp B  &kp M  &kp L   &kp F &kp DE_SS
    &kp LGUI &hml 2 C &hml 1 S &hm RALT I &hm LCTRL E &kp O      &kp D &hm RCTRL T  &hml RALT N  &hml 1 R   &hml 2 H &kp J
    &kp LALT &kp V &kp X &kp LBKT &kp SQT &kp SEMI   &kp W &kp G  &kp COMMA &kp DOT &kp K &mo 1
-                  &kp LC(C_MENU_LEFT) &kp LC(C_MENU_UP) &kp SPACE    &kp LSHFT &kp BSPC &kp RET
+                  &kp LC(C_MENU_LEFT) &kp LC(C_MENU_RIGHT) &kp SPACE    &kp LSHFT &kp BSPC &kp RET
                         >;
                 };
                 lower_layer {
