@@ -23,6 +23,18 @@
             bindings = <&kp>, <&kp>;
         };
     };
+    
+    behaviors {
+        hml: homerow_mods_layers {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -67,7 +79,7 @@
 #define DE_CIRC GRAVE  // ^ (dead)
 #define DE_SS   MINUS // ß
 #define DE_ACUT EQUAL  // ´ (dead)
-#define DE_UDIA LBRC // Ü
+#define DE_UE 	LBKT // Ü
 #define DE_PLUS RBRC // +
 #define DE_OE 	SEMI // Ö
 #define DE_AE 	SQT // Ä
@@ -118,8 +130,8 @@
 // |  ALT |  V  |  X  |  Ü  |  Ä  |  Ö  |   |  W  |  G   |  ,  |  .  |  K  | RAL  |
 //                    | CTRL| LWR | SPC |   | SHFT| BSPC | ENT |
                         bindings = <
-   &kp TAB  &kp Z &kp Y &kp U &kp A &kp Q      &kp P &kp B  &kp M  &kp L   &kp F &kp DE_SS
-   &kp LGUI &kp C &kp S &hm RALT I &hm LCTL E &kp O      &hm LCTL D &hm RALT T  &kp N  &kp R   &kp H &kp J
+   &hm ESC TAB  &kp Z &kp Y &kp U &kp A &kp Q      &kp P &kp B  &kp M  &kp L   &kp F &kp DE_SS
+   &kp LGUI &hml 2 C &hml 1 S &hm RALT I &hm LCTL E &kp O      &hm LCTL D &hm RALT T  &hml 1 N  &hml 2 R   &kp H &kp J
    &kp LALT &kp V &kp X &kp LBKT &kp SQT &kp SEMI   &kp W &kp G  &kp COMMA &kp DOT &kp J &mo 1
                   &kp LCTRL &mo 2 &kp SPACE    &kp LSHFT &kp BSPC &kp RET
                         >;
@@ -127,13 +139,13 @@
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  `   |  &  |  @  | UP  | EURO|  [  |   |  ]  |  !  |  §  |  =  |  *  |  +   |
-// |  \   |  /  | LFT | DWN | RGT |  (  |   |  )  |  ?  |  °  |  -  |  :  |      |
-// |      |  #  |  |  |  ~  |  %  |  {  |   |  }  |  _  |  "  |  '  |  ;  |  ^   |
+// |  \   |  /  | LFT | DWN | RGT |  (  |   |  )  |  ?  |  "  |  '  |  -  |      |
+// |      |  #  |  |  |  ~  |  %  |  {  |   |  }  |  _  |  ;  |  :  |  °  |  ^   |
 //                    |     |     |  <  |   |  >  | RALT|     |
                         bindings = <
    &kp PLUS   &kp LS(N6)  &kp RA(Q)   &kp C_MENU_UP   &kp RA(E)  &kp RA(N8) &kp RA(N9) &kp EXCL  &kp HASH   &kp RPAR &kp RBRC  &kp RBKT 
-   &kp RA(MINUS)    &kp AMPS    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp STAR  &kp LPAR &kp UNDER &kp TILDE   &kp SLASH &kp GT &kp LS(N4)
-   &kp LCTRL   &kp BSLH &kp RA(NUBS)  &kp RA(RBRC) &kp PRCNT &kp LA(N7) &kp LA(N0) &kp QMARK &kp AT  &kp PIPE   &kp LT  &kp GRAVE
+   &kp RA(MINUS)    &kp AMPS    &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_RIGHT &kp STAR  &kp LPAR &kp UNDER &kp DE_DQUO   &kp DE_QUOT &kp DE_MINS &kp LS(N4)
+   &kp LCTRL   &kp BSLH &kp RA(NUBS)  &kp RA(RBRC) &kp PRCNT &kp LA(N7) &kp LA(N0) &kp QMARK &kp DE_SCLN  &kp DE_COLN   &kp DE_DEG  &kp GRAVE
                                            &trans          &trans           &trans           &trans   &kp RALT  &trans
                         >;
                 };
@@ -145,10 +157,10 @@
 // |theta | rho | tau | eta |  pi |zeta |   | beta|  1  |  2  |  3  | mu  |      |
 //                    |     |     |     |   |     |     |  0  |
                         bindings = <
-   &kp ESC  &trans  &trans  &trans  &trans  &trans     &trans  &kp N7  &kp N8  &kp N9  &kp N0  &trans
+   &kp ESC  &trans  &trans  &trans  &trans  &trans     &trans  &kp N7  &kp N8  &kp N9  &trans  &trans
    &kp TAB  &trans  &trans  &trans  &trans  &trans     &trans  &kp N4  &kp N5  &kp N6  &trans  &trans
    &trans   &trans  &trans  &trans  &trans  &trans     &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
-                           &trans  &trans  &trans     &trans  &trans  &trans
+                           &trans  &trans  &trans     &trans  &kp N0  &trans
                         >;
                 };
         };
