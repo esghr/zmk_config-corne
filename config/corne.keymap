@@ -125,15 +125,15 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB (ESC) |     Z     |     Y     |     U     |     A    |    Q    |     |    P    |    B     |    M    |    L    |    F    |    ẞ     |
-// |     GUI    |  C (RSL)  |  S (LWR)  |  I (RALT) | E (LCTRL)|    O    |     |    D    | T (RCTRL)| N (RALT)| R (LWR) | H (RSL) |    J     |
-// |     ALT    |     V     |     X     |     Ü     |     Ä    |    Ö    |     |    W    |    G     |    ,    |    .    |    K    |   RALT   |
-//                                      |    CTRL   |    LWR   |   SPC   |     |   SHFT  |   BSPC   |   ENT   |
+// |            |  Z (ESC)  |  Y (TAB)  |     U     |     A    |    Q    |     |    P    |    B     |    M    |    L    |    F    |       |
+// |            |  C (RSL)  |  S (LWR)  |  I (RALT) | E (LCTRL)|    O    |     |    D    | T (RCTRL)| N (RALT)| R (LWR) | H (RSL) |       |
+// |            |     V     |     X     |     J     |     Ä    |    Ö    |     |    W    |    G     |    ,    |    .    |    K    |       |
+//                                      |    RET    |     Ü    |   SPC   |     |   SHFT  |    ß     |  BSPC   |
                         bindings = <
-   &hm ESC TAB  &kp Z &kp Y &kp U &kp A &kp Q      &kp P &kp B  &kp M  &kp L   &kp F &kp DE_SS
-   &kp LGUI &hml 2 C &hml 1 S &hm RALT I &hm LCTRL E &kp O      &kp D &hm RCTRL T  &hml RALT N  &hml 1 R   &hml 2 H &kp J
-   &kp LALT &kp V &kp X &kp LBKT &kp SQT &kp SEMI   &kp W &kp G  &kp COMMA &kp DOT &kp K &mo 1
-                  &kp LC(C_MENU_LEFT) &kp LC(C_MENU_RIGHT) &kp SPACE    &kp LSHFT &kp BSPC &kp RET
+   &trans &hm ESC Z &hm TAB Y &kp U &kp A &kp Q      &kp P &kp B  &kp M  &kp L   &kp F &trans
+   &trans &hml 2 C &hml 1 S &hm RALT I &hm LCTRL E &kp O      &kp D &hm RCTRL T  &hml RALT N  &hml 1 R   &hml 2 H &trans
+   &trans &hm LGUI V &kp X &kp J &kp SQT &kp SEMI   &kp W &kp G  &kp COMMA &kp DOT &kp K &trans
+                  &kp RET &kp LBKT &kp SPACE    &kp LSHFT &kp DE_SS &kp BSPC
                         >;
                 };
                 lower_layer {
@@ -155,12 +155,12 @@
 // |  xi  | xi  |    |labda| chi | tau |   |kappa|    |    |    |gamma|omega |
 // | phi  |HOME |LC(END)|LC(HOME)|END |omcrn|   | nu  |    |LC(LA(DWN))|LC(LA(UP))|    |  @  |
 // |theta | rho | tau | eta |  pi |zeta |   | beta|    |    |    |   |  §  |
-//                    |     |    |    |   |    |LSHFT|    |
+//                    |     |    |line lft|   |line lft|LSHFT|    |
                         bindings = <
    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
    &trans  &kp HOME  &kp LC(END)  &kp LC(HOME)  &kp END  &trans     &trans  &trans  &kp LC(LA(C_MENU_DOWN))  &kp LC(LA(C_MENU_UP))  &kp LS(N6)  &kp RA(Q)
    &trans   &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &kp LS(N3)
-                           &trans  &trans  &trans     &trans  &kp LSHFT  &trans
+                           &trans  &trans  &kp LC(C_MENU_LEFT)     &kp LC(C_MENU_RIGHT)  &kp LSHFT  &trans
                         >;
                 };
         };
