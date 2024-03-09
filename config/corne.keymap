@@ -138,28 +138,28 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  mu |  \  |  (~)  |  ?  |  !  |  [  |   |  ]  |  7  |  8  |  9  |    |  *  |
-// | EURO| LFT | UP  | DWN | RGT |  (  |   |  )  |  4  |  5  |  6  |  "  |  -  |
-// |  _  | DLR | "|" |  %  |  #  |  {  |   |  }  |  1  |  2  |  3  |  '  |  /  |
-//                   |  °  |  =  |  <  |   |  >  |  0  |  ^  |
+// |     |LFTline|DWNpage|UPpage|RGTline|[ (])|   |  @  |  7  |  8  |  9  | mu |    |
+// |     |LFT(word)| DWN | UP |RGT(word)|"(" (")")|   |? (!)|4(STRG)|  5  |  6  | " (') |    |
+// |     |DLR (EURO)|"|"(°)|  %  |  #  |{ (})|   |_ (-)|  1  |  2  |  3  |/ (\)|    |
+//                   |  *  |  =  |< (>)|   |  §  |  0  |  ^  |
                         bindings = <
-   &kp RA(M) &kp RA(MINUS)  &kp RA(DE_PLUS) &kp LS(DE_SS) &kp LS(N1)  &kp DE_LBRC &kp DE_RBRC &kp N7 &kp N8 &kp N9 &kp RBRC  &kp LS(RBRC) 
-   &kp RA(E) &kp C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &kp C_MENU_RIGHT &kp LS(N8)  &kp LS(N9) &kp N4 &kp N5 &kp N6 &kp LS(N2) &kp SLASH
-   &kp LS(SLASH) &kp LS(N4)  &kp RA(DE_LABK)  &kp LS(N5) &kp NUHS &kp RA(N7) &kp RA(N0) &kp N1 &kp N2  &kp N3   &kp LS(DE_HASH)  &kp LS(N7)
-                                           &kp LS(DE_CIRC) &kp LS(N0) &kp NUBS      &kp LS(DE_LABK) &kp N0 &kp GRAVE
+   &trans &hm HOME LC(HOME) &kp PG_DN &kp PG_UP &hm END LC(END) &hm DE_LBRC DE_RBRC &kp RA(Q) &kp N7 &kp N8 &kp N9 &kp RA(M)  &trans  
+   &trans &hm C_MENU_LEFT LC(C_MENU_LEFT) &kp C_MENU_DOWN &kp C_MENU_UP &hm C_MENU_RIGHT LC(C_MENU_RIGHT) &hm LS(N8) LS(N9) &hm LS(DE_SS) LS(N1) &hm N4 LSHFT &kp N5 &kp N6 &hm LS(N2) LS(DE_HASH) &trans 
+   &trans &hm LS(N4) RA(E) &hm RA(DE_LABK) LS(DE_CIRC)  &kp LS(N5) &kp NUHS &hm RA(N7) RA(N0) &hm LS(SLASH) SLASH &kp N1 &kp N2 &kp N3 &hm LS(N7) DE_BSLS &trans 
+                                           &hm RBRC LS(RBRC) &kp LS(N0) &hm NUBS LS(N3)     &kp LS(N3) &kp N0 &kp GRAVE
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  xi  | xi  |    |labda| chi | tau |   |kappa|    |    |    |gamma|omega |
-// | phi  |HOME |LC(END)|LC(HOME)|END |omcrn|   | nu  |    |LC(LA(DWN))|LC(LA(UP))|    |  @  |
-// |theta | rho | tau | eta |  pi |zeta |   | beta|    |    |    |   |  §  |
+// | phi  |HOME |LC(END)|LC(HOME)|END |omcrn|   | nu  |    |LC(LA(DWN))|LC(LA(UP))|    |    |
+// |theta | rho | tau | eta |  pi |zeta |   | beta|    |    |    |   |    |
 //                    |     |    |line lft|   |line lft|LSHFT|    |
                         bindings = <
    &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-   &trans  &kp HOME  &kp LC(END)  &kp LC(HOME)  &kp END  &trans     &trans  &trans  &kp LC(LA(C_MENU_DOWN))  &kp LC(LA(C_MENU_UP))  &kp LS(N6)  &kp RA(Q)
-   &trans   &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &kp LS(N3)
+   &trans  &kp HOME  &kp LC(END)  &kp LC(HOME)  &kp END  &trans     &trans  &trans  &kp LC(LA(C_MENU_DOWN))  &kp LC(LA(C_MENU_UP))  &trans  &trans
+   &trans   &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
                            &trans  &trans  &kp LC(C_MENU_LEFT)     &kp LC(C_MENU_RIGHT)  &kp LSHFT  &trans
                         >;
                 };
