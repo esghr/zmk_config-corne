@@ -143,10 +143,10 @@
 // |     |DLR (EURO)|"|"(°)|  %  |  #  |{ (})|   |_ (-)|  1  |  2  |  3  |/ (\)|    |
 //                   |  *  |  =  |< (>)|   |  §  |  0  |  ^  |
                         bindings = <
-   &trans &hm HOME LC(HOME) &kp PG_DN &kp PG_UP &hm END LC(END) &hm DE_LBRC DE_RBRC &kp RA(Q) &kp N7 &kp N8 &kp N9 &kp RA(M)  &trans  
-   &trans &hm C_MENU_LEFT LC(C_MENU_LEFT) &kp C_MENU_DOWN &kp C_MENU_UP &hm C_MENU_RIGHT LC(C_MENU_RIGHT) &hm LS(N8) LS(N9) &hm LS(DE_SS) LS(N1) &hm N4 LSHFT &kp N5 &kp N6 &hm LS(N2) LS(DE_HASH) &trans 
-   &trans &hm LS(N4) RA(E) &hm RA(DE_LABK) LS(DE_CIRC)  &kp LS(N5) &kp NUHS &hm RA(N7) RA(N0) &hm LS(SLASH) SLASH &kp N1 &kp N2 &kp N3 &hm LS(N7) DE_BSLS &trans 
-                                           &hm RBRC LS(RBRC) &kp LS(N0) &hm NUBS LS(N3)     &kp LS(N3) &kp N0 &kp GRAVE
+   &trans &hm LC(HOME) HOME &kp PG_DN &kp PG_UP &hm LC(END) END &hm DE_RBRC DE_LBRC &kp RA(Q) &kp N7 &kp N8 &kp N9 &kp RA(M)  &trans  
+   &trans &hm LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &hm LC(C_MENU_RIGHT) C_MENU_RIGHT &hm LS(N9) LS(N8) &hm LS(N1) LS(DE_SS) &hm LSHFT N4 &kp N5 &kp N6 &hm LS(DE_HASH) LS(N2) &trans 
+   &trans &hm RA(E) LS(N4) &hm LS(DE_CIRC) RA(DE_LABK) &kp LS(N5) &kp NUHS &hm RA(N0) RA(N7) &hm LS(SLASH) SLASH &kp N1 &kp N2 &kp N3 &hm DE_BSLS LS(N7) &trans 
+                                           &hm LS(RBRC) RBRC &kp LS(N0) &hm LS(N3) NUBS     &kp LS(N3) &kp N0 &kp GRAVE 
                         >;
                 };
 
