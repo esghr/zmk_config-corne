@@ -38,7 +38,7 @@
     behaviors {
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
-            binding-cells = <0>;
+            #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp COMMA>, <LS(N2)>;
         };
@@ -60,7 +60,7 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
-            binding-cells = <2>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
@@ -72,7 +72,7 @@
         hml: homerow_mods_layers {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LAYER";
-            binding-cells = <2>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
