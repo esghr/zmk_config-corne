@@ -28,7 +28,7 @@
         combo_apo {
             timeout-ms = <50>;
             key-positions = <32 38>;
-            bindings = <&kp LS(DE_HASH)>;
+            bindings = <&kp SQT>;
         };
     };
 };
