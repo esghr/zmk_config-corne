@@ -23,6 +23,39 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_apo {
+            timeout-ms = <50>;
+            key-positions = <32 38>;
+            bindings = <&kp LS(DE_HASH)>;
+        };
+    };
+};
+
+
+/ {
+    behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp COMMA>, <LS(N2)>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &td0
+            >;
+        };
+    };
+};
+
+/ {
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -136,14 +169,14 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |            |  Z (ESC)  |  Y (TAB)  |     U     |     A    | Q (@)   |     |    P    |    B (!) |    M    |    L    |    F    |       |
+// |            |  Z (ESC)  |  Y (TAB)  |     U     |     A    |  Q (@)  |     |    P    |    B (!) |    M    |    L    |    F    |       |
 // |            |  C (RSL)  |  S (LWR)  |  I (RALT) | E (LCTRL)|    O    |     |    D (?)| T (RCTRL)| N (RALT)| R (LWR) | H (RSL) |       |
-// |            |  V (LGUI) |  X (_)    |  J (-)    |  Ä (/)   | Ö (\)   |     |    W    |    G     |  , (")  |  . (')  |    K    |       |
-//                                      |    RET    |     Ü    |   SPC   |     |   SHFT  |    ß     |  BSPC   |
+// |            |  V (LGUI) |  X (_)    |  J (-)    |   Ä (/)  |  Ö (\)  |     |    W    |    G     |  , (")  |  . (')  |    K    |       |
+//                                      |    RET    |          |   SPC   |     |   SHFT  |    ß     |  BSPC   |
                         bindings = <
-   &trans &hm ESC Z  &hm TAB Y       &kp U       &kp A          &hm RA(Q) Q        &kp P           &hm LS(N1) B     &kp M               &kp L               &kp F     &trans
-   &trans &hml 2 C   &hml 1 S        &hm RALT I  &hm LCTRL E    &kp O              &hm LS(DE_SS) D &hm RCTRL T      &hml RALT N         &hml 1 R            &hml 2 H  &trans
-   &trans &hm LGUI V &hm LS(SLASH) X &hm SLASH J &hm LS(N7) SQT &hm DE_BSLS SEMI   &kp W           &kp G            &hm LS(N2) COMMA    &hm LS(DE_HASH) DOT &kp K     &trans
+   &trans &hm ESC Z  &hm TAB Y       &kp U       &kp A          &hm RA(Q) Q        &kp P           &hm LS(N1) B     &kp M       &kp L    &kp F     &trans
+   &trans &hml 2 C   &hml 1 S        &hm RALT I  &hm LCTRL E    &kp O              &hm LS(DE_SS) D &hm RCTRL T      &hml RALT N &hml 1 R &hml 2 H  &trans
+   &trans &hm LGUI V &hm LS(SLASH) X &hm SLASH J &hm LS(N7) SQT &hm DE_BSLS SEMI   &kp W           &kp G            &td0        &kp DOT  &kp K     &trans
                                      &kp RET     &kp LBKT       &kp SPACE          &kp LSHFT       &kp DE_SS        &kp BSPC
                         >;
                 };
