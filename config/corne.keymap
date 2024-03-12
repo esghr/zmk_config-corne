@@ -17,7 +17,7 @@
     combos {
         compatible = "zmk,combos";
         combo_ue {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <3 22>;
             bindings = <&kp LBKT>;
         };
@@ -30,7 +30,7 @@
     combos {
         compatible = "zmk,combos";
         combo_oe {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <17 22>;
             bindings = <&kp SEMI>;
         };
@@ -43,7 +43,7 @@
     combos {
         compatible = "zmk,combos";
         combo_Q {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <13 21>;
             bindings = <&kp Q>;
         };
@@ -56,7 +56,7 @@
     combos {
         compatible = "zmk,combos";
         combo_P {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <13 19>;
             bindings = <&kp P>;
         };
@@ -69,7 +69,7 @@
     combos {
         compatible = "zmk,combos";
         combo_W {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <13 20>;
             bindings = <&kp W>;
         };
@@ -82,7 +82,7 @@
     combos {
         compatible = "zmk,combos";
         combo_F {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <14 20>;
             bindings = <&kp F>;
         };
@@ -95,7 +95,7 @@
     combos {
         compatible = "zmk,combos";
         combo_Z {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <14 22>;
             bindings = <&kp Z>;
         };
@@ -108,7 +108,7 @@
     combos {
         compatible = "zmk,combos";
         combo_K {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <19 22>;
             bindings = <&kp K>;
         };
@@ -134,7 +134,7 @@
     combos {
         compatible = "zmk,combos";
         combo_J {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <20 21>;
             bindings = <&kp J>;
         };
@@ -147,7 +147,7 @@
     combos {
         compatible = "zmk,combos";
         combo_delword {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <16 41>;
             bindings = <&kp LC(BSPC)>;
         };
@@ -160,7 +160,7 @@
     combos {
         compatible = "zmk,combos";
         combo_ {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <32 33>;
             bindings = <&kp LS(SLASH)>;
         };
