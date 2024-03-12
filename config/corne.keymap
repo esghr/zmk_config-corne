@@ -18,7 +18,7 @@
         compatible = "zmk,combos";
         combo_ue {
             timeout-ms = <50>;
-            key-positions = <3 20>;
+            key-positions = <3 22>;
             bindings = <&kp LBKT>;
         };
     };
@@ -31,7 +31,7 @@
         compatible = "zmk,combos";
         combo_oe {
             timeout-ms = <50>;
-            key-positions = <17 20>;
+            key-positions = <17 22>;
             bindings = <&kp SEMI>;
         };
     };
