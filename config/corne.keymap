@@ -28,7 +28,7 @@
         combo_apo {
             timeout-ms = <50>;
             key-positions = <32 38>;
-            bindings = <&kp LC(N2)>;
+            bindings = <&kp LS(N2)>;
         };
     };
 };
@@ -50,7 +50,7 @@
         combo_delword {
             timeout-ms = <50>;
             key-positions = <16 41>;
-            bindings = <&kp LS(BSPC)>;
+            bindings = <&kp LC(BSPC)>;
         };
     };
 };
