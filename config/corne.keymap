@@ -36,7 +36,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_apo {
+        combo_dapo {
             timeout-ms = <50>;
             key-positions = <33 38>;
             bindings = <&kp LS(NUHS)>;
