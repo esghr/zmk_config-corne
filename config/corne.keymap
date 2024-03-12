@@ -71,7 +71,7 @@
         combo_W {
             timeout-ms = <50>;
             key-positions = <13 20>;
-            bindings = <&kp P>;
+            bindings = <&kp W>;
         };
     };
 };
@@ -84,7 +84,7 @@
         combo_F {
             timeout-ms = <50>;
             key-positions = <14 20>;
-            bindings = <&kp P>;
+            bindings = <&kp F>;
         };
     };
 };
@@ -97,7 +97,7 @@
         combo_Z {
             timeout-ms = <50>;
             key-positions = <15 21>;
-            bindings = <&kp P>;
+            bindings = <&kp Z>;
         };
     };
 };
@@ -110,7 +110,7 @@
         combo_K {
             timeout-ms = <50>;
             key-positions = <19 22>;
-            bindings = <&kp P>;
+            bindings = <&kp K>;
         };
     };
 };
@@ -136,7 +136,7 @@
         combo_J {
             timeout-ms = <50>;
             key-positions = <20 21>;
-            bindings = <&kp MINUS>;
+            bindings = <&kp J>;
         };
     };
 };
