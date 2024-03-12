@@ -28,29 +28,18 @@
         combo_apo {
             timeout-ms = <50>;
             key-positions = <32 38>;
-            bindings = <&kp SQT>;
+            bindings = <&kp LS(N2)>;
         };
     };
 };
 
-
 / {
-    behaviors {
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp COMMA>, <&kp LS(N2)>;
-        };
-    };
-
-    keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
-            bindings = <
-                &td0
-            >;
+    combos {
+        compatible = "zmk,combos";
+        combo_apo {
+            timeout-ms = <50>;
+            key-positions = <33 38>;
+            bindings = <&kp LS(NUHS)>;
         };
     };
 };
