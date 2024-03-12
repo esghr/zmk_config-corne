@@ -56,6 +56,17 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_ss {
+            timeout-ms = <50>;
+            key-positions = <13 32>;
+            bindings = <&kp DE_SS>;
+        };
+    };
+};
+
+/ {
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -177,7 +188,7 @@
    &trans &hm ESC Z  &hm TAB Y       &kp U       &kp A          &hm RA(Q) Q        &kp P           &hm LS(N1) B     &kp M       &kp L    &kp F     &trans
    &trans &hml 2 C   &hml 1 S        &hm RALT I  &hm LCTRL E    &kp O              &hm LS(DE_SS) D &hm RCTRL T      &hml RALT N &hml 1 R &hml 2 H  &trans
    &trans &hm LGUI V &hm LS(SLASH) X &hm SLASH J &hm LS(N7) SQT &hm DE_BSLS SEMI   &kp W           &kp G            &kp COMMA   &kp DOT  &kp K     &trans
-                                     &kp RET     &kp LBKT       &kp SPACE          &kp LSHFT       &kp DE_SS        &kp BSPC
+                                     &kp RET     &trans         &kp SPACE          &kp LSHFT       &trans           &kp BSPC
                         >;
                 };
                 lower_layer {
