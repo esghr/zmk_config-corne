@@ -121,7 +121,7 @@
     combos {
         compatible = "zmk,combos";
         combo_ss {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <14 32>;
             bindings = <&kp MINUS>;
         };
@@ -285,7 +285,7 @@
 // |            |  C (RSL)  |  S (LWR)  |  I (RALT) | E (LCTRL)|    O    |     |    D    | T (RCTRL)| N (RALT)| R (LWR) | H (RSL) |       |
 // |            |  V (LGUI) |     X     |     "     |     Ä    |    '    |     |    -    |    G     |    ,    |    .    |    /    |       |
 //                                      |    RET    |          |   SPC   |     |   SHFT  |          |  BSPC   |
-// Z: I+R, Q: R+C, P: T+C, F: N+S, (V):  , J: N+R, Ö: O+H, Ü: U+H, W: N+C, K: T+H, ß: S+","
+
                         bindings = <
    &trans &kp ESC    &hm TAB Y &kp U       &kp A       &kp LS(MINUS)      &kp LS(N1)    &kp B       &kp M       &kp L    &kp LS(SLASH) &trans
    &trans &hml 2 C   &hml 1 S  &hm RALT I  &hm LCTRL E &kp O              &kp D         &hm RCTRL T &hml RALT N &hml 1 R &hml 2 H      &trans
