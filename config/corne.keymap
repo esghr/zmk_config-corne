@@ -11,14 +11,14 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-//Tastenkombi: U, E
+//Tastenkombi: U, A
 //Ausgabe: Ü
 / {
     combos {
         compatible = "zmk,combos";
         combo_ue {
             timeout-ms = <25>;
-            key-positions = <3 16>;
+            key-positions = <3 4>;
             bindings = <&kp LBKT>;
         };
     };
