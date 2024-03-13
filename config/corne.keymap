@@ -24,14 +24,14 @@
     };
 };
 
-//Tastenkombi: O, I
+//Tastenkombi: E, I
 //Ausgabe: Ö
 / {
     combos {
         compatible = "zmk,combos";
         combo_oe {
             timeout-ms = <25>;
-            key-positions = <15 17>;
+            key-positions = <15 16>;
             bindings = <&kp SEMI>;
         };
     };
