@@ -141,6 +141,19 @@
     };
 };
 
+//Tastenkombi: C, H
+//Ausgabe: V
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_V {
+            timeout-ms = <25>;
+            key-positions = <13 22>;
+            bindings = <&kp V>;
+        };
+    };
+};
+
 //Tastenkombi: E, BCKSPC
 //Ausgabe: del_word
 / {
@@ -281,16 +294,16 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |            |    ESC    |  Y (TAB)  |     U     |     A    |    ?    |     |    !    |    B     |    M    |    L    |    _    |       |
+// |            |  ESC (Z)  |  Y (TAB)  |     U     |     A    |    ?    |     |    !    |    B     |    M    |    L    |    _    |       |
 // |            |  C (RSL)  |  S (LWR)  |  I (RALT) | E (LCTRL)|    O    |     |    D    | T (RCTRL)| N (RALT)| R (LWR) | H (RSL) |       |
-// |            |  V (LGUI) |     X     |     "     |     Ä    |    '    |     |    -    |    G     |    ,    |    .    |    /    |       |
+// |            |  LGUI (V) |     X     |     "     |     Ä    |    '    |     |    -    |    G     |  , (;)  |  . (:)  |  / (\)  |       |
 //                                      |    RET    |          |   SPC   |     |   SHFT  |          |  BSPC   |
 
                         bindings = <
-   &trans &kp ESC    &hm TAB Y &kp U       &kp A       &kp LS(MINUS)      &kp LS(N1)    &kp B       &kp M       &kp L    &kp LS(SLASH) &trans
-   &trans &hml 2 C   &hml 1 S  &hm RALT I  &hm LCTRL E &kp O              &kp D         &hm RCTRL T &hml RALT N &hml 1 R &hml 2 H      &trans
-   &trans &hm LGUI V &kp X     &kp LS(N2)  &kp SQT     &kp LS(NUHS)       &kp SLASH     &kp G       &kp COMMA   &kp DOT  &kp RA(MINUS) &trans
-                               &kp RET     &trans      &kp SPACE          &kp LSHFT     &trans      &kp BSPC
+   &trans &hm Z ESC  &hm TAB Y &kp U      &kp A       &kp LS(MINUS)      &kp LS(N1) &kp B       &kp M               &kp L           &kp LS(SLASH)        &trans
+   &trans &hml 2 C   &hml 1 S  &hm RALT I &hm LCTRL E &kp O              &kp D      &hm RCTRL T &hm RALT N          &hml 1 R        &hml 2 H             &trans
+   &trans &hm LGUI V &kp X     &kp LS(N2) &kp SQT     &kp LS(NUHS)       &kp SLASH  &kp G       &hm LS(COMMA) COMMA &hm LS(DOT) DOT &hm RA(MINUS) LS(N7) &trans
+                               &kp RET    &trans      &kp SPACE          &kp LSHFT  &trans      &kp BSPC
                         >;
                 };
                 lower_layer {
@@ -301,7 +314,7 @@
 //                          |  *   |  =      |< (>)    |     |  §  |  0    |  ^  |
                         bindings = <
    &trans &hm LC(HOME) HOME &kp PG_DN &kp PG_UP &hm LC(END) END &hm DE_RBRC DE_LBRC &trans &kp N7 &kp N8 &kp N9 &kp RA(M)  &trans  
-   &trans &hm LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &hm LC(C_MENU_RIGHT) C_MENU_RIGHT &hm LS(N9) LS(N8) &trans &hm LSHFT N4 &kp N5 &kp N6 &trans  &trans 
+   &trans &hm LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &hm LC(C_MENU_RIGHT) C_MENU_RIGHT &hm LS(N9) LS(N8) &kp AT &hm LSHFT N4 &kp N5 &kp N6 &trans  &trans 
    &trans &hm RA(E) LS(N4) &hm LS(DE_CIRC) RA(DE_LABK) &kp LS(N5) &kp NUHS &hm RA(N0) RA(N7) &trans &kp N1 &kp N2 &kp N3 &trans &trans 
                                            &hm LS(RBRC) RBRC &kp LS(N0) &hm LS(N3) NUBS     &kp LS(N3) &kp N0 &kp GRAVE 
                         >;
@@ -316,7 +329,7 @@
                         bindings = <
    &trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
    &trans  &kp HOME  &kp LC(END)  &kp LC(HOME)  &kp END  &kp F11     &kp F12  &trans  &kp LC(LA(C_MENU_DOWN))  &kp LC(LA(C_MENU_UP))  &trans  &trans
-   &trans   &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+   &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
                            &trans  &trans  &kp LC(C_MENU_LEFT)     &kp LC(C_MENU_RIGHT)  &kp LSHFT  &trans
                         >;
                 };
