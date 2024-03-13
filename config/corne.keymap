@@ -201,7 +201,7 @@
         combo_pl {
             timeout-ms = <25>;
             key-positions = <9 13 19>;
-            bindings = <&kp LS(LBRC)>;
+            bindings = <&kp LA(LBRC)>;
         };
     };
 };
