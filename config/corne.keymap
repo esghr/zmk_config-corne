@@ -89,14 +89,14 @@
     };
 };
 
-//Tastenkombi: T, N
+//Tastenkombi: R, H
 //Ausgabe: Z
 / {
     combos {
         compatible = "zmk,combos";
         combo_Z {
             timeout-ms = <25>;
-            key-positions = <19 20>;
+            key-positions = <21 22>;
             bindings = <&kp Z>;
         };
     };
@@ -201,7 +201,7 @@
         combo_pl {
             timeout-ms = <25>;
             key-positions = <9 13 19>;
-            bindings = <&kp EQUAL>;
+            bindings = <&kp RBRC>;
         };
     };
 };
@@ -246,7 +246,7 @@
 #define DE_SS   MINUS // ß
 #define DE_ACUT PLUS  // ´ (dead)
 #define DE_UE 	LBKT // Ü
-#define DE_PLUS EQUAL // +
+#define DE_PLUS RBRC // +
 #define DE_OE 	SEMI // Ö
 #define DE_AE 	SQT // Ä
 #define DE_HASH NUHS // #
@@ -265,7 +265,7 @@
 #define DE_EQL  LS(N0)    // =
 #define DE_QUES LS(DE_SS)   // ?
 #define DE_GRV  LS(DE_ACUT) // ` (dead)
-#define DE_ASTR LS(EQUAL) // *
+#define DE_ASTR LS(RBRC) // *
 #define DE_QUOT LS(DE_HASH) // '
 #define DE_RABK LS(DE_LABK) // >
 #define DE_SCLN LS(COMMA) // ;
