@@ -11,40 +11,40 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-//Tastenkombi: U, H
+//Tastenkombi: U, E
 //Ausgabe: Ü
 / {
     combos {
         compatible = "zmk,combos";
         combo_ue {
             timeout-ms = <25>;
-            key-positions = <3 22>;
+            key-positions = <3 16>;
             bindings = <&kp LBKT>;
         };
     };
 };
 
-//Tastenkombi: O, H
+//Tastenkombi: O, I
 //Ausgabe: Ö
 / {
     combos {
         compatible = "zmk,combos";
         combo_oe {
             timeout-ms = <25>;
-            key-positions = <17 22>;
+            key-positions = <15 17>;
             bindings = <&kp SEMI>;
         };
     };
 };
 
-//Tastenkombi: R, C
+//Tastenkombi: S, H
 //Ausgabe: Q
 / {
     combos {
         compatible = "zmk,combos";
         combo_Q {
             timeout-ms = <25>;
-            key-positions = <13 21>;
+            key-positions = <14 22>;
             bindings = <&kp Q>;
         };
     };
@@ -89,14 +89,14 @@
     };
 };
 
-//Tastenkombi: S, H
+//Tastenkombi: T, N
 //Ausgabe: Z
 / {
     combos {
         compatible = "zmk,combos";
         combo_Z {
             timeout-ms = <25>;
-            key-positions = <14 22>;
+            key-positions = <19 20>;
             bindings = <&kp Z>;
         };
     };
@@ -115,14 +115,14 @@
     };
 };
 
-//Tastenkombi: S, ","
+//Tastenkombi: S, C
 //Ausgabe: ß
 / {
     combos {
         compatible = "zmk,combos";
         combo_ss {
             timeout-ms = <25>;
-            key-positions = <14 32>;
+            key-positions = <13 14>;
             bindings = <&kp MINUS>;
         };
     };
@@ -180,6 +180,32 @@
     };
 };
 
+//Tastenkombi: STR
+//Ausgabe: * 
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_str {
+            timeout-ms = <25>;
+            key-positions = <14 19 21>;
+            bindings = <&kp LS(RBRC)>;
+        };
+    };
+};
+
+//Tastenkombi: PL
+//Ausgabe: + 
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_pl {
+            timeout-ms = <25>;
+            key-positions = <9 13 19>;
+            bindings = <&kp RBRC>;
+        };
+    };
+};
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -215,35 +241,6 @@
     };
 };
 
-/*
-#define de_GRAVE PLUS 
-#define de_DQT AT
-#define de_4 N4 
-#define de_ue LBKT
-#define de_PLUS RBKT
-#define de_8 N8
-#define de_EQUAL RPAR
-#define de_LPAR STAR
-#define de_STAR RBRC
-#define de_HASH BSLH
-#define de_SLASH AMPS
-#define de_RPAR LPAR
-#define de_QMARK UNDER
-#define de_oe COLON
-#define de_MINUS SLASH
-#define de_PARA HASH
-#define de_SQT PIPE
-#define de_DEGREE TILDE
-#define de_ue LBRC
-#define de_STAR RBRC
-#define de_UNDER QMARK
-#define de_ae DQT
-#define de_oe SEMI
-#define de_CARET GRAVE
-#define de_SEMICOLON LT
-#define de_COLON GT
-*/
-
 // Aliases
 #define DE_CIRC GRAVE  // ^ (dead)
 #define DE_SS   MINUS // ß
@@ -268,7 +265,7 @@
 #define DE_EQL  LS(N0)    // =
 #define DE_QUES LS(DE_SS)   // ?
 #define DE_GRV  LS(DE_ACUT) // ` (dead)
-#define DE_ASTR LS(DE_PLUS) // *
+#define DE_ASTR LS(RBRC) // *
 #define DE_QUOT LS(DE_HASH) // '
 #define DE_RABK LS(DE_LABK) // >
 #define DE_SCLN LS(COMMA) // ;
@@ -302,7 +299,7 @@
                         bindings = <
    &trans &hm Z ESC  &hm TAB Y &kp U      &kp A       &kp LS(MINUS)      &kp LS(N1) &kp B       &kp M               &kp L           &kp LS(SLASH)        &trans
    &trans &hml 2 C   &hml 1 S  &hm RALT I &hm LCTRL E &kp O              &kp D      &hm RCTRL T &hm RALT N          &hml 1 R        &hml 2 H             &trans
-   &trans &hm LGUI V &kp X     &kp LS(N2) &kp SQT     &kp LS(NUHS)       &kp SLASH  &kp G       &hm LS(COMMA) COMMA &hm LS(DOT) DOT &hm RA(MINUS) LS(N7) &trans
+   &trans &hm V LGUI &kp X     &kp LS(N2) &kp SQT     &kp LS(NUHS)       &kp SLASH  &kp G       &hm LS(COMMA) COMMA &hm LS(DOT) DOT &hm RA(MINUS) LS(N7) &trans
                                &kp RET    &trans      &kp SPACE          &kp LSHFT  &trans      &kp BSPC
                         >;
                 };
