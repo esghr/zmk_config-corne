@@ -11,145 +11,67 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-//Tastenkombi: U, E
-//Ausgabe: Ü
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_ue {
-            timeout-ms = <25>;
-            key-positions = <3 16>;
-            bindings = <&kp LBKT>;
-        };
-    };
-};
-
-//Tastenkombi: E, I
-//Ausgabe: Ö
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_oe {
-            timeout-ms = <25>;
-            key-positions = <15 16>;
-            bindings = <&kp SEMI>;
-        };
-    };
-};
-
-//Tastenkombi: S, H
-//Ausgabe: Q
+//Tastenkombi: D, Q
+//Ausgabe: "
 / {
     combos {
         compatible = "zmk,combos";
         combo_Q {
-            timeout-ms = <25>;
-            key-positions = <14 22>;
-            bindings = <&kp Q>;
+            timeout-ms = <40>;
+            key-positions = <5 18>;
+            bindings = <&kp LS(N2)>;
         };
     };
 };
 
-//Tastenkombi: T, C
-//Ausgabe: P
+//Tastenkombi: U, N, D
+//Ausgabe: _
 / {
     combos {
         compatible = "zmk,combos";
-        combo_P {
-            timeout-ms = <25>;
-            key-positions = <13 19>;
-            bindings = <&kp P>;
+        combo_UNDER {
+            timeout-ms = <40>;
+            key-positions = <3 18 21>;
+            bindings = <&kp LS(SLASH)>;
         };
     };
 };
 
-//Tastenkombi: N, C
-//Ausgabe: W
+//Tastenkombi: S, L, A
+//Ausgabe: /
 / {
     combos {
         compatible = "zmk,combos";
-        combo_W {
+        combo_SLS {
             timeout-ms = <25>;
-            key-positions = <13 20>;
-            bindings = <&kp W>;
+            key-positions = <4 9 14>;
+            bindings = <&kp LS(N7)>;
         };
     };
 };
 
-//Tastenkombi: N, S
-//Ausgabe: F
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_F {
-            timeout-ms = <25>;
-            key-positions = <14 20>;
-            bindings = <&kp F>;
-        };
-    };
-};
-
-//Tastenkombi: R, H
-//Ausgabe: Z
+//Tastenkombi: E, S, C
+//Ausgabe: ESC
 / {
     combos {
         compatible = "zmk,combos";
         combo_Z {
-            timeout-ms = <25>;
-            key-positions = <21 22>;
-            bindings = <&kp Z>;
+            timeout-ms = <40>;
+            key-positions = <13 14 16>;
+            bindings = <&kp ESC>;
         };
     };
 };
 
-//Tastenkombi: T, H
-//Ausgabe: K
+//Tastenkombi: B, S, L
+//Ausgabe: \
 / {
     combos {
         compatible = "zmk,combos";
-        combo_K {
+        combo_BSLS {
             timeout-ms = <25>;
-            key-positions = <19 22>;
-            bindings = <&kp K>;
-        };
-    };
-};
-
-//Tastenkombi: S, C
-//Ausgabe: ß
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_ss {
-            timeout-ms = <25>;
-            key-positions = <13 14>;
-            bindings = <&kp MINUS>;
-        };
-    };
-};
-
-//Tastenkombi: N, R
-//Ausgabe: J
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_J {
-            timeout-ms = <25>;
-            key-positions = <20 21>;
-            bindings = <&kp J>;
-        };
-    };
-};
-
-//Tastenkombi: C, H
-//Ausgabe: V
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_V {
-            timeout-ms = <25>;
-            key-positions = <13 22>;
-            bindings = <&kp V>;
+            key-positions = <7 9 14>;
+            bindings = <&kp RA(MINUS)>;
         };
     };
 };
@@ -167,14 +89,14 @@
     };
 };
 
-//Tastenkombi: . , ","
-//Ausgabe: _
+//Tastenkombi: M, I, S
+//Ausgabe: -
 / {
     combos {
         compatible = "zmk,combos";
-        combo_ {
+        combo_MIS {
             timeout-ms = <25>;
-            key-positions = <32 33>;
+            key-positions = <8 14 15>;
             bindings = <&kp LS(SLASH)>;
         };
     };
@@ -291,16 +213,16 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |            |  ESC (Z)  |  Y (TAB)  |     U     |     A    |    ?    |     |    !    |    B     |    M    |    L    |    _    |       |
-// |            |  C (RSL)  |  S (LWR)  |  I (RALT) | E (LCTRL)|    O    |     |    D    | T (RCTRL)| N (RALT)| R (LWR) | H (RSL) |       |
-// |            |  LGUI (V) |     X     |     "     |     Ä    |    '    |     |    -    |    G     |  , (;)  |  . (:)  |  / (\)  |       |
-//                                      |    RET    |          |   SPC   |     |   SHFT  |          |  BSPC   |
+// |  ESC  |     Z     |  J (TAB)  |     U     |   A (!)  |  Q (?)  |     |    F    |    B     |    M    |    L    |    K    |       |
+// |   ß   |  C (LWR)  |  S (RSL)  |  I (RALT) | E (LCTRL)|    O    |     |    D    | N (RCTRL)| T (RALT)| R (RSL) | H (LWR) |   Y   |
+// |   !   |  V (LGUI) |     X     |     Ü     |     Ä    |    Ö    |     |    P    |    G     |    ,    |    .    |    W    |   ?   |
+//                                 |    RET    |          |   SPC   |     |   SHFT  |          |  BSPC   |
 
                         bindings = <
-   &trans &hm Z ESC  &hm TAB Y &kp U      &kp A       &kp LS(MINUS)      &kp LS(N1) &kp B       &kp M               &kp L           &kp LS(SLASH)        &trans
-   &trans &hml 2 C   &hml 1 S  &hm RALT I &hm LCTRL E &kp O              &kp D      &hm RCTRL T &hm RALT N          &hml 1 R        &hml 2 H             &trans
-   &trans &hm V LGUI &kp X     &kp LS(N2) &kp SQT     &kp LS(NUHS)       &kp SLASH  &kp G       &hm LS(COMMA) COMMA &hm LS(DOT) DOT &hm RA(MINUS) LS(N7) &trans
-                               &kp RET    &trans      &kp SPACE          &kp LSHFT  &trans      &kp BSPC
+   &kp ESC    &kp Z      &hm TAB Y &kp U      &kp A       &kp Q              &kp F     &kp B       &kp M      &kp L    &kp K    &trans
+   &kp MINUS  &hml 1 C   &hml 2 S  &hm RALT I &hm LCTRL E &kp O              &kp D     &hm RCTRL N &hm RALT T &hml 2 R &hml 1 H &kp Y
+   &kp LS(N1) &hm LGUI V &kp X     &kp LBKT   &kp SQT     &kp SEMI           &kp P     &kp G       &kp COMMA  &kp DOT  &kp W    &kp LS(MINUS)
+                                   &kp RET    &trans      &kp SPACE          &kp LSHFT &trans      &kp BSPC
                         >;
                 };
                 lower_layer {
@@ -310,9 +232,9 @@
 // |     |DLR (EURO)|"|"(°) |  %   |  #      |{ (})|   |     |     |  1    |  2  |  3  |    |    |
 //                          |  *   |  =      |< (>)    |     |  §  |  0    |  ^  |
                         bindings = <
-   &trans &hm LC(HOME) HOME &kp PG_DN &kp PG_UP &hm LC(END) END &hm DE_RBRC DE_LBRC &trans &kp N7 &kp N8 &kp N9 &kp RA(M)  &trans  
-   &trans &hm LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &hm LC(C_MENU_RIGHT) C_MENU_RIGHT &hm LS(N9) LS(N8) &kp AT &hm LSHFT N4 &kp N5 &kp N6 &trans  &trans 
-   &trans &hm RA(E) LS(N4) &hm LS(DE_CIRC) RA(DE_LABK) &kp LS(N5) &kp NUHS &hm RA(N0) RA(N7) &trans &kp N1 &kp N2 &kp N3 &trans &trans 
+   &trans &hm LC(HOME) HOME               &kp PG_DN                     &kp PG_UP                         &hm LC(END) END   &hm DE_RBRC DE_LBRC &trans        &kp N7 &kp N8 &kp N9 &kp RA(M)  &trans  
+   &trans &hm LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &hm LC(C_MENU_RIGHT) C_MENU_RIGHT &hm LS(N9) LS(N8) &kp AT              &hm LSHFT N4  &kp N5 &kp N6 &trans            &trans 
+   &trans &hm RA(E) LS(N4)                &hm LS(DE_CIRC) RA(DE_LABK)   &kp LS(N5)                        &kp NUHS          &hm RA(N0) RA(N7)   &trans        &kp N1 &kp N2 &kp N3 &trans &trans 
                                            &hm LS(RBRC) RBRC &kp LS(N0) &hm LS(N3) NUBS     &kp LS(N3) &kp N0 &kp GRAVE 
                         >;
                 };
