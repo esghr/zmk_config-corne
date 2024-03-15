@@ -11,7 +11,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-int KC_RIGHT_BRACKET = 0x0030;
+/int KC_RIGHT_BRACKET = 0x0030;
 // Aliases
 #define PLUS	KC_RIGHT_BRACKET // 
 #define DE_CIRC GRAVE  // ^ (dead)
