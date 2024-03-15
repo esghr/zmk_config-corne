@@ -203,15 +203,15 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC  |     Z     |  J (TAB)  |     U     |   A (!)  |  Q (?)  |     |    F    |    B     |    M    |    L    |    K    |       |
+// |  ESC  |     Z     |  J (TAB)  |     U     |   A (!)  |  Q (?)  |     |    P    |    B     |    M    |    L    |    F    |       |
 // |   ß   |  C (LWR)  |  S (RSL)  |  I (RALT) | E (LCTRL)|    O    |     |    D    | T (RCTRL)| N (RALT)| R (RSL) | H (LWR) |   Y   |
-// |   !   |  V (LGUI) |     X     |     Ü     |     Ä    |    Ö    |     |    P    |    G     |    ,    |    .    |    W    |   ?   |
+// |   !   |  V (LGUI) |     X     |     Ü     |     Ä    |    Ö    |     |    W    |    G     |    ,    |    .    |    K    |   ?   |
 //                                 |    RET    |          |   SPC   |     |   SHFT  |          |  BSPC   |
 
                         bindings = <
-   &kp ESC    &kp Z      &hm TAB J &kp U      &kp A       &kp Q              &kp F     &kp B       &kp M      &kp L    &kp K    &trans
+   &kp ESC    &kp Z      &hm TAB J &kp U      &kp A       &kp Q              &kp P     &kp B       &kp M      &kp L    &kp F    &trans
    &kp MINUS  &hml 1 C   &hml 2 S  &hm RALT I &hm LCTRL E &kp O              &kp D     &hm RCTRL T &hm RALT N &hml 2 R &hml 1 H &kp Y
-   &kp LS(N1) &hm LGUI V &kp X     &kp LBKT   &kp SQT     &kp SEMI           &kp P     &kp G       &kp COMMA  &kp DOT  &kp W    &kp LS(MINUS)
+   &kp LS(N1) &hm LGUI V &kp X     &kp LBKT   &kp SQT     &kp SEMI           &kp W     &kp G       &kp COMMA  &kp DOT  &kp K    &kp LS(MINUS)
                                    &kp RET    &trans      &kp SPACE          &kp LSHFT &trans      &kp BSPC
                         >;
                 };
