@@ -76,7 +76,7 @@
         combo_QU {
             timeout-ms = <40>;
             key-positions = <32 38>;
-            bindings = <&kp LS(DE_HASH)>;
+            bindings = <&kp LS(NUHS)>;
         };
     };
 };
