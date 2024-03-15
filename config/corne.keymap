@@ -204,13 +204,13 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC  |     Z     |  J (TAB)  |     U     |   A (!)  |  Q (?)  |     |    F    |    B     |    M    |    L    |    K    |       |
-// |   ß   |  C (LWR)  |  S (RSL)  |  I (RALT) | E (LCTRL)|    O    |     |    D    | N (RCTRL)| T (RALT)| R (RSL) | H (LWR) |   Y   |
+// |   ß   |  C (LWR)  |  S (RSL)  |  I (RALT) | E (LCTRL)|    O    |     |    D    | T (RCTRL)| N (RALT)| R (RSL) | H (LWR) |   Y   |
 // |   !   |  V (LGUI) |     X     |     Ü     |     Ä    |    Ö    |     |    P    |    G     |    ,    |    .    |    W    |   ?   |
 //                                 |    RET    |          |   SPC   |     |   SHFT  |          |  BSPC   |
 
                         bindings = <
    &kp ESC    &kp Z      &hm TAB J &kp U      &kp A       &kp Q              &kp F     &kp B       &kp M      &kp L    &kp K    &trans
-   &kp MINUS  &hml 1 C   &hml 2 S  &hm RALT I &hm LCTRL E &kp O              &kp D     &hm RCTRL N &hm RALT T &hml 2 R &hml 1 H &kp Y
+   &kp MINUS  &hml 1 C   &hml 2 S  &hm RALT I &hm LCTRL E &kp O              &kp D     &hm RCTRL T &hm RALT N &hml 2 R &hml 1 H &kp Y
    &kp LS(N1) &hm LGUI V &kp X     &kp LBKT   &kp SQT     &kp SEMI           &kp P     &kp G       &kp COMMA  &kp DOT  &kp W    &kp LS(MINUS)
                                    &kp RET    &trans      &kp SPACE          &kp LSHFT &trans      &kp BSPC
                         >;
