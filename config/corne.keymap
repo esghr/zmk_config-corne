@@ -101,7 +101,7 @@
         compatible = "zmk,combos";
         combo_BSLS {
             timeout-ms = <40>;
-            key-positions = <7 9 14>;
+            key-positions = <8 10 14>;
             bindings = <&kp RA(MINUS)>;
         };
     };
@@ -153,7 +153,7 @@
         compatible = "zmk,combos";
         combo_pl {
             timeout-ms = <25>;
-            key-positions = <9 13 30>;
+            key-positions = <9 14 30>;
             bindings = <&kp RBRC>;
         };
     };
