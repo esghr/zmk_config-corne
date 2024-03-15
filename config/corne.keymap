@@ -58,7 +58,7 @@
 //Tastenkombi: ,, .
 //Ausgabe: "
 / {
-    combos_DQU {
+    combos {
         compatible = "zmk,combos";
         combo_Q {
             timeout-ms = <40>;
@@ -110,7 +110,7 @@
 //Tastenkombi: B, S, L
 //Ausgabe: "\"
 / {
-    combos_BSLS {
+    combos {
         compatible = "zmk,combos";
         combo_BSLS {
             timeout-ms = <40>;
