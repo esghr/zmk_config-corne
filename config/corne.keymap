@@ -11,159 +11,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-//Tastenkombi: D, Q
-//Ausgabe: "
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_Q {
-            timeout-ms = <40>;
-            key-positions = <5 18>;
-            bindings = <&kp LS(N2)>;
-        };
-    };
-};
-
-//Tastenkombi: U, N, D
-//Ausgabe: _
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_UNDER {
-            timeout-ms = <40>;
-            key-positions = <3 18 21>;
-            bindings = <&kp LS(SLASH)>;
-        };
-    };
-};
-
-//Tastenkombi: S, L, A
-//Ausgabe: /
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_SLS {
-            timeout-ms = <25>;
-            key-positions = <4 9 14>;
-            bindings = <&kp LS(N7)>;
-        };
-    };
-};
-
-//Tastenkombi: E, S, C
-//Ausgabe: ESC
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_Z {
-            timeout-ms = <40>;
-            key-positions = <13 14 16>;
-            bindings = <&kp ESC>;
-        };
-    };
-};
-
-//Tastenkombi: B, S, L
-//Ausgabe: "\"
-/ {
-    combos_BSLS {
-        compatible = "zmk,combos";
-        combo_BSLS {
-            timeout-ms = <25>;
-            key-positions = <7 9 14>;
-            bindings = <&kp RA(MINUS)>;
-        };
-    };
-};
-
-//Tastenkombi: E, BCKSPC
-//Ausgabe: del_word
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_delword {
-            timeout-ms = <25>;
-            key-positions = <16 41>;
-            bindings = <&kp LC(BSPC)>;
-        };
-    };
-};
-
-//Tastenkombi: M, I, S
-//Ausgabe: -
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_MIS {
-            timeout-ms = <25>;
-            key-positions = <8 14 15>;
-            bindings = <&kp LS(SLASH)>;
-        };
-    };
-};
-
-//Tastenkombi: STR
-//Ausgabe: * 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_str {
-            timeout-ms = <25>;
-            key-positions = <14 19 21>;
-            bindings = <&kp LS(RBRC)>;
-        };
-    };
-};
-
-//Tastenkombi: PL
-//Ausgabe: + 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_pl {
-            timeout-ms = <25>;
-            key-positions = <9 13 19>;
-            bindings = <&kp RBRC>;
-        };
-    };
-};
-
-/ {
-    behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-    };
-    
-    behaviors {
-        hml: homerow_mods_layers {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LAYER";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
-    };
-
-    keymap {
-        compatible = "zmk,keymap";
-        default_layer {
-            bindings = <
-                &hm LCTRL A &hm LGUI S &hm LALT D &hm LSHIFT F
-            >;
-        };
-    };
-};
-
+int KC_RIGHT_BRACKET = 0x0030
 // Aliases
+#define PLUS	KC_RIGHT_BRACKET // 
 #define DE_CIRC GRAVE  // ^ (dead)
 #define DE_SS   MINUS // ß
 #define DE_ACUT PLUS  // ´ (dead)
@@ -205,6 +55,147 @@
 #define DE_TILD RA(DE_PLUS) // ~
 #define DE_PIPE RA(DE_LABK) // |
 #define DE_MICR RA(M)    // µ
+
+//Tastenkombi: D, Q
+//Ausgabe: "
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_Q {
+            timeout-ms = <40>;
+            key-positions = <5 18>;
+            bindings = <&kp LS(N2)>;
+        };
+    };
+};
+
+//Tastenkombi: U, N, D
+//Ausgabe: _
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_UNDER {
+            timeout-ms = <40>;
+            key-positions = <3 18 21>;
+            bindings = <&kp LS(SLASH)>;
+        };
+    };
+};
+
+//Tastenkombi: S, L, A
+//Ausgabe: /
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_SLS {
+            timeout-ms = <40>;
+            key-positions = <4 9 14>;
+            bindings = <&kp LS(N7)>;
+        };
+    };
+};
+
+//Tastenkombi: B, S, L
+//Ausgabe: "\"
+/ {
+    combos_BSLS {
+        compatible = "zmk,combos";
+        combo_BSLS {
+            timeout-ms = <40>;
+            key-positions = <7 9 14>;
+            bindings = <&kp RA(MINUS)>;
+        };
+    };
+};
+
+//Tastenkombi: E, BCKSPC
+//Ausgabe: del_word
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_delword {
+            timeout-ms = <40>;
+            key-positions = <16 41>;
+            bindings = <&kp LC(BSPC)>;
+        };
+    };
+};
+
+//Tastenkombi: M, I, S
+//Ausgabe: -
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_MIS {
+            timeout-ms = <40>;
+            key-positions = <8 14 15>;
+            bindings = <&kp SLASH>;
+        };
+    };
+};
+
+//Tastenkombi: STR
+//Ausgabe: * 
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_str {
+            timeout-ms = <25>;
+            key-positions = <14 20 21>;
+            bindings = <&kp LS(RBRC)>;
+        };
+    };
+};
+
+//Tastenkombi: P, L, S
+//Ausgabe: + 
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_pl {
+            timeout-ms = <25>;
+            key-positions = <9 13 30>;
+            bindings = <&kp PLUS>;
+        };
+    };
+};
+
+/ {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+    
+    behaviors {
+        hml: homerow_mods_layers {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_LAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+            bindings = <
+                &hm LCTRL A &hm LGUI S &hm LALT D &hm LSHIFT F
+            >;
+        };
+    };
+};
+
+
 
 
 / {
