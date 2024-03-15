@@ -210,7 +210,7 @@ int KC_RIGHT_BRACKET = 0x0030
 //                                 |    RET    |          |   SPC   |     |   SHFT  |          |  BSPC   |
 
                         bindings = <
-   &kp ESC    &kp Z      &hm TAB Y &kp U      &kp A       &kp Q              &kp F     &kp B       &kp M      &kp L    &kp K    &trans
+   &kp ESC    &kp Z      &hm TAB J &kp U      &kp A       &kp Q              &kp F     &kp B       &kp M      &kp L    &kp K    &trans
    &kp MINUS  &hml 1 C   &hml 2 S  &hm RALT I &hm LCTRL E &kp O              &kp D     &hm RCTRL N &hm RALT T &hml 2 R &hml 1 H &kp Y
    &kp LS(N1) &hm LGUI V &kp X     &kp LBKT   &kp SQT     &kp SEMI           &kp P     &kp G       &kp COMMA  &kp DOT  &kp W    &kp LS(MINUS)
                                    &kp RET    &trans      &kp SPACE          &kp LSHFT &trans      &kp BSPC
