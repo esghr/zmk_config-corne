@@ -64,9 +64,9 @@
 };
 
 //Tastenkombi: B, S, L
-//Ausgabe: \
+//Ausgabe: "\"
 / {
-    combos {
+    combos_BSLS {
         compatible = "zmk,combos";
         combo_BSLS {
             timeout-ms = <25>;
