@@ -55,70 +55,6 @@
 #define DE_PIPE RA(DE_LABK) // |
 #define DE_MICR RA(M)    // µ
 
-//Tastenkombi: ,, .
-//Ausgabe: "
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_Q {
-            timeout-ms = <40>;
-            key-positions = <32 33>;
-            bindings = <&kp LS(N2)>;
-        };
-    };
-};
-
-//Tastenkombi: 
-//Ausgabe: 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_QU {
-            timeout-ms = <40>;
-            key-positions = <32 38>;
-            bindings = <&kp LS(NUHS)>;
-        };
-    };
-};
-
-//Tastenkombi: U, N, D
-//Ausgabe: _
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_UNDER {
-            timeout-ms = <40>;
-            key-positions = <3 18 21>;
-            bindings = <&kp LS(SLASH)>;
-        };
-    };
-};
-
-//Tastenkombi: S, L, A
-//Ausgabe: /
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_SLS {
-            timeout-ms = <40>;
-            key-positions = <4 9 14>;
-            bindings = <&kp LS(N7)>;
-        };
-    };
-};
-
-//Tastenkombi: B, S, L
-//Ausgabe: "\"
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_BSLS {
-            timeout-ms = <40>;
-            key-positions = <8 10 14>;
-            bindings = <&kp RA(MINUS)>;
-        };
-    };
-};
 
 //Tastenkombi: E, BCKSPC
 //Ausgabe: del_word
@@ -129,45 +65,6 @@
             timeout-ms = <40>;
             key-positions = <16 41>;
             bindings = <&kp LC(BSPC)>;
-        };
-    };
-};
-
-//Tastenkombi: M, I, S
-//Ausgabe: -
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_MIS {
-            timeout-ms = <40>;
-            key-positions = <8 14 15>;
-            bindings = <&kp SLASH>;
-        };
-    };
-};
-
-//Tastenkombi: STR
-//Ausgabe: * 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_str {
-            timeout-ms = <25>;
-            key-positions = <14 20 21>;
-            bindings = <&kp LS(RBRC)>;
-        };
-    };
-};
-
-//Tastenkombi: P, L, S
-//Ausgabe: + 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_pl {
-            timeout-ms = <25>;
-            key-positions = <9 14 30>;
-            bindings = <&kp RBRC>;
         };
     };
 };
@@ -251,7 +148,7 @@
                         bindings = <
    &kp F1        &kp F2     &kp F3        &kp F4       &kp F5     &kp F6       &kp F7     &kp F8      &kp F9          &kp F10    &kp F11     &kp F12
    &kp RA(MINUS) &kp LS(N7) &kp SLASH     &kp LS(NUHS) &kp LS(N2) &trans       &kp RA(N7) &kp DE_RBRC &kp LS(N8)      &kp LS(N8) &kp DE_RBRC &kp RA(N0)
-   &trans        &kp NUBS   &kp LS(SLASH) &kp LS(N4)   &kp RBRC   &trans       &kp NUHS   &kp LS(N5)  &kp LS(DE_CIRC) &kp RA(E)  &kp LS(N3)  &kp LS(NUBS)
+   &trans        &kp NUBS   &kp LS(SLASH) &kp LS(N4)   &kp RBRC   &trans       &kp NUHS   &kp LS(N5)  &kp LS(DE_CIRC) &kp RA(E)  &kp NUBS    &kp LS(NUBS)
                                   &trans       &trans     &trans       &trans     &trans      &trans
                         >;
                 };
