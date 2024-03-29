@@ -216,43 +216,43 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC  |     Z     |  J (TAB)  |     U     |   A (!)  |  Q (?)  |     |    P    |    B     |    M    |    L    |    F    |       |
-// |   ß   |  C (LWR)  |  S (RSL)  |  I (RALT) | E (LCTRL)|    O    |     |    D    | T (RCTRL)| N (RALT)| R (RSL) | H (LWR) |   Y   |
-// |   !   |  V (LGUI) |     X     |     Ü     |     Ä    |    Ö    |     |    W    |    G     |    ,    |    .    |    K    |   ?   |
-//                                 |    RET    |          |   SPC   |     |   SHFT  |          |  BSPC   |
+// |  ESC  |     Z     |  J (TAB)  |     U     |     A    |    Q    |     |    P    |    B     |    M    |    L    |    F    |       |
+// |   ß   |  C (LGUI) |     S     |  I (RALT) | E (LCTRL)|    O    |     |    D    | T (RCTRL)| N (RALT)|    R    |H (LGUS) |   Y   |
+// |   !   |     V     |     X     |     Ü     |     Ä    |    Ö    |     |    W    |    G     |    ,    |    .    |    K    |   ?   |
+//                                 |    RET    |    LWR   |   SPC   |     |   SHFT  |   RSL    |  BSPC   |
 
                         bindings = <
-   &kp ESC    &kp Z      &hm TAB J &kp U      &kp A       &kp Q              &kp P     &kp B       &kp M      &kp L    &kp F    &trans
-   &kp Y      &hml 1 C   &hml 2 S  &hm RALT I &hm LCTRL E &kp O              &kp D     &hm RCTRL T &hm RALT N &hml 2 R &hml 1 H &kp MINUS 
-   &kp LS(N1) &hm LGUI V &kp X     &kp LBKT   &kp SQT     &kp SEMI           &kp W     &kp G       &kp COMMA  &kp DOT  &kp K    &kp LS(MINUS)
-                                   &kp RET    &trans      &kp SPACE          &kp LSHFT &trans      &kp BSPC
+   &kp ESC    &kp Z      &hm TAB J &kp U      &kp A       &kp Q              &kp P     &kp B       &kp M      &kp L    &kp F      &trans
+   &kp Y      &hm LGUI C &kp S     &hm RALT I &hm LCTRL E &kp O              &kp D     &hm RCTRL T &hm RALT N &kp R    &hm LGUI H &kp MINUS 
+   &kp LS(N1) &kp V      &kp X     &kp LBKT   &kp SQT     &kp SEMI           &kp W     &kp G       &kp COMMA  &kp DOT  &kp K      &kp LS(MINUS)
+                                   &kp RET    &mo 1       &kp SPACE          &kp LSHFT &mo 2      &kp BSPC
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |     |LFTline   |DWNpage|UPpage|RGTline  |[ (])    |     |     |  7    |  8  |  9  | mu |    |
-// |     |LFT(word) | DWN   | UP   |RGT(word)|"(" (")")|     |     |4(STRG)|  5  |  6  |    |    |
-// |     |DLR (EURO)|"|"(°) |  %   |  #      |{ (})|   |     |     |  1    |  2  |  3  |    |    |
-//                          |  *   |  =      |< (>)    |     |  §  |  0    |  ^  |
+// |     |LFTline  |DWNpage    |  UPpage  |RGTline  |   |     |   | 7 | 8 | 9 | mu |    |
+// |HOME |LFT(word)| DWN       |    UP    |RGT(word)|END|     |   | 4 | 5 | 6 |    |    |
+// |     |LC(END)  |LC(LA(DWN))|LC(LA(UP))|LC(HOME) |   |     |   | 1 | 2 | 3 |    |    |
+//                             |  *       |  =      |   |     |   | 0 |   |
                         bindings = <
-   &trans &hm LC(HOME) HOME               &kp PG_DN                     &kp PG_UP                         &hm LC(END) END   &hm DE_RBRC DE_LBRC  &hm LS(SLASH) SLASH &kp N7 &kp N8 &kp N9 &kp RA(M)  &trans  
-   &trans &hm LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &hm LC(C_MENU_RIGHT) C_MENU_RIGHT &hm LS(N9) LS(N8) &hm RA(MINUS) LS(N7) &hm LSHFT N4  &kp N5 &kp N6 &kp RA(Q) &trans 
-   &trans &hm RA(E) LS(N4)                &hm LS(DE_CIRC) RA(DE_LABK)   &kp LS(N5)                        &kp NUHS          &hm RA(N0) RA(N7)    &kp SLASH     &kp N1 &kp N2 &kp N3 &trans &trans 
-                                           &hm LS(RBRC) RBRC &kp LS(N0) &hm LS(N3) NUBS     &kp LS(N3) &kp N0 &kp GRAVE 
+   &trans &hm LC(HOME) HOME               &kp PG_DN        &kp PG_UP     &hm LC(END) END   &hm DE_RBRC DE_LBRC  &hm LS(SLASH) SLASH &kp N7 &kp N8 &kp N9 &kp RA(M)  &trans  
+   &trans &hm LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &hm LC(C_MENU_RIGHT) C_MENU_RIGHT &kp END &trans &hm LSHFT N4  &kp N5 &kp N6 &kp RA(Q) &trans 
+   &trans &kp LC(END)               &kp LC(LA(C_MENU_DOWN))   &kp LC(LA(C_MENU_UP))  &kp LC(HOME) &trans &kp SLASH &kp N1 &kp N2 &kp N3 &trans &trans 
+                                           &trans &kp LS(N0) &trans     &trans &kp N0 &trans 
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  xi  | F1  | F2 | F3 | F4 | F5 |  | F6 | F7 | F8 | F9 | F10|omega |
-// | phi  |HOME |LC(END)|LC(HOME)|END | F11|   | F12 |    |LC(LA(DWN))|LC(LA(UP))|    |    |
-// |theta | rho | tau | eta |  pi |zeta |   | beta|    |    |    |   |    |
+// |  xi | F1| F2 | F3 | F4 | F5 |  | F6 | F7 | F8 | F9 | F10|omega |
+// |  \  | / | - | ' | " |    |   | F12 |    |||    |    |
+// |theta| = | _ |"|"|  pi |zeta |   |  #  |  %  |"|"(°)|DLR (EURO)| <  |  | 
 //                    |     |    |line lft|   |line lft|LSHFT|    |
                         bindings = <
-   &trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5     &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
-   &trans  &kp HOME  &kp LC(END)  &kp LC(HOME)  &kp END  &kp F11     &kp F12  &trans  &kp LC(LA(C_MENU_DOWN))  &kp LC(LA(C_MENU_UP))  &trans  &trans
-   &trans  &trans  &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-                           &trans  &trans  &kp LC(C_MENU_LEFT)     &kp LC(C_MENU_RIGHT)  &kp LSHFT  &trans
+   &kp F1        &kp F2     &kp F3        &kp F4       &kp F5     &kp F6       &kp F7     &kp F8      &kp F9          &kp F10    &kp F11     &kp F12
+   &kp RA(MINUS) &kp LS(N7) &kp SLASH     &kp LS(NUHS) &kp LS(N2) &trans       &kp RA(N7) &kp DE_RBRC &kp LS(N8)      &kp LS(N8) &kp DE_RBRC &kp RA(N0)
+   &trans        &kp NUBS   &kp LS(SLASH) &kp LS(N4)   &kp RBRC   &trans       &kp NUHS   &kp LS(N5)  &kp LS(DE_CIRC) &kp RA(E)  &kp LS(N3)  &kp LS(NUBS)
+                                  &trans       &trans     &trans       &trans     &trans      &trans
                         >;
                 };
         };
