@@ -146,9 +146,9 @@
 // |theta| = | _ |"|"|  pi |zeta |   |  #  |  %  |"|"(°)|DLR (EURO)| <  |  | 
 //                    |     |    |line lft|   |line lft|LSHFT|    |
                         bindings = <
-   &kp F1        &kp F2     &kp F3        &kp F4       &kp F5     &kp F6       &kp F7     &kp F8      &kp F9          &kp F10    &kp F11     &kp F12
-   &kp RA(MINUS) &kp LS(N7) &kp SLASH     &kp LS(NUHS) &kp LS(N2) &trans       &kp RA(N7) &kp DE_RBRC &kp LS(N8)      &kp LS(N8) &kp DE_RBRC &kp RA(N0)
-   &trans        &kp NUBS   &kp LS(SLASH) &kp LS(N4)   &kp RBRC   &trans       &kp NUHS   &kp LS(N5)  &kp LS(DE_CIRC) &kp RA(E)  &kp NUBS    &kp LS(NUBS)
+   &kp F1        &kp F2     &kp F3        &kp F4       &kp F5     &kp F6       &kp F7     &kp F8      &kp F9          &kp F10    &kp F11    &kp F12
+   &kp RA(MINUS) &kp LS(N7) &kp SLASH     &kp LS(NUHS) &kp LS(N2) &trans       &kp RA(N7) &kp DE_RBRC &kp LS(N8)      &kp LS(N8) &kp LS(N9) &kp RA(N0)
+   &trans        &kp NUBS   &kp LS(SLASH) &kp LS(N4)   &kp RBRC   &trans       &kp NUHS   &kp LS(N5)  &kp LS(DE_CIRC) &kp RA(E)  &kp NUBS   &kp LS(NUBS)
                                   &trans       &trans     &trans       &trans     &trans      &trans
                         >;
                 };
