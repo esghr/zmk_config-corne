@@ -119,10 +119,10 @@
 //                                 |    RET    |    LWR   |   SPC   |     |   SHFT  |   RSL    |  BSPC   |
 
                         bindings = <
-   &kp ESC    &kp Z      &hm TAB J &kp U      &kp A       &kp Q              &kp P     &kp B       &kp M      &kp L    &kp F      &trans
-   &kp Y      &hm LGUI C &kp S     &hm RALT I &hm LCTRL E &kp O              &kp D     &hm RCTRL T &hm RALT N &kp R    &hm LGUI H &kp MINUS 
-   &kp LS(N1) &kp V      &kp X     &kp LBKT   &kp SQT     &kp SEMI           &kp W     &kp G       &kp COMMA  &kp DOT  &kp K      &kp LS(MINUS)
-                                   &kp RET    &mo 1       &kp SPACE          &kp LSHFT &mo 2      &kp BSPC
+   &kp ESC         &kp Z &kp J &kp U    &kp A   &kp Q              &kp P     &kp B &kp M      &kp L    &kp F &kp TAB
+   &kp Y           &kp C &kp S &kp I    &kp E   &kp O              &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
+   &hm LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT &kp SEMI           &kp W     &kp G &kp COMMA  &kp DOT  &kp K &kp LS(MINUS)
+                               &hm LCTRL RET &mo 1 &kp SPACE       &kp LSHFT &mo 2 &hm RALT BSPC
                         >;
                 };
                 lower_layer {
