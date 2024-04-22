@@ -11,8 +11,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-// Aliases
-#define PLUS	KC_RIGHT_BRACKET // 
+// Aliases 
 #define DE_CIRC GRAVE  // ^ (dead)
 #define DE_SS   MINUS // ß
 #define DE_ACUT PLUS  // ´ (dead)
@@ -169,15 +168,15 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |     |   lL   | pD  | pU  | lR      |     |     |   |     |     |     |     |     |
-// |HOME |LFT (wL)| DWN | UP  |RGT(word)| END |     |   |     |     |     |     |     |
-// |     |        |     |     |         |     |     |   |     |     |     |     |     |
-//                                |     |     |     |   |     |     |     |
+// |     |   lL   | pD  | pU  | lR      |     |   |     |     |     |     |     |     |
+// |HOME |LFT (wL)| DWN | UP  |RGT(word)| END |   |     |     |     |     |     |     |
+// |     |        |     |     |         |     |   |     |     |     |     |     |     |
+//                                |     |     |   |TO 1 |     |     |     |
                         bindings = <
-   &trans &hm LC(HOME) HOME               &kp PG_DN        &kp PG_UP     &hm LC(END) END   &hm DE_RBRC DE_LBRC  &hm LS(SLASH) SLASH &kp N7 &kp N8 &kp N9 &kp RA(M)  &trans  
-   &trans &hm LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &hm LC(C_MENU_RIGHT) C_MENU_RIGHT &kp END &trans &hm LSHFT N4  &kp N5 &kp N6 &kp RA(Q) &trans 
-   &trans &trans &trans   &trans  &trans &trans &kp SLASH &kp N1 &kp N2 &kp N3 &trans &trans 
-                                           &trans &kp LS(N0) &trans     &trans &kp N0 &trans 
+   &trans &hm LC(HOME) HOME               &kp PG_DN       &kp PG_UP     &hm LC(END) END                   &trans  &trans &trans &trans &trans &trans &trans  
+   &trans &hm LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &hm LC(C_MENU_RIGHT) C_MENU_RIGHT &kp END &trans &trans &trans &trans &trans &trans 
+   &trans &trans                          &trans          &trans        &trans                            &trans  &trans &trans &trans &trans &trans &trans 
+                                           &trans &kp LS(N0) &trans                                       &to 1 &kp N0 &trans 
                         >;
                 };
                 one_hand_nav {
@@ -185,12 +184,12 @@
 // | ESC |  Z  |  H  |  M  |  A  | F_l |   |     |     |     |     |     |     |
 // | TAB |  C  |  S  |  L  |  E  |num_l|   |     |     |     |     |     |     |
 // |LGUI |  V  |  X  |  W  |  T  |RALT |   |     |     |     |     |     |     |
-//                |(TO dl2)|LSTRG| SPC |   |TO dl|     |     |
+//                |(TOG 2)|LSTRG| SPC |   |TO dl|     |     |
                         bindings = <
    &kp ESC  &kp Z &kp H &kp M  &kp A &tog 5      &trans &trans &trans &trans &trans &trans  
-   &kp TAB  &kp C &kp S &kp L  &kp E &to 3       &trans &trans &trans &trans &trans &trans 
+   &kp TAB  &kp C &kp S &kp L  &kp E &tog 4       &trans &trans &trans &trans &trans &trans 
    &kp LGUI &kp V &kp X &kp W  &kp T &kp RALT    &trans &trans &trans &trans &trans &trans 
-                    &trans &kp LCTRL &kp SPC     &to 1 &trans &trans 
+                    &tog 2 &kp LCTRL &kp SPC     &to 1 &trans &trans 
                         >;
                 };
                 num_layer {
