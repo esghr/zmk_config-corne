@@ -81,7 +81,17 @@
             bindings = <&kp>, <&kp>;
         };
     };
-    
+    behaviors {
+        lam: layer_mod {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&to>;
+        };
+    };
     behaviors {
         hml: homerow_mods_layers {
             compatible = "zmk,behavior-hold-tap";
@@ -91,6 +101,17 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
+        };
+    };
+    behaviors {
+        OHN: act_OHN {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_LAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&tog>, <&kp>;
         };
     };
 
@@ -104,7 +125,15 @@
     };
 };
 
+// Taste gedrückt halten: ()
+// Taste doppelt drücken: []
 
+// zum Anfang der Zeile springen: lL (lineLeft)
+// zum Ende der Zeile springen: lR (lineRight)
+// vor ein Wort springen: lW (left(of)Word)
+// hinter ein Wort springen: rW (right(of)Word)
+// zum Anfang der Seite springen: pU (pageUp)
+// zum Ende der Seite springen: pD (pageDown)
 
 
 / {
@@ -113,43 +142,81 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  ESC  |     Z     |  J (TAB)  |     U     |     A    |    Q    |     |    P    |    B     |    M    |    L    |    F    |       |
-// |   ß   |  C (LGUI) |     S     |  I (RALT) | E (LCTRL)|    O    |     |    D    | T (RCTRL)| N (RALT)|    R    |H (LGUS) |   Y   |
-// |   !   |     V     |     X     |     Ü     |     Ä    |    Ö    |     |    W    |    G     |    ,    |    .    |    K    |   ?   |
-//                                 |    RET    |    LWR   |   SPC   |     |   SHFT  |   RSL    |  BSPC   |
+// |ESC (TAB)|  Z  |  J   |  U  |  A  |  Q  |     |  P  |  B  |  M  |  L  |  F  |BCKSP|
+// |   ß     |  C  |  S   |  I  |  E  |  O  |     |  D  |  T  |  N  |  R  |  H  |  Y  |
+// |! (LGUI) |  V  |  X   |  Ü  |  Ä  |  Ö  |     |  W  |  G  |  ,  |  .  |  K  |  ?  |
+//                  |RET (LCTRL)| LWR | SPC |     |SHFT | RSL |TO 3 (MO 4) |
 
                         bindings = <
-   &kp ESC         &kp Z &kp J &kp U    &kp A   &kp Q              &kp P     &kp B &kp M      &kp L    &kp F &kp TAB
-   &kp Y           &kp C &kp S &kp I    &kp E   &kp O              &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
-   &hm LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT &kp SEMI           &kp W     &kp G &kp COMMA  &kp DOT  &kp K &kp LS(MINUS)
-                               &hm LCTRL RET &mo 1 &kp SPACE       &kp LSHFT &mo 2 &hm RALT BSPC
+   &hm TAB ESC     &kp Z &kp J &kp U    &kp A   &kp Q          &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
+   &kp Y           &kp C &kp S &kp I    &kp E   &kp O          &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
+   &hm LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT &kp SEMI       &kp W     &kp G &kp COMMA  &kp DOT  &kp K &hml 2 LS(MINUS)
+                         &hm LCTRL RET  &LSHFT  &kp SPACE      &kp RSHFT &mo 1 &lam 4 3
+                        >;
+                };
+                raise_layer {
+// -----------------------------------------------------------------------------------------
+// |     |"|"(°)|  %  |  <  |  >  |DLR (EURO)|   |     |     |     |     |     |     |
+// |  \  |  /   |  -  |  '  |  "  |  #       |   |     |     |     |     |     |     |
+// |     |  <   |  _  | "|" |  *  |  =       |   |     |     |     |     |     |     | 
+//                    |     |    |line lft|            |     |     |    |
+                        bindings = <
+   &trans        &kp LS(DE_CIRC) &kp LS(N5)    &kp NUBS     &kp LS(NUBS) &kp RA(E)  &trans &trans &trans &trans &trans &trans
+   &kp RA(MINUS) &kp LS(N7)      &kp SLASH     &kp LS(NUHS) &kp LS(N2)   &kp NUHS   &trans &trans &trans &trans &trans &trans
+   &kp GRAVE     &kp NUBS        &kp LS(SLASH) &kp LS(N4)   &kp RBRC     &kp LS(N0) &trans &trans &trans &trans &trans &trans
+                                               &trans       &trans       &trans     &trans &trans &trans
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |     |LFTline  |DWNpage    |  UPpage  |RGTline  |   |     |   | 7 | 8 | 9 | mu |    |
-// |HOME |LFT(word)| DWN       |    UP    |RGT(word)|END|     |   | 4 | 5 | 6 |    |    |
-// |     |LC(END)  |LC(LA(DWN))|LC(LA(UP))|LC(HOME) |   |     |   | 1 | 2 | 3 |    |    |
-//                             |  *       |  =      |   |     |   | 0 |   |
+// |     |   lL   | pD  | pU  | lR      |     |     |   |     |     |     |     |     |
+// |HOME |LFT (wL)| DWN | UP  |RGT(word)| END |     |   |     |     |     |     |     |
+// |     |        |     |     |         |     |     |   |     |     |     |     |     |
+//                                |     |     |     |   |     |     |     |
                         bindings = <
    &trans &hm LC(HOME) HOME               &kp PG_DN        &kp PG_UP     &hm LC(END) END   &hm DE_RBRC DE_LBRC  &hm LS(SLASH) SLASH &kp N7 &kp N8 &kp N9 &kp RA(M)  &trans  
    &trans &hm LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &hm LC(C_MENU_RIGHT) C_MENU_RIGHT &kp END &trans &hm LSHFT N4  &kp N5 &kp N6 &kp RA(Q) &trans 
-   &trans &kp LC(END)               &kp LC(LA(C_MENU_DOWN))   &kp LC(LA(C_MENU_UP))  &kp LC(HOME) &trans &kp SLASH &kp N1 &kp N2 &kp N3 &trans &trans 
+   &trans &trans &trans   &trans  &trans &trans &kp SLASH &kp N1 &kp N2 &kp N3 &trans &trans 
                                            &trans &kp LS(N0) &trans     &trans &kp N0 &trans 
                         >;
                 };
-
-                raise_layer {
+                one_hand_nav {
 // -----------------------------------------------------------------------------------------
-// |  xi | F1| F2 | F3 | F4 | F5 |  | F6 | F7 | F8 | F9 | F10|omega |
-// |  \  | / | - | ' | " |    |   | F12 |    |||    |    |
-// |theta| = | _ |"|"|  pi |zeta |   |  #  |  %  |"|"(°)|DLR (EURO)| <  |  | 
-//                    |     |    |line lft|   |line lft|LSHFT|    |
+// | ESC |  Z  |  H  |  M  |  A  | F_l |   |     |     |     |     |     |     |
+// | TAB |  C  |  S  |  L  |  E  |num_l|   |     |     |     |     |     |     |
+// |LGUI |  V  |  X  |  W  |  T  |RALT |   |     |     |     |     |     |     |
+//                |(TO dl2)|LSTRG| SPC |   |TO dl|     |     |
                         bindings = <
-   &kp F1        &kp F2     &kp F3        &kp F4       &kp F5     &kp F6       &kp F7     &kp F8     &kp F9          &kp F10    &kp F11    &kp F12
-   &kp RA(MINUS) &kp LS(N7) &kp SLASH     &kp LS(NUHS) &kp LS(N2) &trans       &kp RA(N7) &kp RA(N8) &kp LS(N8)      &kp LS(N9) &kp RA(N9) &kp RA(N0)
-   &kp GRAVE     &kp NUBS   &kp LS(SLASH) &kp LS(N4)   &kp RBRC   &kp LS(N0)   &kp NUHS   &kp LS(N5) &kp LS(DE_CIRC) &kp RA(E)  &kp NUBS   &kp LS(NUBS)
-                                          &trans       &trans     &trans       &trans     &trans      &trans
+   &kp ESC  &kp Z &kp H &kp M  &kp A &tog 5      &trans &trans &trans &trans &trans &trans  
+   &kp TAB  &kp C &kp S &kp L  &kp E &to 3       &trans &trans &trans &trans &trans &trans 
+   &kp LGUI &kp V &kp X &kp W  &kp T &kp RALT    &trans &trans &trans &trans &trans &trans 
+                    &trans &kp LCTRL &kp SPC     &to 1 &trans &trans 
+                        >;
+                };
+                num_layer {
+// -----------------------------------------------------------------------------------------
+// |     |     |  7  |  8  |  9  |TOG 5|   |     |     |     |     |     |     |
+// |     |     |  4  |  5  |  6  |TO 3 |   |     |     |     |     |     |     |
+// |     |  0  |  1  |  2  |  3  |     |   |     |     |     |     |     |     |
+//                   |     |     | SPC |   |TO dl|     |     |
+                        bindings = <
+   &trans &trans &kp N7 &kp N8 &kp N9 &tog 5    &trans &trans &trans &trans &trans &trans  
+   &trans &trans &kp N4 &kp N5 &kp N6 &to 3     &trans &trans &trans &trans &trans &trans 
+   &trans &kp N0 &kp N1 &kp N2 &kp N3 &trans    &trans &trans &trans &trans &trans &trans 
+                        &trans &trans &kp SPC   &to 1 &trans &trans 
+                        >;
+                };
+                F_layer {
+// -----------------------------------------------------------------------------------------
+// |     | F1  | F2  | F3  | F4  |TOG 4|   |     |     |     |     |     |     |
+// |     | F5  | F6  | F7  | F8  |TO 3 |   |     |     |     |     |     |     |
+// |     | F9  | F10 | F11 | F12 |     |   |     |     |     |     |     |     |
+//                   |     |     | SPC |   |TO dl|     |     |
+                        bindings = <
+   &trans &kp F1 &kp F2  &kp F3  &kp F4  &tog 4   &trans &trans &trans &trans &trans &trans  
+   &trans &kp F6 &kp F6  &kp F7  &kp F8  &to 3    &trans &trans &trans &trans &trans &trans 
+   &trans &kp F9 &kp F10 &kp F11 &kp F12 &trans   &trans &trans &trans &trans &trans &trans 
+                         &trans  &trans  &trans   &to 1 &trans &trans 
                         >;
                 };
         };
