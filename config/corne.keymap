@@ -189,7 +189,7 @@
    &kp ESC  &kp Z &kp H &kp M  &kp A &tog 5      &trans &trans &trans &trans &trans &trans  
    &kp TAB  &kp C &kp S &kp L  &kp E &tog 4      &trans &trans &trans &trans &trans &trans 
    &kp LGUI &kp V &kp X &kp W  &kp T &kp RALT    &trans &trans &trans &trans &trans &trans 
-                    &lam 1 2 &kp LCTRL &kp SPC     &to 1 &trans &tog 3
+                    &lam 1 2 &kp LCTRL &hml B SPC     &trans &trans &trans
                         >;
                 };
                 num_layer {
@@ -202,7 +202,7 @@
    &trans &trans &kp N7 &kp N8 &kp N9 &tog 5    &trans &trans &trans &trans &trans &trans  
    &trans &trans &kp N4 &kp N5 &kp N6 &to 3     &trans &trans &trans &trans &trans &trans 
    &trans &kp N0 &kp N1 &kp N2 &kp N3 &trans    &trans &trans &trans &trans &trans &trans 
-                        &trans &trans &kp SPC   &to 1 &trans &trans 
+                        &trans &trans &kp SPC   &trans &trans &trans 
                         >;
                 };
                 F_layer {
@@ -215,7 +215,7 @@
    &trans &kp F1 &kp F2  &kp F3  &kp F4  &tog 4   &trans &trans &trans &trans &trans &trans  
    &trans &kp F6 &kp F6  &kp F7  &kp F8  &to 3    &trans &trans &trans &trans &trans &trans 
    &trans &kp F9 &kp F10 &kp F11 &kp F12 &trans   &trans &trans &trans &trans &trans &trans 
-                         &trans  &trans  &trans   &to 1 &trans &trans 
+                         &trans  &trans  &trans   &trans &trans &trans 
                         >;
                 };
         };
