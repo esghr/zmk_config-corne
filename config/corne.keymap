@@ -150,7 +150,7 @@
    &hm TAB ESC     &kp Z &kp J &kp U    &kp A     &kp Q          &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
    &kp Y           &kp C &kp S &kp I    &kp E     &kp O          &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
    &hm LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT   &kp SEMI       &kp W     &kp G &kp COMMA  &kp DOT  &kp K &hml 2 LS(MINUS)
-                         &hm LCTRL RET  &kp LSHFT &kp SPACE      &kp RSHFT &mo 1 &lam 4 3
+                         &hm LCTRL RET  &kp LSHFT &kp SPACE      &kp RSHFT &mo 1 &tog 3
                         >;
                 };
                 raise_layer {
