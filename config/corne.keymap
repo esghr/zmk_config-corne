@@ -144,13 +144,13 @@
 // |ESC (TAB)|  Z  |  J   |  U  |  A  |  Q  |     |  P  |  B  |  M  |  L  |  F  |BCKSP|
 // |   ß     |  C  |  S   |  I  |  E  |  O  |     |  D  |  T  |  N  |  R  |  H  |  Y  |
 // |! (LGUI) |  V  |  X   |  Ü  |  Ä  |  Ö  |     |  W  |  G  |  ,  |  .  |  K  |  ?  |
-//                  |RET (LCTRL)| LWR | SPC |     |SHFT | RSL |TO 3 (MO 4) |
+//                  |RET (LCTRL)|SHFT | SPC |     |SHFT | RSL |TO 3 (MO 4) |
 
                         bindings = <
-   &hm TAB ESC     &kp Z &kp J &kp U    &kp A   &kp Q          &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
-   &kp Y           &kp C &kp S &kp I    &kp E   &kp O          &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
-   &hm LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT &kp SEMI       &kp W     &kp G &kp COMMA  &kp DOT  &kp K &hml 2 LS(MINUS)
-                         &hm LCTRL RET  &LSHFT  &kp SPACE      &kp RSHFT &mo 1 &lam 4 3
+   &hm TAB ESC     &kp Z &kp J &kp U    &kp A     &kp Q          &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
+   &kp Y           &kp C &kp S &kp I    &kp E     &kp O          &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
+   &hm LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT   &kp SEMI       &kp W     &kp G &kp COMMA  &kp DOT  &kp K &hml 2 LS(MINUS)
+                         &hm LCTRL RET  &kp LSHFT &kp SPACE      &kp RSHFT &mo 1 &lam 4 3
                         >;
                 };
                 raise_layer {
