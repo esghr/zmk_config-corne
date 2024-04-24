@@ -94,7 +94,7 @@
     behaviors {
         mo_to: modlayer_tolayer {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "MODLAYER_TOLAYER";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
@@ -105,7 +105,7 @@
     behaviors {
         kp_to: keypress_tolayer {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "KEYPRESS_TOLAYER";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
@@ -117,7 +117,7 @@
     behaviors {
         to_kp: tolayer_keypress {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LAYER";
+            label = "TOLAYER_KEYPRESS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
@@ -162,7 +162,7 @@
    &kp_kp TAB ESC     &kp Z &kp J &kp U    &kp A       &kp Q       &kp P     &kp B      &kp M      &kp L    &kp F &mo_kp 4 BSPC
    &kp Y              &kp C &kp S &kp I    &kp E       &kp O       &kp D     &kp T      &kp N      &kp R    &kp H &kp MINUS 
    &kp_kp LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT     &kp SEMI    &kp W     &kp G      &kp COMMA  &kp DOT  &kp K &mo_kp 5 LS(MINUS)
-                      &kp_to LCTRL 3  &kp_kp ENT BSPC &kp SPACE    &kp RSHFT &mo_to 1 4 &mo_to 2 2 
+                      &kp_to LCTRL 3  &kp_kp ENT BSPC  &kp SPACE    &kp RSHFT &mo_to 1 4 &mo_to 2 2 
                         >;
                 };
                 raise_layer {
