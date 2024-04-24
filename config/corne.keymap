@@ -110,7 +110,7 @@
    &mt TAB ESC     &kp Z &kp J &kp U    &kp A       &kp Q       &kp P     &kp B      &kp M      &kp L    &kp F &lt 4 BSPC
    &kp Y           &kp C &kp S &kp I    &kp E       &kp O       &kp D     &kp T      &kp N      &kp R    &kp H &kp MINUS 
    &mt LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT     &kp SEMI    &kp W     &kp G      &kp COMMA  &kp DOT  &kp K &lt 5 LS(MINUS)
-                   &kp_to LCTRL 3     &mt ENT BSPC  &kp SPC     &kp RSHFT &mo_to 1 4 MO_TO(2) 
+                   &kp_to LCTRL 3     &mt ENT BSPC  &kp SPACE     &kp LSHFT &mo_to 1 4 MO_TO(2) 
                         >;
                 };
                 raise_layer {
@@ -123,7 +123,7 @@
    &kp RA(Q)     &kp LS(DE_CIRC) &kp LS(N5)    &kp NUBS     &kp LS(NUBS) &kp RA(E)  &trans &trans &trans &trans &trans &trans
    &kp RA(MINUS) &kp LS(N7)      &kp SLASH     &kp LS(NUHS) &kp LS(N2)   &kp NUHS   &trans &trans &trans &trans &trans &trans
    &trans        &kp GRAVE       &kp LS(SLASH) &kp LS(N4)   &kp RBRC     &kp LS(N0) &trans &trans &trans &trans &trans &trans
-                                               &trans       &trans       &kp SPC    &trans &trans &trans
+                                               &trans       &trans       &kp SPACE    &trans &trans &trans
                         >;
                 };
                 lower_layer {
@@ -136,7 +136,7 @@
    &kp RA(N8) &kp RA(N9) &kp HOME                        &kp C_MENU_UP &mt LC(END) END                      &mo 5           &trans &trans &trans &trans &trans &trans  
    &kp LS(N8) &kp LS(N9) &mt LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN  &mt LC(C_MENU_RIGHT) C_MENU_RIGHT &to 2           &trans &trans &trans &trans &trans &trans 
    &kp RA(N7) &kp RA(N0) &kp END                         &kp LC(HOME)  &kp PG_DN                            &kp LC(END)     &trans &trans &trans &trans &trans &trans 
-                                                         &kp_to LCTRL 3  &lt 1 BSPC                         &to_kp 4 SPC    &to 0  &trans  &trans 
+                                                         &kp_to LCTRL 3  &lt 1 BSPC                         &to_kp 4 SPACE   &to 0  &trans  &trans 
                         >;
                 };
                 one_hand_nav {
@@ -149,7 +149,7 @@
    &kp ESC  &kp Z &kp H &kp M  &kp A &mo 5            &trans &trans &trans &trans &trans &trans  
    &kp TAB  &kp C &kp S &kp L  &kp E &kp_to LSHFT 2   &trans &trans &trans &trans &trans &trans 
    &kp LGUI &kp V &kp X &kp W  &kp T &kp RALT         &trans &trans &trans &trans &trans &trans 
-         &kp LCTRL &lt 1 BSPC &to_kp 4 SPC            &to 0 &trans &trans
+         &kp LCTRL &lt 1 BSPC &to_kp 4 SPACE            &to 0 &trans &trans
                         >;
                 };
                 num_layer {
@@ -162,7 +162,7 @@
    &trans &trans &kp N7 &kp N8 &kp N9 &mo 5    &trans &trans &trans &trans &trans &trans  
    &trans &trans &kp N4 &kp N5 &kp N6 &to 2    &trans &trans &trans &trans &trans &trans 
    &trans &kp N0 &kp N1 &kp N2 &kp N3 &trans   &trans &trans &trans &trans &trans &trans 
-        &kp_to LCTRL 3 &lt 1 BSPC &kp SPC      &to 0 &trans &trans 
+        &kp_to LCTRL 3 &lt 1 BSPC &kp SPACE      &to 0 &trans &trans 
                         >;
                 };
                 F_layer {
@@ -175,7 +175,7 @@
    &trans &kp F1 &kp F2  &kp F3  &kp F4  &trans   &trans &trans &trans &trans &trans &trans  
    &trans &kp F6 &kp F6  &kp F7  &kp F8  &trans   &trans &trans &trans &trans &trans &trans 
    &trans &kp F9 &kp F10 &kp F11 &kp F12 &trans   &trans &trans &trans &trans &trans &trans 
-                &kp_to LCTRL 3  &trans  &kp SPC   &to 0  &trans &trans 
+                &kp_to LCTRL 3  &trans  &kp SPACE   &to 0  &trans &trans 
                         >;
                 };
         };
