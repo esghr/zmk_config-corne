@@ -81,13 +81,6 @@
             tapping-term-ms = <200>;
             bindings = <&to>, <&kp>;
         };
-        kp_kp: behavior_kp_kp {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&kp>;
-        };
     };
 };
 
@@ -116,7 +109,7 @@
    &mt TAB ESC     &kp Z &kp J &kp U    &kp A       &kp Q       &kp P     &kp B      &kp M      &kp L    &kp F &lt 4 BSPC
    &kp Y           &kp C &kp S &kp I    &kp E       &kp O       &kp D     &kp T      &kp N      &kp R    &kp H &kp MINUS 
    &mt LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT     &kp SEMI    &kp W     &kp G      &kp COMMA  &kp DOT  &kp K &lt 5 LS(MINUS)
-                   &kp_to LCTRL 3  &kp_kp ENT BSPC  &kp SPACE   &kp LSHFT &mo_to 1 4 MO_TO(2) 
+                   &kp_to LCTRL 3  &mt RET BSPC  &kp SPACE   &kp LSHFT &mo_to 1 4 MO_TO(2) 
                         >;
                 };
                 raise_layer {
