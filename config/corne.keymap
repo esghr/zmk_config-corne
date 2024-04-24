@@ -88,7 +88,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&tog>;
+            bindings = <&mo>, <&to>;
         };
     };
     behaviors {
@@ -103,14 +103,14 @@
         };
     };
     behaviors {
-        OHN: act_OHN {
+        ohn: act_ohn {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LAYER";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&tog>, <&kp>;
+            bindings = <&to>, <&kp>;
         };
     };
 
@@ -141,81 +141,81 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |ESC (TAB)|  Z  |  J   |  U  |  A  |  Q  |     |  P  |  B  |  M  |  L  |  F  |BCKSP|
+// |ESC (TAB)|  Z  |  J   |  U  |  A  |  Q  |     |  P  |  B  |  M  |  L  |  F  |BSPC |
 // |   ß     |  C  |  S   |  I  |  E  |  O  |     |  D  |  T  |  N  |  R  |  H  |  Y  |
-// |! (LGUI) |  V  |  X   |  Ü  |  Ä  |  Ö  |     |  W  |  G  |  ,  |  .  |  K  |  ?  |
-//                  |RET (LCTRL)|SHFT | SPC |     |SHFT | RSL |TO 3 (MO 4) |
+// |! (LGUI) |  V  |  X   |  Ü  |  Ä  |  Ö  |     |  W  |  G  |  ,  |  .  |  K  |(MO 4) ?|
+//             |RET (LCTRL)|TO 3 BSPC | SPC |     |SHFT |MO 1 |MO 2 |
 
                         bindings = <
-   &hm TAB ESC     &kp Z &kp J &kp U    &kp A     &kp Q          &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
-   &kp Y           &kp C &kp S &kp I    &kp E     &kp O          &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
-   &hm LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT   &kp SEMI       &kp W     &kp G &kp COMMA  &kp DOT  &kp K &hml 4 LS(MINUS)
-                         &hm LCTRL RET  &kp LSHFT &kp SPACE      &kp RSHFT &mo 1 &tog 3
+   &hm TAB ESC     &kp Z &kp J &kp U    &kp A       &kp Q          &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
+   &kp Y           &kp C &kp S &kp I    &kp E       &kp O          &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
+   &hm LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT     &kp SEMI       &kp W     &kp G &kp COMMA  &kp DOT  &kp K &ohn 4 LS(MINUS)
+                         &hm LCTRL RET  &ohn 3 BSPC &kp SPACE      &kp RSHFT &mo 1 &mo 2 
                         >;
                 };
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |     |"|"(°)|  %  |  <  |  >  |DLR (EURO)|   |     |     |     |     |     |     |
+// | AT  |"|"(°)|  %  |  <  |  >  |DLR (EURO)|   |     |     |     |     |     |     |
 // |  \  |  /   |  -  |  '  |  "  |  #       |   |     |     |     |     |     |     |
-// |     |  <   |  _  | "|" |  *  |  =       |   |     |     |     |     |     |     | 
-//                    |     |    |line lft|            |     |     |    |
+// |     |GRAVE |  _  | "|" |  *  |  =       |   |     |     |     |     |     |     | 
+//                    |     |     |line lft|           |     |     |     |
                         bindings = <
-   &trans        &kp LS(DE_CIRC) &kp LS(N5)    &kp NUBS     &kp LS(NUBS) &kp RA(E)  &trans &trans &trans &trans &trans &trans
+   &kp RA(Q)     &kp LS(DE_CIRC) &kp LS(N5)    &kp NUBS     &kp LS(NUBS) &kp RA(E)  &trans &trans &trans &trans &trans &trans
    &kp RA(MINUS) &kp LS(N7)      &kp SLASH     &kp LS(NUHS) &kp LS(N2)   &kp NUHS   &trans &trans &trans &trans &trans &trans
-   &kp GRAVE     &kp NUBS        &kp LS(SLASH) &kp LS(N4)   &kp RBRC     &kp LS(N0) &trans &trans &trans &trans &trans &trans
-                                               &trans       &trans       &trans     &trans &trans &trans
+   &trans        &kp GRAVE       &kp LS(SLASH) &kp LS(N4)   &kp RBRC     &kp LS(N0) &trans &trans &trans &trans &trans &trans
+                                               &trans       &trans       &kp SPC    &trans &trans &trans
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |     |   lL   | pD  | pU  | lR      |     |   |     |     |     |     |     |     |
-// |HOME |LFT (wL)| DWN | UP  |RGT(word)| END |   |     |     |     |     |     |     |
-// |     |        |     |     |         |     |   |     |     |     |     |     |     |
-//                                |     |     |   |TO 1 |TO 3 |     |     |
+// |  [  |  ]  |   HOME  | UP  |  pU     | TO 5|   |     |     |     |     |     |     |
+// |  (  |  )  | LFT (wL)| DWN |RGT(word)|TO 2 |   |     |     |     |     |     |     |
+// |  {  |  }  |   END   | lL  |  pD     | lR  |   |     |     |     |     |     |     |
+//                       |TO 1 | TO 3    | TO 4 SPC |   |TO 0 |     |     |
                         bindings = <
-   &trans   &hm LC(HOME) HOME               &kp PG_DN       &kp PG_UP     &hm LC(END) END                   &trans  &trans &trans &trans &trans &trans &trans  
-   &kp HOME &hm LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &kp C_MENU_UP &hm LC(C_MENU_RIGHT) C_MENU_RIGHT &kp END &trans &trans &trans &trans &trans &trans 
-   &trans   &trans                          &trans          &trans        &trans                            &trans  &trans &trans &trans &trans &trans &trans 
-                                            &trans          &kp LS(N0)    &trans                                    &to 1   &to 3  &trans 
+   &kp RA(N8) &kp RA(N9) &kp HOME                        &kp C_MENU_UP   &hm LC(END) END                   &to 5          &trans &trans &trans &trans &trans &trans  
+   &kp LS(N8) &kp LS(N9) &hm LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &hm LC(C_MENU_RIGHT) C_MENU_RIGHT &to 2          &trans &trans &trans &trans &trans &trans 
+   &kp RA(N7) &kp RA(N0) &kp END                         &kp LC(HOME)    &kp PG_DN                         &kp LC(END)    &trans &trans &trans &trans &trans &trans 
+                                                         &to 1           &to 3                             &ohn 4 SPC     &to 0  &trans  &trans 
                         >;
                 };
                 one_hand_nav {
 // -----------------------------------------------------------------------------------------
-// | ESC |  Z  |  H  |  M  |  A  | F_l |   |     |     |     |     |     |     |
-// | TAB |  C  |  S  |  L  |  E  |num_l|   |     |     |     |     |     |     |
+// | ESC |  Z  |  H  |  M  |  A  |TO 5 |   |     |     |     |     |     |     |
+// | TAB |  C  |  S  |  L  |  E  |TO 4 |   |     |     |     |     |     |     |
 // |LGUI |  V  |  X  |  W  |  T  |RALT |   |     |     |     |     |     |     |
-//                |(TOG 2)|LSTRG| SPC |   |TO dl|     |     |
+//             |(MO 1) TO 2|LSTRG| SPC |   |TO 0 |     |     |
                         bindings = <
-   &kp ESC  &kp Z &kp H &kp M  &kp A &tog 5      &trans &trans &trans &trans &trans &trans  
-   &kp TAB  &kp C &kp S &kp L  &kp E &tog 4      &trans &trans &trans &trans &trans &trans 
+   &kp ESC  &kp Z &kp H &kp M  &kp A &to 5       &trans &trans &trans &trans &trans &trans  
+   &kp TAB  &kp C &kp S &kp L  &kp E &to 4       &trans &trans &trans &trans &trans &trans 
    &kp LGUI &kp V &kp X &kp W  &kp T &kp RALT    &trans &trans &trans &trans &trans &trans 
-                    &lam 1 2 &kp LCTRL &hml B SPC     &trans &trans &trans
+                  &lam 1 2 &kp LCTRL &hml B SPC  &to 0 &trans &trans
                         >;
                 };
                 num_layer {
 // -----------------------------------------------------------------------------------------
-// |     |     |  7  |  8  |  9  |TOG 5|   |     |     |     |     |     |     |
-// |     |     |  4  |  5  |  6  |TO 3 |   |     |     |     |     |     |     |
+// |     |     |  7  |  8  |  9  |TO 5 |   |     |     |     |     |     |     |
+// |     |     |  4  |  5  |  6  |     |   |     |     |     |     |     |     |
 // |     |  0  |  1  |  2  |  3  |     |   |     |     |     |     |     |     |
-//                   |     |     | SPC |   |TO dl|     |     |
+//                   |MO 1 |TO 3 | SPC |   |TO 0 |     |     |
                         bindings = <
-   &trans &trans &kp N7 &kp N8 &kp N9 &tog 5    &trans &trans &trans &trans &trans &trans  
-   &trans &trans &kp N4 &kp N5 &kp N6 &to 3     &trans &trans &trans &trans &trans &trans 
-   &trans &kp N0 &kp N1 &kp N2 &kp N3 &trans    &trans &trans &trans &trans &trans &trans 
-                        &trans &trans &kp SPC   &trans &trans &trans 
+   &trans &trans &kp N7 &kp N8 &kp N9 &to 5    &trans &trans &trans &trans &trans &trans  
+   &trans &trans &kp N4 &kp N5 &kp N6 &trans   &trans &trans &trans &trans &trans &trans 
+   &trans &kp N0 &kp N1 &kp N2 &kp N3 &trans   &trans &trans &trans &trans &trans &trans 
+                        &mo 1  &to 3 &kp SPC   &to 0 &trans &trans 
                         >;
                 };
                 F_layer {
 // -----------------------------------------------------------------------------------------
-// |     | F1  | F2  | F3  | F4  |TOG 4|   |     |     |     |     |     |     |
-// |     | F5  | F6  | F7  | F8  |TO 3 |   |     |     |     |     |     |     |
+// |     | F1  | F2  | F3  | F4  |     |   |     |     |     |     |     |     |
+// |     | F5  | F6  | F7  | F8  |TO 4 |   |     |     |     |     |     |     |
 // |     | F9  | F10 | F11 | F12 |     |   |     |     |     |     |     |     |
-//                   |     |     | SPC |   |TO dl|     |     |
+//                   |     |TO 3 | SPC |   |TO 0 |     |     |
                         bindings = <
-   &trans &kp F1 &kp F2  &kp F3  &kp F4  &tog 4   &trans &trans &trans &trans &trans &trans  
-   &trans &kp F6 &kp F6  &kp F7  &kp F8  &to 3    &trans &trans &trans &trans &trans &trans 
+   &trans &kp F1 &kp F2  &kp F3  &kp F4  &trans   &trans &trans &trans &trans &trans &trans  
+   &trans &kp F6 &kp F6  &kp F7  &kp F8  &to 4    &trans &trans &trans &trans &trans &trans 
    &trans &kp F9 &kp F10 &kp F11 &kp F12 &trans   &trans &trans &trans &trans &trans &trans 
-                         &trans  &trans  &trans   &trans &trans &trans 
+                         &trans  &to 3   &trans   &to 0 &trans &trans 
                         >;
                 };
         };
