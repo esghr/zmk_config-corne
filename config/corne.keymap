@@ -54,84 +54,38 @@
 #define DE_PIPE RA(DE_LABK) // |
 #define DE_MICR RA(M)    // µ
 
-
-//Tastenkombi: E, BCKSPC
-//Ausgabe: del_word
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_delword {
-            timeout-ms = <40>;
-            key-positions = <16 41>;
-            bindings = <&kp LC(BSPC)>;
-        };
-    };
-};
+#define MO_TO(layer) &mo_to layer layer
+#define KP_TO(layer) &kp_to layer layer
+#define TO_KP(layer) &to_kp layer layer
 
 / {
-    behaviors {
-        kp_kp: keypress_keypress {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
+    &mt {
+    tapping-term-ms = <200>;
+    };
+    &lt {
+    tapping-term-ms = <200>;
     };
     behaviors {
-        mo_kp: modlayer_keypress {
+        mo_to: behavior_mo_to {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LAYER";
             #binding-cells = <2>;
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
-    };
-    behaviors {
-        mo_to: modlayer_tolayer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MODLAYER_TOLAYER";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
             bindings = <&mo>, <&to>;
         };
-    };
-    behaviors {
-        kp_to: keypress_tolayer {
+        kp_to: behavior_kp_to {
             compatible = "zmk,behavior-hold-tap";
-            label = "KEYPRESS_TOLAYER";
             #binding-cells = <2>;
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
             bindings = <&kp>, <&to>;
         };
-    };
-    
-    behaviors {
-        to_kp: tolayer_keypress {
+        to_kp: behavior_to_kp {
             compatible = "zmk,behavior-hold-tap";
-            label = "TOLAYER_KEYPRESS";
             #binding-cells = <2>;
+            flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
             bindings = <&to>, <&kp>;
-        };
-    };
-
-    keymap {
-        compatible = "zmk,keymap";
-        default_layer {
-            bindings = <
-                &hm LCTRL A &hm LGUI S &hm LALT D &hm LSHIFT F
-            >;
         };
     };
 };
@@ -159,10 +113,10 @@
 //             |TO 3 (LCTRL)|ENT BSPC | SPC |     |SHFT |MO 1 TO 4 |MO 2 TO 2|
 
                         bindings = <
-   &kp_kp TAB ESC     &kp Z &kp J &kp U    &kp A       &kp Q       &kp P     &kp B      &kp M      &kp L    &kp F &mo_kp 4 BSPC
-   &kp Y              &kp C &kp S &kp I    &kp E       &kp O       &kp D     &kp T      &kp N      &kp R    &kp H &kp MINUS 
-   &kp_kp LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT     &kp SEMI    &kp W     &kp G      &kp COMMA  &kp DOT  &kp K &mo_kp 5 LS(MINUS)
-                      &kp_to LCTRL 3  &kp_kp ENT BSPC  &kp SPACE    &kp RSHFT &mo_to 1 4 &mo_to 2 2 
+   &mt TAB ESC     &kp Z &kp J &kp U    &kp A       &kp Q       &kp P     &kp B      &kp M      &kp L    &kp F &lt 4 BSPC
+   &kp Y           &kp C &kp S &kp I    &kp E       &kp O       &kp D     &kp T      &kp N      &kp R    &kp H &kp MINUS 
+   &mt LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT     &kp SEMI    &kp W     &kp G      &kp COMMA  &kp DOT  &kp K &lt 5 LS(MINUS)
+                   &kp_to LCTRL 3     &mt ENT BSPC  &kp SPACE   &kp RSHFT &mo_to 1 4 MO_TO(2) 
                         >;
                 };
                 raise_layer {
@@ -185,10 +139,10 @@
 // |  {  |  }  |   END   | lL  |  pD     | lR  |   |     |     |     |     |     |     |
 //               |CTRL TO 3|MO 1 BSPC|TO 4 SPC |   |TO 0 |     |     |
                         bindings = <
-   &kp RA(N8) &kp RA(N9) &kp HOME                           &kp C_MENU_UP   &kp_kp LC(END) END                   &mo 5           &trans &trans &trans &trans &trans &trans  
-   &kp LS(N8) &kp LS(N9) &kp_kp LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN &kp_kp LC(C_MENU_RIGHT) C_MENU_RIGHT &to 2           &trans &trans &trans &trans &trans &trans 
-   &kp RA(N7) &kp RA(N0) &kp END                            &kp LC(HOME)    &kp PG_DN                            &kp LC(END)     &trans &trans &trans &trans &trans &trans 
-                                                            &kp_to LCTRL 3  &mo_kp 1 BSPC                        &to_kp 4 SPC    &to 0  &trans  &trans 
+   &kp RA(N8) &kp RA(N9) &kp HOME                        &kp C_MENU_UP &mt LC(END) END                      &mo 5           &trans &trans &trans &trans &trans &trans  
+   &kp LS(N8) &kp LS(N9) &mt LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN  &mt LC(C_MENU_RIGHT) C_MENU_RIGHT &to 2           &trans &trans &trans &trans &trans &trans 
+   &kp RA(N7) &kp RA(N0) &kp END                         &kp LC(HOME)  &kp PG_DN                            &kp LC(END)     &trans &trans &trans &trans &trans &trans 
+                                                         &kp_to LCTRL 3  &lt 1 BSPC                         &to_kp 4 SPC    &to 0  &trans  &trans 
                         >;
                 };
                 one_hand_nav {
@@ -201,7 +155,7 @@
    &kp ESC  &kp Z &kp H &kp M  &kp A &mo 5            &trans &trans &trans &trans &trans &trans  
    &kp TAB  &kp C &kp S &kp L  &kp E &kp_to LSHFT 2   &trans &trans &trans &trans &trans &trans 
    &kp LGUI &kp V &kp X &kp W  &kp T &kp RALT         &trans &trans &trans &trans &trans &trans 
-         &kp LCTRL &mo_kp 1 BSPC &to_kp 4 SPC         &to 0 &trans &trans
+         &kp LCTRL &lt 1 BSPC &to_kp 4 SPC            &to 0 &trans &trans
                         >;
                 };
                 num_layer {
@@ -214,7 +168,7 @@
    &trans &trans &kp N7 &kp N8 &kp N9 &mo 5    &trans &trans &trans &trans &trans &trans  
    &trans &trans &kp N4 &kp N5 &kp N6 &to 2    &trans &trans &trans &trans &trans &trans 
    &trans &kp N0 &kp N1 &kp N2 &kp N3 &trans   &trans &trans &trans &trans &trans &trans 
-        &kp_to LCTRL 3 &mo_kp 1 BSPC &kp SPC   &to 0 &trans &trans 
+        &kp_to LCTRL 3 &lt 1 BSPC &kp SPC      &to 0 &trans &trans 
                         >;
                 };
                 F_layer {
