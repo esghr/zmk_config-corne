@@ -93,7 +93,7 @@
 // hinter ein Wort springen: rW (right(of)Word)
 // zum Anfang der Seite springen: pU (pageUp)
 // zum Ende der Seite springen: pD (pageDown)
-// mo_to 1 4
+// &mt ENT BSPC
 
 / {
         keymap {
@@ -110,7 +110,7 @@
    &mt TAB ESC     &kp Z &kp J &kp U    &kp A       &kp Q       &kp P     &kp B      &kp M      &kp L    &kp F &lt 4 BSPC
    &kp Y           &kp C &kp S &kp I    &kp E       &kp O       &kp D     &kp T      &kp N      &kp R    &kp H &kp MINUS 
    &mt LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT     &kp SEMI    &kp W     &kp G      &kp COMMA  &kp DOT  &kp K &lt 5 LS(MINUS)
-                   &kp_to LCTRL 3     &mt ENT BSPC  &kp SPACE   &kp LSHFT &mo 4      MO_TO(2) 
+                   &kp_to LCTRL 3     &kp BSPC  &kp SPACE   &kp LSHFT &mo_to 1 4 MO_TO(2) 
                         >;
                 };
                 raise_layer {
