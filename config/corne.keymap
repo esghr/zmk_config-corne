@@ -68,12 +68,12 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&to>;
         };
-        sl_tog: behavior_mo_tog {
+        sl_tog: behavior_sl_tog {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&sl>, <&tog>;
+            bindings = <&tog>, <&sl>;
         };
         kp_to: behavior_kp_to {
             compatible = "zmk,behavior-hold-tap";
@@ -117,7 +117,7 @@
    &mt TAB ESC     &kp Z &kp J &kp U    &kp A       &kp Q       &kp P     &kp B      &kp M      &kp L    &kp F &lt 4 BSPC
    &kp Y           &kp C &kp S &kp I    &kp E       &kp O       &kp D     &kp T      &kp N      &kp R    &kp H &kp MINUS 
    &mt LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT     &kp SEMI    &kp W     &kp G      &kp COMMA  &kp DOT  &kp K &lt 5 LS(MINUS)
-                   &kp_to LCTRL 3  &mt BSPC RET  &kp SPACE   &kp LSHFT &sl_tog 1 4 &sl_tog 2 2 
+                   &kp_to LCTRL 3  &mt BSPC RET  &kp SPACE   &kp LSHFT &tog_sl 4 1 &tog_sl 2 2 
                         >;
                 };
                 raise_layer {
