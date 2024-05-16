@@ -121,7 +121,7 @@
             tapping-term-ms = <200>;
             bindings = <&kp LCTRL>, <&to 3>; // new
         };
-        td3: tap_dance_3 {
+        td4: tap_dance_4 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
@@ -155,7 +155,7 @@
    &mt TAB ESC     &kp Z &kp J &kp U    &kp A   &kp Q       &kp P     &kp B &kp M      &kp L    &kp F &td0 
    &kp Y           &kp C &kp S &kp I    &kp E   &kp O       &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
    &mt LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W     &kp G &kp COMMA  &kp DOT  &kp K &lt 5 LS(MINUS)
-                               &td3     &td3    &kp SPACE   &kp LSHFT &td1  &td2 
+                               &td3     &td4    &kp SPACE   &kp LSHFT &td1  &td2 
                         >;
                 };
                 raise_layer {
