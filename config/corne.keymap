@@ -61,6 +61,19 @@
 / {
 
     behaviors {
+    	mo_td0: behavior_mo_to {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&td0>;
+        };
+    	td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp BSPC>, <&kp LS(BSPC)>;
+        };
         mo_to: behavior_mo_to {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -114,7 +127,7 @@
 //             |TO 3 (LCTRL)|ENT BSPC | SPC |     |SHFT |MO 1 TO 4 |MO 2 TO 2|
 
                         bindings = <
-   &mt TAB ESC     &kp Z &kp J &kp U    &kp A       &kp Q       &kp P     &kp B      &kp M      &kp L    &kp F &lt 4 BSPC
+   &mt TAB ESC     &kp Z &kp J &kp U    &kp A       &kp Q       &kp P     &kp B      &kp M      &kp L    &kp F &mo_td0 4
    &kp Y           &kp C &kp S &kp I    &kp E       &kp O       &kp D     &kp T      &kp N      &kp R    &kp H &kp MINUS 
    &mt LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT     &kp SEMI    &kp W     &kp G      &kp COMMA  &kp DOT  &kp K &lt 5 LS(MINUS)
                    &kp_to LCTRL 3  &mt BSPC RET  &kp SPACE   &kp LSHFT &tog_sl 4 1 &tog_sl 2 2 
