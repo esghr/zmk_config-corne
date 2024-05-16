@@ -61,7 +61,7 @@
 / {
 
     behaviors {
-    	mo_td0: behavior_mo_to {
+    	mo_td0: behavior_mo_td0 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
