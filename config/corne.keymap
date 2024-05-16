@@ -61,19 +61,7 @@
 / {
 
     behaviors {
-    	mo_td0: behavior_mo_td0 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&td0>;
-        };
-    	td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp BSPC>, <&kp LS(BSPC)>;
-        };
+    	
         mo_to: behavior_mo_to {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -88,6 +76,13 @@
             tapping-term-ms = <200>;
             bindings = <&tog>, <&sl>;
         };
+        mo_sl: behavior_mo_sl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>; // new
+            bindings = <&mo>, <&sl>;
+        };
         kp_to: behavior_kp_to {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -101,6 +96,36 @@
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&to>, <&kp>;
+        };
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp BSPC>, <&kp LS(BSPC)>; // new
+        };
+        td1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo_sl 4 1>, <&to 4>, <&to 3>; // new
+        };
+        td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo_sl 2 2>, <&to 1>; // new
+        };
+        td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LCTRL>, <&to 3>; // new
+        };
+        td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RET>, <&kp BSPC>; // new
         };
     };
 };
@@ -124,13 +149,13 @@
 // |ESC (TAB)|  Z  |  J   |  U  |  A  |  Q  |     |  P  |  B  |  M  |  L  |  F  |MO 4 BSPC |
 // |   ß     |  C  |  S   |  I  |  E  |  O  |     |  D  |  T  |  N  |  R  |  H  |  Y  |
 // |! (LGUI) |  V  |  X   |  Ü  |  Ä  |  Ö  |     |  W  |  G  |  ,  |  .  |  K  |(MO 5) ?|
-//             |TO 3 (LCTRL)|ENT BSPC | SPC |     |SHFT |MO 1 TO 4 |MO 2 TO 2|
+//             |TO 3 (LCTRL)|RET BSPC | SPC |     |SHFT |MO 1 TO 4 |MO 2 TO 2|
 
                         bindings = <
-   &mt TAB ESC     &kp Z &kp J &kp U    &kp A       &kp Q       &kp P     &kp B      &kp M      &kp L    &kp F &mo_td0 4
-   &kp Y           &kp C &kp S &kp I    &kp E       &kp O       &kp D     &kp T      &kp N      &kp R    &kp H &kp MINUS 
-   &mt LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT     &kp SEMI    &kp W     &kp G      &kp COMMA  &kp DOT  &kp K &lt 5 LS(MINUS)
-                   &kp_to LCTRL 3  &mt BSPC RET  &kp SPACE   &kp LSHFT &tog_sl 4 1 &tog_sl 2 2 
+   &mt TAB ESC     &kp Z &kp J &kp U    &kp A   &kp Q       &kp P     &kp B &kp M      &kp L    &kp F &td0 
+   &kp Y           &kp C &kp S &kp I    &kp E   &kp O       &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
+   &mt LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W     &kp G &kp COMMA  &kp DOT  &kp K &lt 5 LS(MINUS)
+                               &td3     &td3    &kp SPACE   &kp LSHFT &td1  &td2 
                         >;
                 };
                 raise_layer {
