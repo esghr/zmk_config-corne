@@ -101,7 +101,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp BSPC>, <&kp LS(BSPC)>; // new
+            bindings = <&kp BSPC>, <&kp LC(BSPC)>; // new
         };
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
