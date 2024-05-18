@@ -80,7 +80,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <200>; // new
+            tapping-term-ms = <100>; // new
             bindings = <&mo>, <&sl>;
         };
         kp_to: behavior_kp_to {
@@ -106,7 +106,7 @@
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&mo_sl 4 1>, <&to 4>, <&to 3>; // new
         };
         td2: tap_dance_2 {
