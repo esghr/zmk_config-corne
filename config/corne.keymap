@@ -101,13 +101,13 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
-            bindings = <&mo 1>, <&to 4>, <&to 3>; // new
+            bindings = <&mo 1>, <&to 2>, <&to 3>; // new
         };
         td2: tap_dance_2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo 4>, <&to 2>; // new
+            bindings = <&mo 4>, <&to 4>; // new
         };
         td3: tap_dance_3 {
             compatible = "zmk,behavior-tap-dance";
