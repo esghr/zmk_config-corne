@@ -100,7 +100,7 @@
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             bindings = <&mo 1>, <&to 2>, <&to 3>; // new
         };
         td2: tap_dance_2 {
@@ -146,8 +146,8 @@
 //             |TO 3 (LCTRL)|RET BSPC | SPC |     |SHFT |MO 1 TO 4 |MO 2 TO 2|
 
                         bindings = <
-   &mt TAB ESC     &kp Z &kp J &kp U    &kp A   &kp Q       &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
-   &kp Y           &kp C &kp S &kp I    &kp E   &kp O       &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
+   &mt TAB ESC     &kp Y &kp J &kp U    &kp A   &kp Q       &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
+   &kp Z           &kp C &kp S &kp I    &kp E   &kp O       &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
    &mt LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W     &kp G &kp COMMA  &kp DOT  &kp K &lt 5 LS(MINUS)
                                &td3     &td4    &kp SPACE   &kp LSHFT &td1  &td2 
                         >;
