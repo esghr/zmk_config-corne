@@ -53,7 +53,8 @@
 #define DE_TILD RA(DE_PLUS) // ~
 #define DE_PIPE RA(DE_LABK) // |
 #define DE_MICR RA(M)    // µ
-#define PLUSD (0xBB)    // Plus
+#define PLUSDD (0xBB)    
+#define PLUSD (LS(ZMK_HID_USAGE(HID_USAGE_KEY, PLUSDD))) // Plus
 
 // Taste gedrückt halten: ()
 // Taste doppelt drücken: []
