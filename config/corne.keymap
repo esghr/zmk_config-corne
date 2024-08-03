@@ -58,72 +58,6 @@
 #define KP_TO(layer) &kp_to layer layer
 #define TO_KP(layer) &to_kp layer layer
 
-/ {
-
-    behaviors {
-    	
-        mo_to: behavior_mo_to {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&to>;
-        };
-        tog_sl: behavior_sl_tog {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&tog>, <&sl>;
-        };
-        mo_sl: behavior_mo_sl {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <100>; // new
-            bindings = <&mo>, <&sl>;
-        };
-        kp_to: behavior_kp_to {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&to>;
-        };
-        to_kp: behavior_to_kp {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&to>, <&kp>;
-        };
-        td1: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mo 1>, <&to 2>, <&to 3>; // new
-        };
-        td2: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mo 4>, <&to 4>; // new
-        };
-        td3: tap_dance_3 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LCTRL>, <&to 3>; // new
-        };
-        td4: tap_dance_4 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt LALT RET>, <&kp LC(BSPC)>; // new
-        };
-    };
-};
-
 // Taste gedrückt halten: ()
 // Taste doppelt drücken: []
 
@@ -140,81 +74,42 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |ESC (TAB)|  Z  |  J   |  U  |  A  |  Q  |     |  P  |  B  |  M  |  L  |  F  | BSPC |
-// |   ß     |  C  |  S   |  I  |  E  |  O  |     |  D  |  T  |  N  |  R  |  H  |  Y  |
-// |! (LGUI) |  V  |  X   |  Ü  |  Ä  |  Ö  |     |  W  |  G  |  ,  |  .  |  K  |(MO 5) ?|
-//             |TO 3 (LCTRL)|RET BSPC | SPC |     |SHFT |MO 1 TO 4 |MO 2 TO 2|
+// |ESC (TAB)|  Z  |  J   |  U  |  A  |  Q  |   |  P  |  B  |  M  |  L  |  F  | BSPC |
+// |   ß     |  C  |  S   |  I  |  E  |  O  |   |  D  |  T  |  N  |  R  |  H  |  Y  |
+// |! (LGUI) |  V  |  X   |  Ü  |  Ä  |  Ö  |   |  W  |  G  |  ,  |  .  |  K  |  ?  |
+//                  |RET (LCTRL)|MO 2 | SPC |   |SHFT |MO 1 |BSPC (LALT)|
 
                         bindings = <
    &mt TAB ESC     &kp Y &kp J &kp U    &kp A   &kp Q       &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
    &kp Z           &kp C &kp S &kp I    &kp E   &kp O       &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
-   &mt LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W     &kp G &kp COMMA  &kp DOT  &kp K &lt 5 LS(MINUS)
-                               &td3     &td4    &kp SPACE   &kp LSHFT &td1  &td2 
+   &mt LGUI LS(N1) &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W     &kp G &kp COMMA  &kp DOT  &kp K &kp LS(MINUS)
+                            &mt LCTRL RET &mo 2 &kp SPACE   &kp LSHFT &mo 1 &mt LALT RET
                         >;
                 };
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  <  |  >  |  [  |  ]  |     |GRAVE|   |     |     |     |     |     |     |
-// |  /  |  -  |  (  |  )  |  "  |  @  |   |     |     |     |     |     |     |
-// |  \  |  _  |  {  |  }  |  '  |  °  |   |     |     |     |     |     |     | 
-//                   |     |     | SPC |   |     |     |     |
+// |   <    |  >  |  [  |  ]  |  &  |GRAVE|   |     |PG_UP|  UP | HOME|     |     |
+// |   /    |  -  |  (  |  )  |  "  |  @  |   |     | LFT | DWN | RGT |     |     |
+// |\ (LGUI)|  #  |  {  |  }  |  '  |  °  |   |     |PG_DN|     | END |     |     | 
+//                |RET (LCTRL)|     | SPC |   |SHFT |     |BSPC (LALT)|
                         bindings = <
-   &kp NUBS      &kp LS(NUBS)  &kp RA(N8) &kp RA(N9) &kp LS(NUBS) &kp GRAVE  &trans &trans &trans &trans &trans &trans
-   &kp LS(N7)    &kp SLASH     &kp LS(N8) &kp LS(N9) &kp LS(N2)   &kp RA(Q)   &trans &trans &trans &trans &trans &trans
-   &kp RA(MINUS) &kp LS(SLASH) &kp RA(N7) &kp RA(N0) &kp LS(NUHS)     &kp LS(DE_CIRC) &trans &trans &trans &trans &trans &trans
-                                               &trans       &trans       &kp SPACE  &trans &trans &trans
+   &kp NUBS           &kp LS(NUBS) &kp RA(N8) &kp RA(N9) &kp LS(N6)   &kp GRAVE       &trans &kp PG_UP &kp C_MENU_UP &kp HOME &trans &trans
+   &kp LS(N7)         &kp SLASH    &kp LS(N8) &kp LS(N9) &kp LS(N2)   &kp RA(Q)       &trans &kp C_MENU_LEFT &kp C_MENU_DOWN  &kp C_MENU_RIGHT &trans &trans
+   &mt LGUI RA(MINUS) &kp NUHS     &kp RA(N7) &kp RA(N0) &kp LS(NUHS) &kp LS(GRAVE)   &trans &kp PG_DN &trans  &kp END &trans &trans
+                                                     &mt LCTRL RET &trans &kp SPACE   &kp LSHFT &trans &mt LALT RET
                         >;
                 };
-                lower_layer {
+                numF_layer {
 // -----------------------------------------------------------------------------------------
-// |    |    |   HOME  | UP  |  pU     | MO 5|   |     |     |     |     |     |     |
-// |    |    | LFT (wL)| DWN |RGT(word)| TO 2|   |     |     |     |     |     |     |
-// |    |    |   END   | lL  |  pD     | lR  |   |     |     |     |     |     |     |
-//               |CTRL TO 3|MO 1 BSPC|TO 4 SPC |   |TO 0 |     |     |
+// |   %    |  #  |  7  |  8  |  9  |     |   |     | F1  | F2  | F3  | F10 |     |
+// |  EURO  |  =  |  4  |  5  |  6  |     |   |     | F4  | F5  | F6  | F11 |     |
+// |$ (LGUI)|  0  |  1  |  2  |  3  |     |   |     | F7  | F8  | F9  | F12 |     |
+//                |RET (LCTRL)|     | SPC |   |SHFT |     |BSPC (LALT)|
                         bindings = <
-   &trans &trans &kp HOME                        &kp C_MENU_UP &mt LC(END) END                      &mo 5           &trans &trans &trans &trans &trans &trans  
-   &trans &trans &mt LC(C_MENU_LEFT) C_MENU_LEFT &kp C_MENU_DOWN  &mt LC(C_MENU_RIGHT) C_MENU_RIGHT &tog 2           &trans &trans &trans &trans &trans &trans 
-   &trans &trans &kp END                         &kp LC(HOME)  &kp PG_DN                            &kp LC(END)     &trans &trans &trans &trans &trans &trans 
-                                                         &kp_to LCTRL 3  &lt 1 BSPC                         &to_kp 4 SPACE   &to 0  &trans  &trans 
-                        >;
-                };
-                one_hand_nav {
-// -----------------------------------------------------------------------------------------
-// | ESC |  Z  |  H  |  M  |  A  |MO 5      |   |     |     |     |     |     |     |
-// | TAB |  C  |  S  |  L  |  E  |SHFT TO 2 |   |     |     |     |     |     |     |
-// |LGUI |  V  |  X  |  W  |  T  |RALT      |   |     |     |     |     |     |     |
-//                 |CTRL |MO 1 BSPC|TO 4 SPC|   |TO 0 |     |     |
-                        bindings = <
-   &kp ESC  &kp Z &kp H &kp M  &kp A &mo 5            &trans &trans &trans &trans &trans &trans  
-   &kp TAB  &kp C &kp S &kp L  &kp E &kp_to LSHFT 2   &trans &trans &trans &trans &trans &trans 
-   &kp LGUI &kp V &kp X &kp W  &kp T &kp RALT         &trans &trans &trans &trans &trans &trans 
-         &kp LCTRL &lt 1 BSPC &to_kp 4 SPACE          &to 0 &trans &trans
-                        >;
-                };
-                num_layer {
-// -----------------------------------------------------------------------------------------
-// |  %  |  #  |  7  |  8  |  9  |MO 5 |   |     |     |     |     |     |     |
-// |EURO |  =  |  4  |  5  |  6  |TO 2 |   |     |     |     |     |     |     |
-// |  $  |  0  |  1  |  2  |  3  |     |   |     |     |     |     |     |     |
-//          |CTRL MO 1|MO 1 BSPC | SPC |   |TO 0 |     |     |
-                        bindings = <
-   &kp LS(N5) &kp NUHS &kp N7 &kp N8 &kp N9 &mo 5    &trans &trans &trans &trans &trans &trans  
-   &kp RA(E)  &kp LS(N0) &kp N4 &kp N5 &kp N6 &to 2    &trans &trans &trans &trans &trans &trans 
-   &kp LS(N4) &kp N0 &kp N1 &kp N2 &kp N3 &tog 4   &trans &trans &trans &trans &trans &trans 
-        &kp_to LCTRL 3 &lt 1 BSPC &kp SPACE    &to 0 &trans &trans 
-                        >;
-                };
-                F_layer {
-// -----------------------------------------------------------------------------------------
-// |     | F1  | F2  | F3  | F4  |     |   |     |     |     |     |     |     |
-// |     | F5  | F6  | F7  | F8  |TO 4 |   |     |     |     |     |     |     |
-// |     | F9  | F10 | F11 | F12 |     |   |     |     |     |     |     |     |
-//               |CTRL TO 3|     | SPC |   |TO 0 |     |     |
-                        bindings = <
-   &trans &kp F1 &kp F2  &kp F3  &kp F4  &trans   &trans &trans &trans &trans &trans &trans  
-   &trans &kp F6 &kp F6  &kp F7  &kp F8  &trans   &trans &trans &trans &trans &trans &trans 
-   &trans &kp F9 &kp F10 &kp F11 &kp F12 &trans   &trans &trans &trans &trans &trans &trans 
-                &kp_to LCTRL 3  &trans  &kp SPACE   &to 0  &trans &trans 
+   &kp LS(N5)      &kp NUHS &kp N7 &kp N8 &kp N9 &trans    &trans &kp F1 &kp F2 &kp F3 &kp F10 &trans 
+   &kp RA(E)       &kp LS(N0) &kp N4 &kp N5 &kp N6 &trans  &trans &kp F4 &kp F5 &kp F6 &kp F11 &trans
+   &mt LGUI LS(N4) &kp N0 &kp N1 &kp N2 &kp N3 &trans      &trans &kp F7 &kp F8 &kp F9 &kp F12 &trans 
+                          &mt LCTRL RET &trans &kp SPACE   &kp LSHFT &trans &mt LALT RET
                         >;
                 };
         };
