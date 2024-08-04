@@ -84,7 +84,7 @@
 // |ESC (TAB)|  Y  |  J   |  U  |  A  |  Q  |   |  P  |  B  |  M  |  L  |  F  | BSPC|
 // |   Z     |  C  |  S   |  I  |  E  |  O  |   |  D  |  T  |  N  |  R  |  H  |  ß  |
 // |  LGUI   |  V  |  X   |  Ü  |  Ä  |  Ö  |   |  W  |  G  |  ,  |  .  |  K  |!(RALT)|
-//            |RET (LCTRL)|BSPC (RALT)| SPC |   |SHFT |MO 1 | TAB |
+//            |RET (LCTRL)|BSPC (RALT)| SPC |   |SHFT |mo_tog 1 | TAB |
 
                         bindings = <
    &mt TAB ESC &kp Y &kp J &kp U    &kp A   &kp Q       &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
@@ -98,11 +98,11 @@
 // |ESC (TAB)|NUHS(F12) |7(F7)|8(F8)|9(F9)|  0  |   |     |PG_UP| UP  | HOME|     | BSPC  |
 // |  SLASH  |NUBS(F11) |4(F4)|5(F5)|6(F6)|PLUS |   | HOME| LFT | DWN | RGT | END | RSHFT |
 // |  LGUI   |GRAVE(F10)|1(F1)|2(F2)|3(F3)|RBRC |   | PLUS|PG_DN|  ,  |  .  |     |!(RALT)|
-//                |RET (LCTRL)|BSPC (RALT)| SPC |   |SHFT |     | TAB |
+//                |RET (LCTRL)|BSPC (RALT)| SPC |   |SHFT |tog 1| TAB |
                         bindings = <
-   &mt TAB ESC &mt F12 NUHS   &mt F7 N7 &mt F8 N8 &mt F9 N9 &kp N0      &trans    &kp PG_UP &kp C_MENU_UP &kp HOME &trans &kp BSPC 
-   &kp SLASH   &mt F11 LS(N0) &mt F4 N4 &mt F5 N5 &mt F6 N6 &kp PLUS    &kp HOME  &kp C_MENU_LEFT &kp C_MENU_DOWN  &kp C_MENU_RIGHT &kp END &kp RSHFT
-   &kp LGUI    &mt F10 GRAVE  &mt F1 N1 &mt F2 N2 &mt F3 N3 &kp RBRC    &kp PLUSD &kp PG_DN &kp COMMA &kp DOT &trans &mt RALT LS(N1)
+   &mt TAB ESC &mt F12 NUHS   &mt F7 N7 &mt F8 N8 &mt F9 N9 &kp N0      &trans   &kp PG_UP &kp C_MENU_UP &kp HOME &trans &kp BSPC 
+   &kp SLASH   &mt F11 LS(N0) &mt F4 N4 &mt F5 N5 &mt F6 N6 &kp PLUS    &kp HOME &kp C_MENU_LEFT &kp C_MENU_DOWN  &kp C_MENU_RIGHT &kp END &kp RSHFT
+   &kp LGUI    &mt F10 GRAVE  &mt F1 N1 &mt F2 N2 &mt F3 N3 &kp RBRC    &trans   &kp PG_DN &kp COMMA &kp DOT &trans &mt RALT LS(N1)
                                 &mt LCTRL RET &mt RALT BSPC &kp SPACE   &kp LSHFT &tog 1 &kp TAB
                         >;
                 };
