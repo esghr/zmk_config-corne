@@ -84,13 +84,13 @@
 // |ESC (TAB)|  Y  |  J   |  U  |  A  |  Q  |   |  P  |  B  |  M  |  L  |  F  | BSPC|
 // |   Z     |  C  |  S   |  I  |  E  |  O  |   |  D  |  T  |  N  |  R  |  H  |  ß  |
 // |  LGUI   |  V  |  X   |  Ü  |  Ä  |  Ö  |   |  W  |  G  |  ,  |  .  |  K  |!(RALT)|
-//            |RET (LCTRL)|BSPC (RALT)| SPC |   |SHFT |mo_tog 1 | TAB |
+//            |RET (LCTRL)|BSPC (LALT)| SPC |   |SHFT |mo_tog 1 | TAB |
 
                         bindings = <
    &mt TAB ESC &kp Y &kp J &kp U    &kp A   &kp Q       &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
    &kp Z       &kp C &kp S &kp I    &kp E   &kp O       &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
    &kp LGUI    &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W     &kp G &kp COMMA  &kp DOT  &kp K &mt RALT LS(N1)
-                &mt LCTRL RET &mt RALT BSPC &kp SPACE   &kp LSHFT &mo_tog &kp TAB
+                &mt LCTRL RET &mt LALT BSPC &kp SPACE   &kp LSHFT &mo_tog &kp TAB
                         >;
                 };
                 num_F_nav_layer {
