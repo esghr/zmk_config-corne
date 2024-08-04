@@ -7,12 +7,20 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/hid_usage.h>
-#include <dt-bindings/zmk/hid_usage_pages.h>
-#include <dt-bindings/zmk/modifiers.h>
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+
+/ {
+    behaviors {
+        mo_tog: mo_tog_tabdance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo 1>, <&tog 1>;
+        };
+    };
+};
 
 // Aliases 
 #define DE_CIRC GRAVE  // ^ (dead)
@@ -56,8 +64,6 @@
 #define DE_TILD RA(DE_PLUS) // ~
 #define DE_PIPE RA(DE_LABK) // |
 #define DE_MICR RA(M)    // µ
-#define PLUSDD (0xBB)    
-#define PLUSD (LS(ZMK_HID_USAGE(HID_USAGE_KEY, PLUSDD))) // Plus
 
 // Taste gedrückt halten: ()
 // Taste doppelt drücken: []
@@ -84,7 +90,7 @@
    &mt TAB ESC &kp Y &kp J &kp U    &kp A   &kp Q       &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
    &kp Z       &kp C &kp S &kp I    &kp E   &kp O       &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
    &kp LGUI    &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W     &kp G &kp COMMA  &kp DOT  &kp K &mt RALT LS(N1)
-                &mt LCTRL RET &mt RALT BSPC &kp SPACE   &kp LSHFT &mo 1 &kp TAB
+                &mt LCTRL RET &mt RALT BSPC &kp SPACE   &kp LSHFT &mo_tog &kp TAB
                         >;
                 };
                 num_F_nav_layer {
@@ -97,7 +103,7 @@
    &mt TAB ESC &mt F12 NUHS   &mt F7 N7 &mt F8 N8 &mt F9 N9 &kp N0      &trans    &kp PG_UP &kp C_MENU_UP &kp HOME &trans &kp BSPC 
    &kp SLASH   &mt F11 LS(N0) &mt F4 N4 &mt F5 N5 &mt F6 N6 &kp PLUS    &kp HOME  &kp C_MENU_LEFT &kp C_MENU_DOWN  &kp C_MENU_RIGHT &kp END &kp RSHFT
    &kp LGUI    &mt F10 GRAVE  &mt F1 N1 &mt F2 N2 &mt F3 N3 &kp RBRC    &kp PLUSD &kp PG_DN &kp COMMA &kp DOT &trans &mt RALT LS(N1)
-                                &mt LCTRL RET &mt RALT BSPC &kp SPACE   &kp LSHFT &trans &kp TAB
+                                &mt LCTRL RET &mt RALT BSPC &kp SPACE   &kp LSHFT &tog 1 &kp TAB
                         >;
                 };
         };
