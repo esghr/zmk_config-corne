@@ -65,8 +65,9 @@
 #define DE_PIPE RA(DE_LABK) // |
 #define DE_MICR RA(M)    // µ
 
-// Taste gedrückt halten: ()
-// Taste doppelt drücken: []
+// SHFT: ()
+// ALT: []
+// Taste gedrückt halten: {}
 
 // zum Anfang der Zeile springen: lL (lineLeft)
 // zum Ende der Zeile springen: lR (lineRight)
@@ -81,29 +82,29 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |ESC (TAB)|  Y  |  J   |  U  |  A  |  Q  |   |  P  |  B  |  M  |  L  |  F  | BSPC|
-// |   Z     |  C  |  S   |  I  |  E  |  O  |   |  D  |  T  |  N  |  R  |  H  |  ß  |
-// |  LGUI   |  V  |  X   |  Ü  |  Ä  |  Ö  |   |  W  |  G  |  ,  |  .  |  K  |!(RALT)|
-//            |RET (LCTRL)|BSPC (LALT)| SPC |   |SHFT |mo_tog 1 | TAB |
+// |ESC TAB|  Y  |  J   |  U  |  A  |  Q  |   |  P  |  B  |  M  |  L  |  F  | BSPC|
+// |   Z   |  C  |  S   |  I  |  E  |  O  |   |  D  |  T  |  N  |  R  |  H  |  ß  |
+// |  LGUI |  V  |  X   |  Ü  |  Ä  |  Ö  |   |  W  |  G  |  ,  |  .  |  K  |  !  |
+//              |BSPC RALT|TAB LCTRL| SPC |   |SHFT |tog1 | RET RALT |
 
                         bindings = <
    &mt TAB ESC &kp Z &kp J &kp U    &kp A   &kp Q       &kp P     &kp B &kp M      &kp L    &kp F &kp BSPC
    &kp Y       &kp C &kp S &kp I    &kp E   &kp O       &kp D     &kp T &kp N      &kp R    &kp H &kp MINUS 
    &kp LGUI    &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W     &kp G &kp COMMA  &kp DOT  &kp K &mt RALT LS(N1)
-                &mt LCTRL RET &mt LALT BSPC &kp SPACE   &kp LSHFT &mo_tog &kp TAB
+                &mt RALT BSPC &mt LCTRL TAB &kp SPACE   &kp LSHFT &mo_tog &mt TAB RET
                         >;
                 };
                 num_F_nav_layer {
 // -----------------------------------------------------------------------------------------
-// |ESC (TAB)|NUHS(F12) |7(F7)|8(F8)|9(F9)|  0  |   |     |PG_UP| UP  | HOME|     | BSPC  |
-// |  SLASH  |NUBS(F11) |4(F4)|5(F5)|6(F6)|PLUS |   | HOME| LFT | DWN | RGT | END | RSHFT |
-// |  LGUI   |GRAVE(F10)|1(F1)|2(F2)|3(F3)|RBRC |   | PLUS|PG_DN|  ,  |  .  |     |!(RALT)|
-//                |RET (LCTRL)|BSPC (RALT)| SPC |   |SHFT |tog 1| TAB |
+// | ESC TAB |   1 F1  |  2 F2  |  3 F3  | 4 F4 | 5 F5 |   | 6 F6 | 7 F7 |   8 F8  |  9 F9  |  0 F10 | BSPC F12 |
+// |  NUHS   |LS(SLASH)| SLASH  |LS(NUHS)|LS(N2)|      |   |      | LFT  |    UP   |  DWN   |  RGT   | ! F11 |
+// |  LGUI   |  GRAVE  | TILDE2 |NUBS F11|RBKT  | RBRC |   |      | HOME |  PG_UP  | PG_DN  |  END   |RSHFT|
+//                             |BSPC LCTRL|TAB RALT|SPC|   | SHFT |tog1  |RET RALT |
                         bindings = <
-   &mt TAB ESC &mt F12 NUHS   &mt F7 N7 &mt F8 N8 &mt F9 N9 &kp N0      &trans   &kp PG_UP &kp UP &kp HOME &trans &kp BSPC 
-   &kp SLASH   &mt F11 LS(N0) &mt F4 N4 &mt F5 N5 &mt F6 N6 &kp PLUS    &kp HOME &kp LEFT &kp DOWN  &kp RIGHT &kp END &kp RSHFT
-   &kp LGUI    &mt F10 GRAVE  &mt F1 N1 &mt F2 N2 &mt F3 N3 &kp RBRC    &trans   &kp PG_DN &kp COMMA &kp DOT &trans &mt RALT LS(N1)
-                                &mt LCTRL RET &mt RALT BSPC &kp SPACE   &kp LSHFT &tog 1 &kp TAB
+   &mt TAB ESC &mt F1 N1     &mt F2 N2  &mt F3 N3    &mt F4 N4  &mt F5 N5    &mt F6 N6 &mt F7 N7 &mt F8 N8 &mt F9 N9 &kp N0    &kp BSPC 
+   &kp NUHS    &kp LS(SLASH) &kp SLASH  &kp LS(NUHS) &kp LS(N2) &trans       &trans    &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &mt F11 LS(N1) 
+   &kp LGUI    &mt F10 GRAVE &kp TILDE2 &mt F11 NUBS &kp RBKT   &kp RBRC     &trans    &kp HOME  &kp PG_UP &kp PG_DN &kp END   &kp RSHFT
+                                    &mt LCTRL BSPC &mt RALT TAB &kp SPACE    &kp LSHFT &tog 1    &mt RALT RET
                         >;
                 };
         };
