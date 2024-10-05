@@ -58,19 +58,12 @@
 // ALT: []
 // Taste gedrückt halten: {}
 
-// zum Anfang der Zeile springen: lL (lineLeft)
-// zum Ende der Zeile springen: lR (lineRight)
-// vor ein Wort springen: lW (left(of)Word)
-// hinter ein Wort springen: rW (right(of)Word)
-// zum Anfang der Seite springen: pU (pageUp)
-// zum Ende der Seite springen: pD (pageDown)
-// Idee: Hold SPC ist auf Layer 1
 / {
         behaviors {
         mo_tog: mo_tog_tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             bindings = <&mo 1>, <&mo 2>, <&mo 3>;
         };
     };
