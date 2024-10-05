@@ -101,7 +101,7 @@
    &mt TAB ESC &kp N6    &kp N7   &kp N8   &kp N9     &kp N0      &kp F6   &kp F7   &kp F8   &kp F9   &kp F10   &kp PG_UP 
    &kp F11     &kp N1    &kp N2   &kp N3   &kp N4     &kp N5      &kp HOME &kp LEFT &kp UP   &kp DOWN &kp RIGHT &kp END 
    &kp LGUI    &kp GRAVE &kp NUHS &kp NUBS &kp RBKT   &kp RBRC    &kp F1   &kp F2   &kp F3   &kp F4   &kp F5    &kp PG_DN
-                         &mt LCTRL BSPC    &kp F12    &kp SPACE   &kp LSHFT  &mo_tog 1 &mt RALT RET
+                         &mt LCTRL BSPC    &kp F12    &kp SPACE   &kp LSHFT  &mo_tog &mt RALT RET
                         >;
                 };
                  LS_num_F_nav_layer {
@@ -114,7 +114,7 @@
    &mt TAB ESC &kp LS(N6)    &kp LS(N7)   &kp LS(N8)   &kp LS(N9)   &kp LS(N0)   &trans    &trans   &trans &trans   &trans    &kp PG_UP 
    &trans      &kp LS(N1)    &kp LS(N2)   &kp LS(N3)   &kp LS(N4)   &kp LS(N5)   &kp HOME  &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp END 
    &kp LGUI    &kp LS(GRAVE) &kp LS(NUHS) &kp LS(NUBS) &kp LS(RBKT) &kp LS(RBRC) &trans    &trans   &trans &trans   &trans    &kp PG_DN
-                           &mt LCTRL BSPC &trans       &kp SPACE    &kp LSHFT    &mo_tog 1 &mt RALT RET
+                           &mt LCTRL BSPC &trans       &kp SPACE    &kp LSHFT    &mo_tog &mt RALT RET
                         >;
                 };
                  RALT_num_F_nav_layer {
@@ -127,7 +127,7 @@
    &mt TAB ESC &kp RA(N6)    &kp RA(N7)   &kp RA(N8)   &kp RA(N9)     &kp RA(N0)      &trans   &trans &trans &trans   &trans   &kp PG_UP 
    &trans      &kp RA(N1)    &kp RA(N2)   &kp RA(N3)   &kp RA(N4)     &kp RA(N5)      &kp HOME &kp LEFT &kp UP   &kp DOWN &kp RIGHT &kp END 
    &kp LGUI    &kp RA(GRAVE) &kp RA(NUHS) &kp RA(NUBS) &kp RA(RBKT)   &kp RA(RBRC)    &trans    &trans   &trans   &trans   &trans    &kp PG_DN
-                         &mt LCTRL BSPC    &trans   &kp SPACE   &kp LSHFT  &mo_tog 1 &mt RALT RET
+                         &mt LCTRL BSPC    &trans   &kp SPACE   &kp LSHFT  &mo_tog &mt RALT RET
                         >;
                 };
         };
