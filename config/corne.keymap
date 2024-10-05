@@ -15,7 +15,7 @@
     behaviors {
         mo_tog: mo_tog_tabdance {
             compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
+            #binding-cells = <3>;
             tapping-term-ms = <150>;
             bindings = <&mo 1>, <&mo 2>, <&mo 3>;
         };
