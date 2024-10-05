@@ -104,7 +104,7 @@
    &mt TAB ESC &mt F1 N1     &mt F2 N2  &mt F3 N3    &mt F4 N4  &mt F5 N5    &mt F6 N6  &mt F7 N7 &mt F8 N8 &mt F9 N9 &kp N0    &kp BSPC 
    &kp NUHS    &kp LS(SLASH) &kp SLASH  &kp LS(NUHS) &kp LS(N2) &kp LS(N8)   &kp LS(N9) &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &mt F11 LS(N1) 
    &kp LGUI    &mt F10 GRAVE &kp TILDE2 &mt F11 NUBS &kp RBKT   &kp RBRC     &trans     &kp HOME  &kp PG_UP &kp PG_DN &kp END   &kp RSHFT
-                                    &mt LCTRL RET &mt RALT BSPC &kp SPACE    &kp LSHFT  &tog 1    &mt RALT RALT
+                                    &mt LCTRL BSPC &mt RALT TAB &kp SPACE    &kp LSHFT  &tog 1    &mt RALT ENT
                         >;
                 };
         };
