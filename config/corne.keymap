@@ -60,6 +60,12 @@
 
 / {
         behaviors {
+        shft_spc: shft_spc_tabdance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk LSHFT>, <&kp SPACE>;
+        };
         nubs_nuhs_ralt: nubs_nuhs_ralt_tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -72,11 +78,11 @@
             tapping-term-ms = <200>;
             bindings = <&kp RBKT>, <&kp RBRC>, <&kp LCTRL>;
         };
-        ret_ctrl_ralt: ret_ctrl_ralt_tabdance {
+        ctrl_ret_ralt: ret_ctrl_ralt_tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp RET>, <&kp LCTRL>, <&kp RALT>;
+            bindings = <&kp LCTRL>, <&kp RET>, <&kp RALT>;
         };
         esc_tab_bspc: esc_tab_bspc_tabdance {
             compatible = "zmk,behavior-tap-dance";
@@ -105,7 +111,7 @@
    &esc_tab_bspc &kp Z &kp J &kp U    &kp A   &kp Q       &kp P &kp B &kp M     &kp L   &kp F &kp BSPC
    &kp Y         &kp C &kp S &kp I    &kp E   &kp O       &kp D &kp T &kp N     &kp R   &kp H &kp MINUS 
    &kp LGUI      &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W &kp G &kp COMMA &kp DOT &kp K &mt GRAVE SLASH
-                 &ret_ctrl_ralt &mo_sw &sk LSHFT    &kp SPACE &plus_star_ctrl &nubs_nuhs_ralt
+                 &ctrl_ret_ralt &mo_sw &sk LSHFT    &kp SPACE &plus_star_ctrl &nubs_nuhs_ralt
                         >;
                 };
                 num_F_nav_layer {
@@ -118,7 +124,7 @@
    &mt TAB ESC    &mt F6 N6 &mt F7 N7 &mt F8 N8 &mt F9 N9 &mt F10 N0       &trans   &trans   &trans   &trans   &trans   &kp BSPC 
    &mt PG_UP HOME &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &mt PG_DN END    &trans   &trans   &trans   &trans   &trans   &trans
    &kp LGUI       &mt F1 N1 &mt F2 N2 &mt F3 N3 &mt F4 N4 &mt F5 N5        &trans   &trans   &trans   &trans   &trans   &trans
-                                 &ret_ctrl_ralt &mo_sw    &sk LSHFT        &kp SPACE &trans &trans
+                                 &ctrl_ret_ralt &mo_sw &sk LSHFT    &kp SPACE &plus_star_ctrl &nubs_nuhs_ralt
                         >;
                 };
                  LS_num_F_nav_layer {
@@ -131,7 +137,7 @@
    &mt TAB ESC    &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0)       &trans    &trans   &trans &trans   &trans    &kp BSPC 
    &mt PG_UP HOME &kp LEFT   &kp UP     &kp DOWN   &kp RIGHT  &mt PG_DN END    &trans    &trans   &trans &trans   &trans    &trans
    &kp LGUI       &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5)       &trans    &trans   &trans &trans   &trans    &trans
-                                    &ret_ctrl_ralt  &mo_sw    &sk LSHFT        &kp SPACE &trans &trans
+                                    &ctrl_ret_ralt &mo_sw &sk LSHFT    &kp SPACE &plus_star_ctrl &nubs_nuhs_ralt
                         >;
                 };
                  RALT_num_F_nav_layer {
@@ -144,7 +150,7 @@
 &mt TAB ESC    &kp RA(N6) &kp RA(N7) &kp RA(N8) &kp RA(N9) &kp RA(N0)       &trans &trans &trans &trans &trans &kp BSPC 
 &mt PG_UP HOME &kp LEFT   &kp UP     &kp DOWN   &kp RIGHT  &mt PG_UP END    &trans &trans &trans &trans &trans &trans
 &kp LGUI       &kp RA(N1) &kp RA(N2) &kp RA(N3) &kp RA(N4) &kp RA(N5)       &trans &trans &trans &trans &trans &trans
-                                     &ret_ctrl_ralt &mo_sw &sk LSHFT        &kp SPACE &trans &trans
+                                     &ctrl_ret_ralt &mo_sw &sk LSHFT    &kp SPACE &plus_star_ctrl &nubs_nuhs_ralt
                         >;
                 };
         };
