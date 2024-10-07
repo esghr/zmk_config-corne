@@ -54,47 +54,25 @@
 #define DE_PIPE RA(DE_LABK) // |
 #define DE_MICR RA(M)    // µ
 
-// SHFT: ()
-// ALT: []
-// Taste gedrückt halten: {}
-
 / {
         behaviors {
-        sksh_spc: sksh_spc_tabdance {
+        ctrl_shftret: ctrl_shftret_tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&sk LSHFT>, <&kp SPACE>;
+            bindings = <&kp LCTRL>, <&mt LSHFT RET>;
         };
-        nuhs_nubs_ralt: nuhs_nubs_ralt_tabdance {
+        ctrlspc_ret: ctrlspc_ret_tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp NUHS>, <&kp NUBS>, <&kp RALT>;
-        };
-        ctrl_plus: ctrl_plus_tabdance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LCTRL>, <&kp RBKT>;
-        };
-        ctrl_ret_ralt: ret_ctrl_ralt_tabdance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LCTRL>, <&kp RET>, <&kp RALT>;
+            bindings = <&mt LCTRL SPACE>, <&kp RET>;
         };
         esc_tab_bspc: esc_tab_bspc_tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp ESC>, <&kp TAB>, <&kp BSPC>;
-        };
-        mo_sw: mo_sw_tabdance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mo 1>, <&mo 2>, <&mo 3>;
         };
     };
         keymap {
@@ -104,54 +82,27 @@
 // -----------------------------------------------------------------------------------------
 // |ESC_TAB_BSPC|  Y  |  J   |  U  |  A  |  Q  |   |  P  |  B  |  M  |  L  |  F  |   BSPC  |
 // |     Z      |  C  |  S   |  I  |  E  |  O  |   |  D  |  T  |  N  |  R  |  H  |    ß    |
-// |    LGUI    |  V  |  X   |  Ü  |  Ä  |  Ö  |   |  W  |  G  |  ,  |  .  |  K  | - GRAVE^|
-//            |LCTRL RET RALT|mo_sw|sk SHFT SPC|   | SPC |NUHS# NUBS< RALT|LCTRL RBKT+|
+// | RALT LGUI  |  V  |  X   |  Ü  |  Ä  |  Ö  |   |  W  |  G  |  ,  |  .  |  K  |  - RALT |
+//                    |ctrlspc_ret|MO 1|sk SHFT|   | SPC|MO 1|ctrl_shftret|
 
                         bindings = <
    &esc_tab_bspc &kp Z &kp J &kp U    &kp A   &kp Q       &kp P &kp B &kp M     &kp L   &kp F &kp BSPC
    &kp Y         &kp C &kp S &kp I    &kp E   &kp O       &kp D &kp T &kp N     &kp R   &kp H &kp MINUS 
-   &kp LGUI      &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W &kp G &kp COMMA &kp DOT &kp K &mt GRAVE SLASH
-                 &ctrl_ret_ralt &mo_sw &sksh_spc    &kp SPACE &nuhs_nubs_ralt &ctrl_plus 
+   &mt RALT LGUI &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W &kp G &kp COMMA &kp DOT &kp K &mt RALT SLASH
+                           &ctrlspc_ret &mo 1 &sk LSHFT   &kp SPACE &mo 1 &ctrl_shftret 
                         >;
                 };
                 num_F_nav_layer {
 // -----------------------------------------------------------------------------------------
-// |F12 ESC TAB| F6 N6 | F7 N7 | F8 N8 | F9 N9 | F10 N0  |   |    |    |    |    |    |BSPC|
-// | PG_UP HOME|  LFT  |  UP   |  DWN  | RIGHT |PG_DN END|   |    |    |    |    |    |    |
-// | F11 LGUI  | F1 N1 | F2 N2 | F3 N3 | F4 N4 |  F5 N5  |   |    |    |    |    |    |    |   
-//            |LCTRL RET RALT|mo_sw|sk SHFT SPC|   | SPC |NUHS# NUBS< RALT|LCTRL RBKT+|
+// |ESC_TAB_BSPC| F6 N6 | F7 N7 | F8 N8 | F9 N9 | F10 N0  |   |F11 |F12 |    |     |    |BSPC|
+// | PG_UP HOME |  LFT  |  UP   |  DWN  | RIGHT |PG_DN END|   |NUHS|NUBS|RBKT|GRAVE|    |    |
+// | RALT LGUI  | F1 N1 | F2 N2 | F3 N3 | F4 N4 |  F5 N5  |   |    |    |    |     |    |RALT|   
+//                               |ctrlspc_ret|MO 1|sk SHFT|   | SPC|MO 1|ctrl_shftret|
                         bindings = <
-   &mt TAB ESC    &mt F6 N6 &mt F7 N7 &mt F8 N8 &mt F9 N9 &mt F10 N0       &trans   &trans   &trans   &trans   &trans   &kp BSPC 
-   &mt PG_UP HOME &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &mt PG_DN END    &trans   &trans   &trans   &trans   &trans   &trans
-   &kp LGUI       &mt F1 N1 &mt F2 N2 &mt F3 N3 &mt F4 N4 &mt F5 N5        &trans   &trans   &trans   &trans   &trans   &trans
-                 &ctrl_ret_ralt &mo_sw &sksh_spc    &kp SPACE &nuhs_nubs_ralt &ctrl_plus
-                        >;
-                };
-                 LS_num_F_nav_layer {
-// -----------------------------------------------------------------------------------------
-// | ESC TAB  | LS(N6)&| LS(N7)/| LS(N8)(| LS(N9))| LS(N0)= |   |    |    |    |    |    |BSPC|
-// |PG_UP HOME| LFT    |   UP   | DWN    | RIGHT  |PG_DN END|   |    |    |    |    |    |    |
-// |  LGUI    | LS(N1)!| LS(N2)"| LS(N3)§| LS(N4)$| LS(N5)% |   |    |    |    |    |    |    |
-//            |LCTRL RET RALT|mo_sw|sk SHFT SPC|   | SPC |NUHS# NUBS< RALT|LCTRL RBKT+|
-                        bindings = <
-   &mt TAB ESC    &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0)       &trans    &trans   &trans &trans   &trans    &kp BSPC 
-   &mt PG_UP HOME &kp LEFT   &kp UP     &kp DOWN   &kp RIGHT  &mt PG_DN END    &trans    &trans   &trans &trans   &trans    &trans
-   &kp LGUI       &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5)       &trans    &trans   &trans &trans   &trans    &trans
-                 &ctrl_ret_ralt &mo_sw &sksh_spc    &kp SPACE &nuhs_nubs_ralt &ctrl_plus
-                        >;
-                };
-                 RALT_num_F_nav_layer {
-// -----------------------------------------------------------------------------------------
-// | ESC TAB |        | RA(N7){| RA(N8)[| RA(N9)]| RA(N0)}|   |    |    |    |    |    |BSPC|
-// |  HOME   | LFT    |   UP   |  DWN   | RIGHT  |  END   |   |    |    |    |    |    |    |
-// |  LGUI   |        | RA(N2)²| RA(N3)³|        |        |   |    |    |    |    |    |    |
-//            |LCTRL RET RALT|mo_sw|sk SHFT SPC|   | SPC |NUHS# NUBS< RALT|LCTRL RBKT+|
-                        bindings = <
-&mt TAB ESC    &kp RA(N6) &kp RA(N7) &kp RA(N8) &kp RA(N9) &kp RA(N0)       &trans &trans &trans &trans &trans &kp BSPC 
-&mt PG_UP HOME &kp LEFT   &kp UP     &kp DOWN   &kp RIGHT  &mt PG_UP END    &trans &trans &trans &trans &trans &trans
-&kp LGUI       &kp RA(N1) &kp RA(N2) &kp RA(N3) &kp RA(N4) &kp RA(N5)       &trans &trans &trans &trans &trans &trans
-                 &ctrl_ret_ralt &mo_sw &sksh_spc    &kp SPACE &nuhs_nubs_ralt &ctrl_plus
-                                     
+   &esc_tab_bspc  &mt F6 N6 &mt F7 N7 &mt F8 N8 &mt F9 N9 &mt F10 N0      &kp F11  &kp F12  &trans   &trans    &trans &kp BSPC 
+   &mt PG_UP HOME &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &mt PG_DN END   &kp NUHS &kp NUBS &kp RBKT &kp GRAVE &trans &trans
+   &mt RALT LGUI  &mt F1 N1 &mt F2 N2 &mt F3 N3 &mt F4 N4 &mt F5 N5       &trans   &trans   &trans   &trans    &trans &kp RALT
+                                       &ctrlspc_ret &mo 1 &sk LSHFT       &kp SPACE &mo 1 &ctrl_shftret 
                         >;
                 };
         };
