@@ -56,11 +56,11 @@
 
 / {
         behaviors {
-        ctrl_shftret: ctrl_shftret_tabdance {
+        ctrlspc_shftret: ctrlspc_shftret_tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LCTRL>, <&mt LSHFT RET>;
+            bindings = <&mt LCTRL SPC>, <&mt LSHFT RET>;
         };
         ctrlspc_ret: ctrlspc_ret_tabdance {
             compatible = "zmk,behavior-tap-dance";
@@ -83,13 +83,13 @@
 // |ESC_TAB_BSPC|  Y  |  J   |  U  |  A  |  Q  |   |  P  |  B  |  M  |  L  |  F  |   BSPC  |
 // |     Z      |  C  |  S   |  I  |  E  |  O  |   |  D  |  T  |  N  |  R  |  H  |    ß    |
 // | RALT LGUI  |  V  |  X   |  Ü  |  Ä  |  Ö  |   |  W  |  G  |  ,  |  .  |  K  |  - RALT |
-//                    |ctrlspc_ret|MO 1|sk SHFT|   | SPC|MO 1|ctrl_shftret|
+//                    |ctrlspc_ret|MO 1|sk SHFT|   | SPC|MO 1|ctrlspc_shftret|
 
                         bindings = <
    &esc_tab_bspc &kp Z &kp J &kp U    &kp A   &kp Q       &kp P &kp B &kp M     &kp L   &kp F &kp BSPC
    &kp Y         &kp C &kp S &kp I    &kp E   &kp O       &kp D &kp T &kp N     &kp R   &kp H &kp MINUS 
    &mt RALT LGUI &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W &kp G &kp COMMA &kp DOT &kp K &mt RALT SLASH
-                           &ctrlspc_ret &mo 1 &sk LSHFT   &kp SPACE &mo 1 &ctrl_shftret 
+                           &ctrlspc_ret &mo 1 &sk LSHFT   &kp SPACE &mo 1 &ctrlspc_shftret 
                         >;
                 };
                 num_F_nav_layer {
@@ -97,12 +97,12 @@
 // |ESC_TAB_BSPC| F6 N6 | F7 N7 | F8 N8 | F9 N9 | F10 N0  |   |F11 |F12 |    |     |    |BSPC|
 // | PG_UP HOME |  LFT  |  UP   |  DWN  | RIGHT |PG_DN END|   |NUHS|NUBS|RBKT|GRAVE|    |    |
 // | RALT LGUI  | F1 N1 | F2 N2 | F3 N3 | F4 N4 |  F5 N5  |   |    |    |    |     |    |RALT|   
-//                               |ctrlspc_ret|MO 1|sk SHFT|   | SPC|MO 1|ctrl_shftret|
+//                               |ctrlspc_ret|MO 1|sk SHFT|   | SPC|MO 1|ctrlspc_shftret|
                         bindings = <
    &esc_tab_bspc  &mt F6 N6 &mt F7 N7 &mt F8 N8 &mt F9 N9 &mt F10 N0      &kp F11  &kp F12  &trans   &trans    &trans &kp BSPC 
    &mt PG_UP HOME &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &mt PG_DN END   &kp NUHS &kp NUBS &kp RBKT &kp GRAVE &trans &trans
    &mt RALT LGUI  &mt F1 N1 &mt F2 N2 &mt F3 N3 &mt F4 N4 &mt F5 N5       &trans   &trans   &trans   &trans    &trans &kp RALT
-                                       &ctrlspc_ret &mo 1 &sk LSHFT       &kp SPACE &mo 1 &ctrl_shftret 
+                                       &ctrlspc_ret &mo 1 &sk LSHFT       &kp SPACE &mo 1 &ctrlspc_shftret 
                         >;
                 };
         };
