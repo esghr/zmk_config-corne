@@ -60,23 +60,23 @@
 
 / {
         behaviors {
-        shft_spc: shft_spc_tabdance {
+        sksh_spc: sksh_spc_tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&sk LSHFT>, <&kp SPACE>;
         };
-        nubs_nuhs_ralt: nubs_nuhs_ralt_tabdance {
+        nuhs_nubs_ralt: nuhs_nubs_ralt_tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp NUBS>, <&kp NUHS>, <&kp RALT>;
+            bindings = <&kp NUHS>, <&kp NUBS>, <&kp RALT>;
         };
-        plus_star_ctrl: plus_star_ctrl_tabdance {
+        ctrl_plus: ctrl_plus_tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp RBKT>, <&kp RBRC>, <&kp LCTRL>;
+            bindings = <&kp LCTRL>, <&kp RBKT>;
         };
         ctrl_ret_ralt: ret_ctrl_ralt_tabdance {
             compatible = "zmk,behavior-tap-dance";
@@ -105,13 +105,13 @@
 // |ESC_TAB_BSPC|  Y  |  J   |  U  |  A  |  Q  |   |  P  |  B  |  M  |  L  |  F  |   BSPC  |
 // |     Z      |  C  |  S   |  I  |  E  |  O  |   |  D  |  T  |  N  |  R  |  H  |    ß    |
 // |    LGUI    |  V  |  X   |  Ü  |  Ä  |  Ö  |   |  W  |  G  |  ,  |  .  |  K  | - GRAVE^|
-//                |RET LCTRL RALT|mo_sw|sk SHFT|   | SPC |RBKT+ RBRC* LCTRL| NUBS< NUHS# RALT|
+//            |LCTRL RET RALT|mo_sw|sk SHFT SPC|   | SPC |NUHS# NUBS< RALT|LCTRL RBKT+|
 
                         bindings = <
    &esc_tab_bspc &kp Z &kp J &kp U    &kp A   &kp Q       &kp P &kp B &kp M     &kp L   &kp F &kp BSPC
    &kp Y         &kp C &kp S &kp I    &kp E   &kp O       &kp D &kp T &kp N     &kp R   &kp H &kp MINUS 
    &kp LGUI      &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W &kp G &kp COMMA &kp DOT &kp K &mt GRAVE SLASH
-                 &ctrl_ret_ralt &mo_sw &sk LSHFT    &kp SPACE &plus_star_ctrl &nubs_nuhs_ralt
+                 &ctrl_ret_ralt &mo_sw &sksh_spc    &kp SPACE &nuhs_nubs_ralt &ctrl_plus 
                         >;
                 };
                 num_F_nav_layer {
@@ -151,6 +151,7 @@
 &mt PG_UP HOME &kp LEFT   &kp UP     &kp DOWN   &kp RIGHT  &mt PG_UP END    &trans &trans &trans &trans &trans &trans
 &kp LGUI       &kp RA(N1) &kp RA(N2) &kp RA(N3) &kp RA(N4) &kp RA(N5)       &trans &trans &trans &trans &trans &trans
                                      &ctrl_ret_ralt &mo_sw &sk LSHFT    &kp SPACE &plus_star_ctrl &nubs_nuhs_ralt
+                                     
                         >;
                 };
         };
