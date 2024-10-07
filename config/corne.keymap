@@ -54,8 +54,18 @@
 #define DE_PIPE RA(DE_LABK) // |
 #define DE_MICR RA(M)    // µ
 
+&mt {
+tapping-term-ms = <200>;
+ };
+
 / {
         behaviors {
+        gui_ralt: gui_ralt_tabdance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp GUI>, <&kp RALT>;
+        };
         ctrlspc_shftret: ctrlspc_shftret_tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -68,11 +78,11 @@
             tapping-term-ms = <200>;
             bindings = <&mt LCTRL RET>, <&kp SPACE>;
         };
-        esc_tab_bspc: esc_tab_bspc_tabdance {
+        tabesc_bspc: tabesc_bspc_tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp ESC>, <&kp TAB>, <&kp BSPC>;
+            bindings = <&mt TAB ESC>, <&kp BSPC>;
         };
     };
         keymap {
@@ -80,28 +90,28 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |ESC_TAB_BSPC|  Y  |  J   |  U  |  A  |  Q  |   |  P  |  B  |  M  |  L  |  F  |   BSPC  |
-// |     Z      |  C  |  S   |  I  |  E  |  O  |   |  D  |  T  |  N  |  R  |  H  |    ß    |
-// | RALT LGUI  |  V  |  X   |  Ü  |  Ä  |  Ö  |   |  W  |  G  |  ,  |  .  |  K  |  - RALT |
-//                    |ctrlret_spc|MO 1|sk SHFT|   | SPC |MO 1 |ctrlspc_shftret|
+// |tabesc_bspc|  Y  |  J   |  U  |  A  |  Q  |   |  P  |  B  |  M  |  L  |  F  |   BSPC  |
+// |    Z      |  C  |  S   |  I  |  E  |  O  |   |  D  |  T  |  N  |  R  |  H  |    ß    |
+// | gui_ralt  |  V  |  X   |  Ü  |  Ä  |  Ö  |   |  W  |  G  |  ,  |  .  |  K  |  - RALT |
+//                   |ctrlret_spc|MO 1|sk SHFT|   | SPC |MO 1 |ctrlspc_shftret|
 
                         bindings = <
-   &esc_tab_bspc &kp Z &kp J &kp U    &kp A   &kp Q       &kp P &kp B &kp M     &kp L   &kp F &kp BSPC
-   &kp Y         &kp C &kp S &kp I    &kp E   &kp O       &kp D &kp T &kp N     &kp R   &kp H &kp MINUS 
-   &mt RALT LGUI &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W &kp G &kp COMMA &kp DOT &kp K &mt RALT SLASH
-                           &ctrlret_spc &mo 1 &sk LSHFT   &kp SPACE &mo 1 &ctrlspc_shftret 
+   &tabesc_bspc &kp Z &kp J &kp U    &kp A   &kp Q       &kp P &kp B &kp M     &kp L   &kp F &kp BSPC
+   &kp Y        &kp C &kp S &kp I    &kp E   &kp O       &kp D &kp T &kp N     &kp R   &kp H &kp MINUS 
+   &gui_ralt    &kp V &kp X &kp LBKT &kp SQT &kp SEMI    &kp W &kp G &kp COMMA &kp DOT &kp K &mt RALT SLASH
+                         &ctrlret_spc &mo 1 &sk LSHFT   &kp SPACE &mo 1 &ctrlspc_shftret 
                         >;
                 };
                 num_F_nav_layer {
 // -----------------------------------------------------------------------------------------
-// |ESC_TAB_BSPC| F6 N6 | F7 N7 | F8 N8 | F9 N9 | F10 N0  |   |     |     |     |     |      |BSPC|
-// | PG_UP HOME |  LFT  |  UP   |  DWN  | RIGHT |PG_DN END|   | F11 |NUHS#|NUBS<|RBKT+|GRAVE^|F12 |
-// | RALT LGUI  | F1 N1 | F2 N2 | F3 N3 | F4 N4 |  F5 N5  |   |     |     |     |     |      |RALT|   
-//                    |ctrlret_spc|MO 1|sk SHFT|   | SPC |MO 1 |ctrlspc_shftret|
+// |tabesc_bspc| F6 N6 | F7 N7 | F8 N8 | F9 N9 | F10 N0  |   |     |     |     |     |      |BSPC|
+// |PG_UP HOME |  LFT  |  UP   |  DWN  | RIGHT |PG_DN END|   | F11 |NUHS#|NUBS<|RBKT+|GRAVE^|F12 |
+// | gui_ralt  | F1 N1 | F2 N2 | F3 N3 | F4 N4 |  F5 N5  |   |     |     |     |     |      |RALT|   
+//                              |ctrlret_spc|MO 1|sk SHFT|   | SPC |MO 1 |ctrlspc_shftret|
                         bindings = <
-   &esc_tab_bspc  &mt F6 N6 &mt F7 N7 &mt F8 N8 &mt F9 N9 &mt F10 N0      &trans  &trans   &trans   &trans   &trans    &kp BSPC 
+   &tabesc_bspc   &mt F6 N6 &mt F7 N7 &mt F8 N8 &mt F9 N9 &mt F10 N0      &trans  &trans   &trans   &trans   &trans    &kp BSPC 
    &mt PG_UP HOME &kp LEFT  &kp UP    &kp DOWN  &kp RIGHT &mt PG_DN END   &kp F11 &kp NUHS &kp NUBS &kp RBKT &kp GRAVE &kp F12
-   &mt RALT LGUI  &mt F1 N1 &mt F2 N2 &mt F3 N3 &mt F4 N4 &mt F5 N5       &trans  &trans   &trans   &trans   &trans    &kp RALT
+   &gui_ralt      &mt F1 N1 &mt F2 N2 &mt F3 N3 &mt F4 N4 &mt F5 N5       &trans  &trans   &trans   &trans   &trans    &kp RALT
                                        &ctrlret_spc &mo 1 &sk LSHFT       &kp SPACE &mo 1 &ctrlspc_shftret 
                         >;
                 };
