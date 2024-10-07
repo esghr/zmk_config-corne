@@ -64,7 +64,7 @@ tapping-term-ms = <200>;
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp GUI>, <&kp RALT>;
+            bindings = <&kp LGUI>, <&kp RALT>;
         };
         ctrlspc_shftret: ctrlspc_shftret_tabdance {
             compatible = "zmk,behavior-tap-dance";
